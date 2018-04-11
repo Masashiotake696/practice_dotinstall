@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+#container {
+  width: 500px;
+  margin: 15px auto;
+}
+
+h1, ul > li {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  padding: 10px;
+  height: 50px;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+ul > li {
+  margin-bottom: 7px;
+  margin: 0 0 10px;
+  cursor: pointer;
+}
+
+#btn {
+  text-align: center;
+  float: right;
+  width: 100px;
+  padding: 7px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #00aaff;
+  box-shadow: 0 4px 0 #0088cc; /* 1番目の値は水平方向の影の距離、2番目の値は垂直方向の影の距離、3番目の値はぼかし距離、4番目の値は色 */
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#btn.disabled {
+  opacity: 0.6;
+}
+
+.correct {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #eee;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+#result {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 30px 0 50px;
+}
+
+#result > div {
+  font-size: 64px;
+  font-weight: bold;
+  margin-top: 30px;
+}

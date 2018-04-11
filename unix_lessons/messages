@@ -1,0 +1,1451 @@
+Mar 20 23:02:51 localhost kernel: imklog 5.8.10, log source = /proc/kmsg started.
+Mar 20 23:02:51 localhost rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="1037" x-info="http://www.rsyslog.com"] start
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys cpuset
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys cpu
+Mar 20 23:02:51 localhost kernel: Linux version 2.6.32-642.el6.x86_64 (mockbuild@worker1.bsys.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-17) (GCC) ) #1 SMP Tue May 10 17:27:01 UTC 2016
+Mar 20 23:02:51 localhost kernel: Command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 20 23:02:51 localhost kernel: KERNEL supported cpus:
+Mar 20 23:02:51 localhost kernel:  Intel GenuineIntel
+Mar 20 23:02:51 localhost kernel:  AMD AuthenticAMD
+Mar 20 23:02:51 localhost kernel:  Centaur CentaurHauls
+Mar 20 23:02:51 localhost kernel: BIOS-provided physical RAM map:
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 0000000000000000 - 000000000009fc00 (usable)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 000000000009fc00 - 00000000000a0000 (reserved)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 0000000000100000 - 000000003fff0000 (usable)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 000000003fff0000 - 0000000040000000 (ACPI data)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 00000000fec00000 - 00000000fec01000 (reserved)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+Mar 20 23:02:51 localhost kernel: BIOS-e820: 00000000fffc0000 - 0000000100000000 (reserved)
+Mar 20 23:02:51 localhost kernel: SMBIOS version 2.5 @ 0xFFF60
+Mar 20 23:02:51 localhost kernel: SMBIOS 2.5 present.
+Mar 20 23:02:51 localhost kernel: Hypervisor detected: KVM
+Mar 20 23:02:51 localhost kernel: last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+Mar 20 23:02:51 localhost kernel: x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+Mar 20 23:02:51 localhost kernel: CPU MTRRs all blank - virtualized system.
+Mar 20 23:02:51 localhost kernel: init_memory_mapping: 0000000000000000-000000003fff0000
+Mar 20 23:02:51 localhost kernel: RAMDISK: 36c48000 - 37fefdee
+Mar 20 23:02:51 localhost kernel: ACPI: RSDP 00000000000e0000 00024 (v02 VBOX  )
+Mar 20 23:02:51 localhost kernel: ACPI: XSDT 000000003fff0030 0003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Mar 20 23:02:51 localhost kernel: ACPI: FACP 000000003fff00f0 000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Mar 20 23:02:51 localhost kernel: ACPI: DSDT 000000003fff0470 021C8 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Mar 20 23:02:51 localhost kernel: ACPI: FACS 000000003fff0200 00040
+Mar 20 23:02:51 localhost kernel: ACPI: APIC 000000003fff0240 00054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Mar 20 23:02:51 localhost kernel: ACPI: SSDT 000000003fff02a0 001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Mar 20 23:02:51 localhost kernel: Setting APIC routing to flat.
+Mar 20 23:02:51 localhost kernel: No NUMA configuration found
+Mar 20 23:02:51 localhost kernel: Faking a node at 0000000000000000-000000003fff0000
+Mar 20 23:02:51 localhost kernel: Bootmem setup node 0 0000000000000000-000000003fff0000
+Mar 20 23:02:51 localhost kernel:  NODE_DATA [0000000000009000 - 000000000003cfff]
+Mar 20 23:02:51 localhost kernel:  bootmap [000000000003d000 -  0000000000044fff] pages 8
+Mar 20 23:02:51 localhost kernel: (7 early reservations) ==> bootmem [0000000000 - 003fff0000]
+Mar 20 23:02:51 localhost kernel:  #0 [0000000000 - 0000001000]   BIOS data page ==> [0000000000 - 0000001000]
+Mar 20 23:02:51 localhost kernel:  #1 [0000006000 - 0000008000]       TRAMPOLINE ==> [0000006000 - 0000008000]
+Mar 20 23:02:51 localhost kernel:  #2 [0001000000 - 0002044924]    TEXT DATA BSS ==> [0001000000 - 0002044924]
+Mar 20 23:02:51 localhost kernel:  #3 [0036c48000 - 0037fefdee]          RAMDISK ==> [0036c48000 - 0037fefdee]
+Mar 20 23:02:51 localhost kernel:  #4 [000009f800 - 0000100000]    BIOS reserved ==> [000009f800 - 0000100000]
+Mar 20 23:02:51 localhost kernel:  #5 [0002045000 - 000204513c]              BRK ==> [0002045000 - 000204513c]
+Mar 20 23:02:51 localhost kernel:  #6 [0000008000 - 0000009000]          PGTABLE ==> [0000008000 - 0000009000]
+Mar 20 23:02:51 localhost kernel: found SMP MP-table at [ffff88000009fff0] 9fff0
+Mar 20 23:02:51 localhost kernel: crashkernel=auto resulted in zero bytes of reserved memory.
+Mar 20 23:02:51 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Mar 20 23:02:51 localhost kernel: kvm-clock: cpu 0, msr 0:1c38e41, boot clock
+Mar 20 23:02:51 localhost kernel: Zone PFN ranges:
+Mar 20 23:02:51 localhost kernel:  DMA      0x00000001 -> 0x00001000
+Mar 20 23:02:51 localhost kernel:  DMA32    0x00001000 -> 0x00100000
+Mar 20 23:02:51 localhost kernel:  Normal   0x00100000 -> 0x00100000
+Mar 20 23:02:51 localhost kernel: Movable zone start PFN for each node
+Mar 20 23:02:51 localhost kernel: early_node_map[2] active PFN ranges
+Mar 20 23:02:51 localhost kernel:    0: 0x00000001 -> 0x0000009f
+Mar 20 23:02:51 localhost kernel:    0: 0x00000100 -> 0x0003fff0
+Mar 20 23:02:51 localhost kernel: ACPI: PM-Timer IO Port: 0x4008
+Mar 20 23:02:51 localhost kernel: Setting APIC routing to flat.
+Mar 20 23:02:51 localhost kernel: ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+Mar 20 23:02:51 localhost kernel: ACPI: IOAPIC (id[0x01] address[0xfec00000] gsi_base[0])
+Mar 20 23:02:51 localhost kernel: IOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23
+Mar 20 23:02:51 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Mar 20 23:02:51 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Mar 20 23:02:51 localhost kernel: Using ACPI (MADT) for SMP configuration information
+Mar 20 23:02:51 localhost kernel: SMP: Allowing 1 CPUs, 0 hotplug CPUs
+Mar 20 23:02:51 localhost kernel: PM: Registered nosave memory: 000000000009f000 - 00000000000a0000
+Mar 20 23:02:51 localhost kernel: PM: Registered nosave memory: 00000000000a0000 - 00000000000f0000
+Mar 20 23:02:51 localhost kernel: PM: Registered nosave memory: 00000000000f0000 - 0000000000100000
+Mar 20 23:02:51 localhost kernel: Allocating PCI resources starting at 40000000 (gap: 40000000:bec00000)
+Mar 20 23:02:51 localhost kernel: Booting paravirtualized kernel on KVM
+Mar 20 23:02:51 localhost kernel: NR_CPUS:4096 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+Mar 20 23:02:51 localhost kernel: PERCPU: Embedded 31 pages/cpu @ffff880002200000 s96600 r8192 d22184 u2097152
+Mar 20 23:02:51 localhost kernel: pcpu-alloc: s96600 r8192 d22184 u2097152 alloc=1*2097152
+Mar 20 23:02:51 localhost kernel: pcpu-alloc: [0] 0 
+Mar 20 23:02:51 localhost kernel: kvm-clock: cpu 0, msr 0:2216e41, primary cpu clock
+Mar 20 23:02:51 localhost kernel: Built 1 zonelists in Node order, mobility grouping on.  Total pages: 258346
+Mar 20 23:02:51 localhost kernel: Policy zone: DMA32
+Mar 20 23:02:51 localhost kernel: Kernel command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16  rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 20 23:02:51 localhost kernel: PID hash table entries: 4096 (order: 3, 32768 bytes)
+Mar 20 23:02:51 localhost kernel: x86/fpu: xstate_offset[2]: 0240, xstate_sizes[2]: 0100
+Mar 20 23:02:51 localhost kernel: xsave/xrstor: enabled xstate_bv 0x7, cntxt size 0x340
+Mar 20 23:02:51 localhost kernel: Memory: 996368k/1048512k available (5455k kernel code, 392k absent, 51752k reserved, 6964k data, 1316k init)
+Mar 20 23:02:51 localhost kernel: Hierarchical RCU implementation.
+Mar 20 23:02:51 localhost kernel: NR_IRQS:33024 nr_irqs:256
+Mar 20 23:02:51 localhost kernel: Console: colour VGA+ 80x25
+Mar 20 23:02:51 localhost kernel: console [tty0] enabled
+Mar 20 23:02:51 localhost kernel: allocated 4194304 bytes of page_cgroup
+Mar 20 23:02:51 localhost kernel: please try 'cgroup_disable=memory' option if you don't want memory cgroups
+Mar 20 23:02:51 localhost kernel: Detected 3100.000 MHz processor.
+Mar 20 23:02:51 localhost kernel: Calibrating delay loop (skipped) preset value.. 6200.00 BogoMIPS (lpj=3100000)
+Mar 20 23:02:51 localhost kernel: pid_max: default: 32768 minimum: 301
+Mar 20 23:02:51 localhost kernel: Security Framework initialized
+Mar 20 23:02:51 localhost kernel: SELinux:  Initializing.
+Mar 20 23:02:51 localhost kernel: Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Mar 20 23:02:51 localhost kernel: Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Mar 20 23:02:51 localhost kernel: Mount-cache hash table entries: 256
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys ns
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys cpuacct
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys memory
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys devices
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys freezer
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys net_cls
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys blkio
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys perf_event
+Mar 20 23:02:51 localhost kernel: Initializing cgroup subsys net_prio
+Mar 20 23:02:51 localhost kernel: CPU: Physical Processor ID: 0
+Mar 20 23:02:51 localhost kernel: mce: CPU supports 0 MCE banks
+Mar 20 23:02:51 localhost kernel: using mwait in idle threads.
+Mar 20 23:02:51 localhost kernel: alternatives: switching to unfair spinlock
+Mar 20 23:02:51 localhost kernel: SMP alternatives: switching to UP code
+Mar 20 23:02:51 localhost kernel: Freeing SMP alternatives: 37k freed
+Mar 20 23:02:51 localhost kernel: ACPI: Core revision 20090903
+Mar 20 23:02:51 localhost kernel: ftrace: converting mcount calls to 0f 1f 44 00 00
+Mar 20 23:02:51 localhost kernel: ftrace: allocating 22342 entries in 88 pages
+Mar 20 23:02:51 localhost kernel: Enabling x2apic
+Mar 20 23:02:51 localhost kernel: Enabled x2apic
+Mar 20 23:02:51 localhost kernel: APIC routing finalized to physical x2apic.
+Mar 20 23:02:51 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Mar 20 23:02:51 localhost kernel: CPU0: Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz stepping 04
+Mar 20 23:02:51 localhost kernel: Performance Events: unsupported p6 CPU model 61 no PMU driver, software events only.
+Mar 20 23:02:51 localhost kernel: NMI watchdog disabled (cpu0): hardware events not enabled
+Mar 20 23:02:51 localhost kernel: Brought up 1 CPUs
+Mar 20 23:02:51 localhost kernel: Total of 1 processors activated (6200.00 BogoMIPS).
+Mar 20 23:02:51 localhost kernel: devtmpfs: initialized
+Mar 20 23:02:51 localhost kernel: regulator: core version 0.5
+Mar 20 23:02:51 localhost kernel: NET: Registered protocol family 16
+Mar 20 23:02:51 localhost kernel: ACPI: bus type pci registered
+Mar 20 23:02:51 localhost kernel: PCI: Using configuration type 1 for base access
+Mar 20 23:02:51 localhost kernel: bio: create slab <bio-0> at 0
+Mar 20 23:02:51 localhost kernel: ACPI: Executed 1 blocks of module-level executable AML code
+Mar 20 23:02:51 localhost kernel: ACPI: Interpreter enabled
+Mar 20 23:02:51 localhost kernel: ACPI: (supports S0 S5)
+Mar 20 23:02:51 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+Mar 20 23:02:51 localhost kernel: ACPI: No dock devices found.
+Mar 20 23:02:51 localhost kernel: PCI: Ignoring host bridge windows from ACPI; if necessary, use "pci=use_crs" and report a bug
+Mar 20 23:02:51 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Mar 20 23:02:51 localhost kernel: PCI host bridge to bus 0000:00
+Mar 20 23:02:51 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+Mar 20 23:02:51 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x00000000-0x7fffffffff]
+Mar 20 23:02:51 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+Mar 20 23:02:51 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+Mar 20 23:02:51 localhost kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+Mar 20 23:02:51 localhost kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 10 *11)
+Mar 20 23:02:51 localhost kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 9 *10 11)
+Mar 20 23:02:51 localhost kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs 5 *9 10 11)
+Mar 20 23:02:51 localhost kernel: vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+Mar 20 23:02:51 localhost kernel: vgaarb: loaded
+Mar 20 23:02:51 localhost kernel: vgaarb: bridge control possible 0000:00:02.0
+Mar 20 23:02:51 localhost kernel: SCSI subsystem initialized
+Mar 20 23:02:51 localhost kernel: usbcore: registered new interface driver usbfs
+Mar 20 23:02:51 localhost kernel: usbcore: registered new interface driver hub
+Mar 20 23:02:51 localhost kernel: usbcore: registered new device driver usb
+Mar 20 23:02:51 localhost kernel: PCI: Using ACPI for IRQ routing
+Mar 20 23:02:51 localhost kernel: NetLabel: Initializing
+Mar 20 23:02:51 localhost kernel: NetLabel:  domain hash size = 128
+Mar 20 23:02:51 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4
+Mar 20 23:02:51 localhost kernel: NetLabel:  unlabeled traffic allowed by default
+Mar 20 23:02:51 localhost kernel: Switching to clocksource kvm-clock
+Mar 20 23:02:51 localhost kernel: pnp: PnP ACPI init
+Mar 20 23:02:51 localhost kernel: ACPI: bus type pnp registered
+Mar 20 23:02:51 localhost kernel: pnp: PnP ACPI: found 4 devices
+Mar 20 23:02:51 localhost kernel: ACPI: ACPI bus type pnp unregistered
+Mar 20 23:02:51 localhost kernel: NET: Registered protocol family 2
+Mar 20 23:02:51 localhost kernel: IP route cache hash table entries: 32768 (order: 6, 262144 bytes)
+Mar 20 23:02:51 localhost kernel: TCP established hash table entries: 131072 (order: 9, 2097152 bytes)
+Mar 20 23:02:51 localhost kernel: TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+Mar 20 23:02:51 localhost kernel: TCP: Hash tables configured (established 131072 bind 65536)
+Mar 20 23:02:51 localhost kernel: TCP reno registered
+Mar 20 23:02:51 localhost kernel: NET: Registered protocol family 1
+Mar 20 23:02:51 localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Mar 20 23:02:51 localhost kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Mar 20 23:02:51 localhost kernel: Trying to unpack rootfs image as initramfs...
+Mar 20 23:02:51 localhost kernel: Freeing initrd memory: 20127k freed
+Mar 20 23:02:51 localhost kernel: platform rtc_cmos: registered platform RTC device (no PNP device found)
+Mar 20 23:02:51 localhost kernel: sha256_ssse3: Using AVX optimized SHA-256 implementation
+Mar 20 23:02:51 localhost kernel: futex hash table entries: 256 (order: 2, 16384 bytes)
+Mar 20 23:02:51 localhost kernel: audit: initializing netlink socket (disabled)
+Mar 20 23:02:51 localhost kernel: type=2000 audit(1490065560.378:1): initialized
+Mar 20 23:02:51 localhost kernel: HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Mar 20 23:02:51 localhost kernel: VFS: Disk quotas dquot_6.5.2
+Mar 20 23:02:51 localhost kernel: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Mar 20 23:02:51 localhost kernel: msgmni has been set to 1985
+Mar 20 23:02:51 localhost kernel: ksign: Installing public key data
+Mar 20 23:02:51 localhost kernel: Loading keyring
+Mar 20 23:02:51 localhost kernel: - Added public key 2163146EC4595AB0
+Mar 20 23:02:51 localhost kernel: - User ID: CentOS (Kernel Module GPG key)
+Mar 20 23:02:51 localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+Mar 20 23:02:51 localhost kernel: io scheduler noop registered
+Mar 20 23:02:51 localhost kernel: io scheduler anticipatory registered
+Mar 20 23:02:51 localhost kernel: io scheduler deadline registered
+Mar 20 23:02:51 localhost kernel: io scheduler cfq registered (default)
+Mar 20 23:02:51 localhost kernel: pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+Mar 20 23:02:51 localhost kernel: pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+Mar 20 23:02:51 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Mar 20 23:02:51 localhost kernel: ACPI: AC Adapter [AC] (on-line)
+Mar 20 23:02:51 localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Mar 20 23:02:51 localhost kernel: ACPI: Power Button [PWRF]
+Mar 20 23:02:51 localhost kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+Mar 20 23:02:51 localhost kernel: ACPI: Sleep Button [SLPF]
+Mar 20 23:02:51 localhost kernel: [Firmware Bug]: No valid trip found
+Mar 20 23:02:51 localhost kernel: GHES: HEST is not enabled!
+Mar 20 23:02:51 localhost kernel: Non-volatile memory driver v1.3
+Mar 20 23:02:51 localhost kernel: Linux agpgart interface v0.103
+Mar 20 23:02:51 localhost kernel: crash memory driver: version 1.1
+Mar 20 23:02:51 localhost kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Mar 20 23:02:51 localhost kernel: brd: module loaded
+Mar 20 23:02:51 localhost kernel: loop: module loaded
+Mar 20 23:02:51 localhost kernel: input: Macintosh mouse button emulation as /devices/virtual/input/input2
+Mar 20 23:02:51 localhost kernel: Fixed MDIO Bus: probed
+Mar 20 23:02:51 localhost kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Mar 20 23:02:51 localhost kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Mar 20 23:02:51 localhost kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Mar 20 23:02:51 localhost kernel: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+Mar 20 23:02:51 localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+Mar 20 23:02:51 localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+Mar 20 23:02:51 localhost kernel: ACPI: Battery Slot [BAT0] (battery present)
+Mar 20 23:02:51 localhost kernel: mice: PS/2 mouse device common for all mice
+Mar 20 23:02:51 localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+Mar 20 23:02:51 localhost kernel: rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+Mar 20 23:02:51 localhost kernel: rtc0: alarms up to one day, 114 bytes nvram
+Mar 20 23:02:51 localhost kernel: cpuidle: using governor ladder
+Mar 20 23:02:51 localhost kernel: cpuidle: using governor menu
+Mar 20 23:02:51 localhost kernel: EFI Variables Facility v0.08 2004-May-17
+Mar 20 23:02:51 localhost kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+Mar 20 23:02:51 localhost kernel: usbcore: registered new interface driver hiddev
+Mar 20 23:02:51 localhost kernel: usbcore: registered new interface driver usbhid
+Mar 20 23:02:51 localhost kernel: usbhid: v2.6:USB HID core driver
+Mar 20 23:02:51 localhost kernel: GRE over IPv4 demultiplexor driver
+Mar 20 23:02:51 localhost kernel: TCP cubic registered
+Mar 20 23:02:51 localhost kernel: Initializing XFRM netlink socket
+Mar 20 23:02:51 localhost kernel: NET: Registered protocol family 17
+Mar 20 23:02:51 localhost kernel: registered taskstats version 1
+Mar 20 23:02:51 localhost kernel: rtc_cmos rtc_cmos: setting system clock to 2017-03-20 23:02:41 UTC (1490050961)
+Mar 20 23:02:51 localhost kernel: Initalizing network drop monitor service
+Mar 20 23:02:51 localhost kernel: Freeing unused kernel memory: 1316k freed
+Mar 20 23:02:51 localhost kernel: Write protecting the kernel read-only data: 10240k
+Mar 20 23:02:51 localhost kernel: Freeing unused kernel memory: 668k freed
+Mar 20 23:02:51 localhost kernel: Freeing unused kernel memory: 1556k freed
+Mar 20 23:02:51 localhost kernel: dracut: dracut-004-409.el6
+Mar 20 23:02:51 localhost kernel: device-mapper: uevent: version 1.0.3
+Mar 20 23:02:51 localhost kernel: device-mapper: ioctl: 4.33.1-ioctl (2015-8-18) initialised: dm-devel@redhat.com
+Mar 20 23:02:51 localhost kernel: udev: starting version 147
+Mar 20 23:02:51 localhost kernel: ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+Mar 20 23:02:51 localhost kernel: input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+Mar 20 23:02:51 localhost kernel: dracut: Starting plymouth daemon
+Mar 20 23:02:51 localhost kernel: dracut: rd_NO_MD: removing MD RAID activation
+Mar 20 23:02:51 localhost kernel: scsi0 : ata_piix
+Mar 20 23:02:51 localhost kernel: scsi1 : ata_piix
+Mar 20 23:02:51 localhost kernel: ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+Mar 20 23:02:51 localhost kernel: ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+Mar 20 23:02:51 localhost kernel: ata1.01: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+Mar 20 23:02:51 localhost kernel: ata1.01: configured for UDMA/33
+Mar 20 23:02:51 localhost kernel: scsi 0:0:1:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+Mar 20 23:02:51 localhost kernel: ahci 0000:00:0d.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 20 23:02:51 localhost kernel: ahci: SSS flag set, parallel bus scan disabled
+Mar 20 23:02:51 localhost kernel: ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+Mar 20 23:02:51 localhost kernel: ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+Mar 20 23:02:51 localhost kernel: scsi2 : ahci
+Mar 20 23:02:51 localhost kernel: ata3: SATA max UDMA/133 abar m8192@0xf0804000 port 0xf0804100 irq 21
+Mar 20 23:02:51 localhost kernel: ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Mar 20 23:02:51 localhost kernel: ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+Mar 20 23:02:51 localhost kernel: ata3.00: 83886080 sectors, multi 128: LBA48 NCQ (depth 31/32)
+Mar 20 23:02:51 localhost kernel: ata3.00: configured for UDMA/133
+Mar 20 23:02:51 localhost kernel: scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+Mar 20 23:02:51 localhost kernel: sr0: scsi3-mmc drive: 32x/32x xa/form2 tray
+Mar 20 23:02:51 localhost kernel: Uniform CD-ROM driver Revision: 3.20
+Mar 20 23:02:51 localhost kernel: sd 2:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)
+Mar 20 23:02:51 localhost kernel: sd 2:0:0:0: [sda] Write Protect is off
+Mar 20 23:02:51 localhost kernel: sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Mar 20 23:02:51 localhost kernel: sda: sda1 sda2
+Mar 20 23:02:51 localhost kernel: sd 2:0:0:0: [sda] Attached SCSI disk
+Mar 20 23:02:51 localhost kernel: dracut: Scanning devices sda2  for LVM logical volumes VolGroup/lv_swap VolGroup/lv_root 
+Mar 20 23:02:51 localhost kernel: Refined TSC clocksource calibration: 3098.967 MHz.
+Mar 20 23:02:51 localhost kernel: dracut: inactive '/dev/VolGroup/lv_root' [37.54 GiB] inherit
+Mar 20 23:02:51 localhost kernel: dracut: inactive '/dev/VolGroup/lv_swap' [1.97 GiB] inherit
+Mar 20 23:02:51 localhost kernel: EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts: 
+Mar 20 23:02:51 localhost kernel: dracut: Mounted root filesystem /dev/mapper/VolGroup-lv_root
+Mar 20 23:02:51 localhost kernel: dracut: Loading SELinux policy
+Mar 20 23:02:51 localhost kernel: type=1403 audit(1490050963.289:2): policy loaded auid=4294967295 ses=4294967295
+Mar 20 23:02:51 localhost kernel: dracut: 
+Mar 20 23:02:51 localhost kernel: dracut: Switching root
+Mar 20 23:02:51 localhost kernel: udev: starting version 147
+Mar 20 23:02:51 localhost kernel: sr 0:0:1:0: Attached scsi generic sg0 type 5
+Mar 20 23:02:51 localhost kernel: sd 2:0:0:0: Attached scsi generic sg1 type 0
+Mar 20 23:02:51 localhost kernel: e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Mar 20 23:02:51 localhost kernel: e1000: Copyright (c) 1999-2006 Intel Corporation.
+Mar 20 23:02:51 localhost kernel: e1000 0000:00:03.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+Mar 20 23:02:51 localhost kernel: e1000 0000:00:03.0: eth0: (PCI:33MHz:32-bit) 08:00:27:40:17:62
+Mar 20 23:02:51 localhost kernel: e1000 0000:00:03.0: eth0: Intel(R) PRO/1000 Network Connection
+Mar 20 23:02:51 localhost kernel: Intel ICH 0000:00:05.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 20 23:02:51 localhost kernel: intel8x0_measure_ac97_clock: measured 50823 usecs (10537 samples)
+Mar 20 23:02:51 localhost kernel: intel8x0: measured clock 207327 rejected
+Mar 20 23:02:51 localhost kernel: intel8x0_measure_ac97_clock: measured 50661 usecs (10539 samples)
+Mar 20 23:02:51 localhost kernel: intel8x0: measured clock 208029 rejected
+Mar 20 23:02:51 localhost kernel: intel8x0_measure_ac97_clock: measured 51003 usecs (10538 samples)
+Mar 20 23:02:51 localhost kernel: intel8x0: measured clock 206615 rejected
+Mar 20 23:02:51 localhost kernel: intel8x0: clocking to 48000
+Mar 20 23:02:51 localhost kernel: piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+Mar 20 23:02:51 localhost kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: 
+Mar 20 23:02:51 localhost kernel: Adding 2064380k swap on /dev/mapper/VolGroup-lv_swap.  Priority:-1 extents:1 across:2064380k 
+Mar 20 23:02:51 localhost kernel: NET: Registered protocol family 10
+Mar 20 23:02:51 localhost kernel: lo: Disabled Privacy Extensions
+Mar 20 23:02:51 localhost kernel: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Mar 20 23:02:51 localhost kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 20 23:02:51 localhost kernel: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Mar 20 23:02:51 localhost kernel: type=1305 audit(1490050971.403:3): audit_pid=1015 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 20 23:02:51 localhost rpc.statd[1081]: Version 1.2.3 starting
+Mar 20 23:02:51 localhost sm-notify[1082]: Version 1.2.3 starting
+Mar 20 23:02:51 localhost rpc.statd[1081]: Initializing NSM state
+Mar 20 23:02:51 localhost udevd[422]: can not read '/etc/udev/rules.d/70-persistent-cd.rules'
+Mar 20 23:02:52 localhost kdump: No crashkernel parameter specified for running kernel
+Mar 20 23:02:59 localhost kernel: lo: Disabled Privacy Extensions
+Mar 20 23:02:59 localhost kernel: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Mar 20 23:03:01 localhost kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 20 23:03:01 localhost kernel: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Mar 20 23:03:04 localhost dhclient[1799]: DHCPREQUEST on eth0 to 255.255.255.255 port 67 (xid=0x3393a0d5)
+Mar 20 23:03:04 localhost dhclient[1799]: DHCPACK from 10.0.2.2 (xid=0x3393a0d5)
+Mar 20 23:03:06 localhost NET[1850]: /sbin/dhclient-script : updated /etc/resolv.conf
+Mar 20 23:03:06 localhost dhclient[1799]: bound to 10.0.2.15 -- renewal in 33082 seconds.
+Mar 20 23:03:09 localhost vboxadd.sh: Building Guest Additions kernel modules.
+Mar 20 23:03:09 localhost vboxadd.sh: Removing existing VirtualBox kernel modules.
+Mar 20 23:03:09 localhost vboxadd.sh: .
+Mar 20 23:03:09 localhost vboxadd.sh: Building the VirtualBox Guest Additions kernel modules.
+Mar 20 23:03:09 localhost vboxadd.sh: Building the main Guest Additions module.
+Mar 20 23:03:30 localhost vboxadd.sh: .
+Mar 20 23:03:30 localhost vboxadd.sh: Building the shared folder support module.
+Mar 20 23:03:34 localhost vboxadd.sh: .
+Mar 20 23:03:34 localhost vboxadd.sh: Building the graphics driver module.
+Mar 20 23:03:35 localhost vboxadd.sh: .
+Mar 20 23:03:36 localhost vboxadd.sh: Doing non-kernel setup of the Guest Additions.
+Mar 20 23:03:36 localhost vboxadd.sh: .
+Mar 20 23:03:36 localhost vboxadd.sh: Starting the VirtualBox Guest Additions.
+Mar 20 23:03:36 localhost kernel: vboxguest 0000:00:04.0: PCI INT A -> GSI 20 (level, low) -> IRQ 20
+Mar 20 23:03:36 localhost kernel: vgdrvHeartbeatInit: Setting up heartbeat to trigger every 2000 milliseconds
+Mar 20 23:03:36 localhost kernel: input: Unspecified device as /devices/pci0000:00/0000:00:04.0/input/input6
+Mar 20 23:03:36 localhost kernel: vboxguest: misc device minor 57, IRQ 20, I/O port d020, MMIO at 00000000f0400000 (size 0x400000)
+Mar 20 23:03:37 localhost vboxadd-x11.sh: Installing the Window System drivers.
+Mar 20 23:03:37 localhost vboxadd.sh: .
+Mar 20 23:03:37 localhost vboxadd.sh: Starting the VirtualBox Guest Additions.
+Mar 20 23:03:37 localhost vboxadd-x11.sh: Installing the Window System drivers.
+Mar 20 23:03:37 localhost vboxadd.sh: .
+Mar 20 23:03:40 localhost yum[6334]: Erased: kernel-devel
+Mar 20 23:03:40 localhost yum[6334]: Erased: gcc
+Mar 20 23:03:40 localhost yum[6334]: Erased: glibc-devel
+Mar 20 23:03:41 localhost yum[6334]: Erased: glibc-headers
+Mar 20 23:03:41 localhost yum[6334]: Erased: kernel-headers
+Mar 20 23:03:41 localhost yum[6334]: Erased: cpp
+Mar 20 23:04:59 localhost init: tty (/dev/tty1) main process (1309) killed by TERM signal
+Mar 20 23:04:59 localhost init: tty (/dev/tty2) main process (1311) killed by TERM signal
+Mar 20 23:04:59 localhost init: tty (/dev/tty3) main process (1313) killed by TERM signal
+Mar 20 23:04:59 localhost init: tty (/dev/tty4) main process (1315) killed by TERM signal
+Mar 20 23:04:59 localhost init: tty (/dev/tty5) main process (1322) killed by TERM signal
+Mar 20 23:04:59 localhost init: tty (/dev/tty6) main process (1325) killed by TERM signal
+Mar 20 23:05:00 localhost rpcbind: rpcbind terminating on signal. Restart with "rpcbind -w"
+Mar 20 23:05:00 localhost auditd[1015]: The audit daemon is exiting.
+Mar 20 23:05:00 localhost kernel: type=1305 audit(1490051100.564:245): audit_pid=0 old=1015 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 20 23:05:00 localhost kernel: type=1305 audit(1490051100.678:246): audit_enabled=0 old=1 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditctl_t:s0 res=1
+Mar 20 23:05:00 localhost kernel: Kernel logging (proc) stopped.
+Mar 20 23:05:00 localhost rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="1037" x-info="http://www.rsyslog.com"] exiting on signal 15.
+Mar 26 14:50:48 localhost kernel: imklog 5.8.10, log source = /proc/kmsg started.
+Mar 26 14:50:48 localhost rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="1058" x-info="http://www.rsyslog.com"] start
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys cpuset
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys cpu
+Mar 26 14:50:48 localhost kernel: Linux version 2.6.32-642.el6.x86_64 (mockbuild@worker1.bsys.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-17) (GCC) ) #1 SMP Tue May 10 17:27:01 UTC 2016
+Mar 26 14:50:48 localhost kernel: Command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 26 14:50:48 localhost kernel: KERNEL supported cpus:
+Mar 26 14:50:48 localhost kernel:  Intel GenuineIntel
+Mar 26 14:50:48 localhost kernel:  AMD AuthenticAMD
+Mar 26 14:50:48 localhost kernel:  Centaur CentaurHauls
+Mar 26 14:50:48 localhost kernel: BIOS-provided physical RAM map:
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 0000000000000000 - 000000000009fc00 (usable)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 000000000009fc00 - 00000000000a0000 (reserved)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 0000000000100000 - 000000003fff0000 (usable)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 000000003fff0000 - 0000000040000000 (ACPI data)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 00000000fec00000 - 00000000fec01000 (reserved)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+Mar 26 14:50:48 localhost kernel: BIOS-e820: 00000000fffc0000 - 0000000100000000 (reserved)
+Mar 26 14:50:48 localhost kernel: SMBIOS version 2.5 @ 0xFFF60
+Mar 26 14:50:48 localhost kernel: SMBIOS 2.5 present.
+Mar 26 14:50:48 localhost kernel: Hypervisor detected: KVM
+Mar 26 14:50:48 localhost kernel: last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+Mar 26 14:50:48 localhost kernel: x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+Mar 26 14:50:48 localhost kernel: CPU MTRRs all blank - virtualized system.
+Mar 26 14:50:48 localhost kernel: init_memory_mapping: 0000000000000000-000000003fff0000
+Mar 26 14:50:48 localhost kernel: RAMDISK: 36c48000 - 37fefdee
+Mar 26 14:50:48 localhost kernel: ACPI: RSDP 00000000000e0000 00024 (v02 VBOX  )
+Mar 26 14:50:48 localhost kernel: ACPI: XSDT 000000003fff0030 0003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Mar 26 14:50:48 localhost kernel: ACPI: FACP 000000003fff00f0 000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Mar 26 14:50:48 localhost kernel: ACPI: DSDT 000000003fff0470 021FF (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Mar 26 14:50:48 localhost kernel: ACPI: FACS 000000003fff0200 00040
+Mar 26 14:50:48 localhost kernel: ACPI: APIC 000000003fff0240 00054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Mar 26 14:50:48 localhost kernel: ACPI: SSDT 000000003fff02a0 001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Mar 26 14:50:48 localhost kernel: Setting APIC routing to flat.
+Mar 26 14:50:48 localhost kernel: No NUMA configuration found
+Mar 26 14:50:48 localhost kernel: Faking a node at 0000000000000000-000000003fff0000
+Mar 26 14:50:48 localhost kernel: Bootmem setup node 0 0000000000000000-000000003fff0000
+Mar 26 14:50:48 localhost kernel:  NODE_DATA [0000000000009000 - 000000000003cfff]
+Mar 26 14:50:48 localhost kernel:  bootmap [000000000003d000 -  0000000000044fff] pages 8
+Mar 26 14:50:48 localhost kernel: (7 early reservations) ==> bootmem [0000000000 - 003fff0000]
+Mar 26 14:50:48 localhost kernel:  #0 [0000000000 - 0000001000]   BIOS data page ==> [0000000000 - 0000001000]
+Mar 26 14:50:48 localhost kernel:  #1 [0000006000 - 0000008000]       TRAMPOLINE ==> [0000006000 - 0000008000]
+Mar 26 14:50:48 localhost kernel:  #2 [0001000000 - 0002044924]    TEXT DATA BSS ==> [0001000000 - 0002044924]
+Mar 26 14:50:48 localhost kernel:  #3 [0036c48000 - 0037fefdee]          RAMDISK ==> [0036c48000 - 0037fefdee]
+Mar 26 14:50:48 localhost kernel:  #4 [000009f800 - 0000100000]    BIOS reserved ==> [000009f800 - 0000100000]
+Mar 26 14:50:48 localhost kernel:  #5 [0002045000 - 000204513c]              BRK ==> [0002045000 - 000204513c]
+Mar 26 14:50:48 localhost kernel:  #6 [0000008000 - 0000009000]          PGTABLE ==> [0000008000 - 0000009000]
+Mar 26 14:50:48 localhost kernel: found SMP MP-table at [ffff88000009fff0] 9fff0
+Mar 26 14:50:48 localhost kernel: crashkernel=auto resulted in zero bytes of reserved memory.
+Mar 26 14:50:48 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Mar 26 14:50:48 localhost kernel: kvm-clock: cpu 0, msr 0:1c38e41, boot clock
+Mar 26 14:50:48 localhost kernel: Zone PFN ranges:
+Mar 26 14:50:48 localhost kernel:  DMA      0x00000001 -> 0x00001000
+Mar 26 14:50:48 localhost kernel:  DMA32    0x00001000 -> 0x00100000
+Mar 26 14:50:48 localhost kernel:  Normal   0x00100000 -> 0x00100000
+Mar 26 14:50:48 localhost kernel: Movable zone start PFN for each node
+Mar 26 14:50:48 localhost kernel: early_node_map[2] active PFN ranges
+Mar 26 14:50:48 localhost kernel:    0: 0x00000001 -> 0x0000009f
+Mar 26 14:50:48 localhost kernel:    0: 0x00000100 -> 0x0003fff0
+Mar 26 14:50:48 localhost kernel: ACPI: PM-Timer IO Port: 0x4008
+Mar 26 14:50:48 localhost kernel: Setting APIC routing to flat.
+Mar 26 14:50:48 localhost kernel: ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+Mar 26 14:50:48 localhost kernel: ACPI: IOAPIC (id[0x01] address[0xfec00000] gsi_base[0])
+Mar 26 14:50:48 localhost kernel: IOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23
+Mar 26 14:50:48 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Mar 26 14:50:48 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+Mar 26 14:50:48 localhost kernel: Using ACPI (MADT) for SMP configuration information
+Mar 26 14:50:48 localhost kernel: SMP: Allowing 1 CPUs, 0 hotplug CPUs
+Mar 26 14:50:48 localhost kernel: PM: Registered nosave memory: 000000000009f000 - 00000000000a0000
+Mar 26 14:50:48 localhost kernel: PM: Registered nosave memory: 00000000000a0000 - 00000000000f0000
+Mar 26 14:50:48 localhost kernel: PM: Registered nosave memory: 00000000000f0000 - 0000000000100000
+Mar 26 14:50:48 localhost kernel: Allocating PCI resources starting at 40000000 (gap: 40000000:bec00000)
+Mar 26 14:50:48 localhost kernel: Booting paravirtualized kernel on KVM
+Mar 26 14:50:48 localhost kernel: NR_CPUS:4096 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+Mar 26 14:50:48 localhost kernel: PERCPU: Embedded 31 pages/cpu @ffff880002200000 s96600 r8192 d22184 u2097152
+Mar 26 14:50:48 localhost kernel: pcpu-alloc: s96600 r8192 d22184 u2097152 alloc=1*2097152
+Mar 26 14:50:48 localhost kernel: pcpu-alloc: [0] 0 
+Mar 26 14:50:48 localhost kernel: kvm-clock: cpu 0, msr 0:2216e41, primary cpu clock
+Mar 26 14:50:48 localhost kernel: Built 1 zonelists in Node order, mobility grouping on.  Total pages: 258346
+Mar 26 14:50:48 localhost kernel: Policy zone: DMA32
+Mar 26 14:50:48 localhost kernel: Kernel command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16  rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 26 14:50:48 localhost kernel: PID hash table entries: 4096 (order: 3, 32768 bytes)
+Mar 26 14:50:48 localhost kernel: x86/fpu: xstate_offset[2]: 0240, xstate_sizes[2]: 0100
+Mar 26 14:50:48 localhost kernel: xsave/xrstor: enabled xstate_bv 0x7, cntxt size 0x340
+Mar 26 14:50:48 localhost kernel: Memory: 996368k/1048512k available (5455k kernel code, 392k absent, 51752k reserved, 6964k data, 1316k init)
+Mar 26 14:50:48 localhost kernel: Hierarchical RCU implementation.
+Mar 26 14:50:48 localhost kernel: NR_IRQS:33024 nr_irqs:256
+Mar 26 14:50:48 localhost kernel: Console: colour VGA+ 80x25
+Mar 26 14:50:48 localhost kernel: console [tty0] enabled
+Mar 26 14:50:48 localhost kernel: allocated 4194304 bytes of page_cgroup
+Mar 26 14:50:48 localhost kernel: please try 'cgroup_disable=memory' option if you don't want memory cgroups
+Mar 26 14:50:48 localhost kernel: Detected 1600.000 MHz processor.
+Mar 26 14:50:48 localhost kernel: Calibrating delay loop (skipped) preset value.. 3200.00 BogoMIPS (lpj=1600000)
+Mar 26 14:50:48 localhost kernel: pid_max: default: 32768 minimum: 301
+Mar 26 14:50:48 localhost kernel: Security Framework initialized
+Mar 26 14:50:48 localhost kernel: SELinux:  Initializing.
+Mar 26 14:50:48 localhost kernel: Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Mar 26 14:50:48 localhost kernel: Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Mar 26 14:50:48 localhost kernel: Mount-cache hash table entries: 256
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys ns
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys cpuacct
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys memory
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys devices
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys freezer
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys net_cls
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys blkio
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys perf_event
+Mar 26 14:50:48 localhost kernel: Initializing cgroup subsys net_prio
+Mar 26 14:50:48 localhost kernel: CPU: Physical Processor ID: 0
+Mar 26 14:50:48 localhost kernel: mce: CPU supports 0 MCE banks
+Mar 26 14:50:48 localhost kernel: using mwait in idle threads.
+Mar 26 14:50:48 localhost kernel: alternatives: switching to unfair spinlock
+Mar 26 14:50:48 localhost kernel: SMP alternatives: switching to UP code
+Mar 26 14:50:48 localhost kernel: Freeing SMP alternatives: 37k freed
+Mar 26 14:50:48 localhost kernel: ACPI: Core revision 20090903
+Mar 26 14:50:48 localhost kernel: ftrace: converting mcount calls to 0f 1f 44 00 00
+Mar 26 14:50:48 localhost kernel: ftrace: allocating 22342 entries in 88 pages
+Mar 26 14:50:48 localhost kernel: Enabling x2apic
+Mar 26 14:50:48 localhost kernel: Enabled x2apic
+Mar 26 14:50:48 localhost kernel: APIC routing finalized to physical x2apic.
+Mar 26 14:50:48 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Mar 26 14:50:48 localhost kernel: CPU0: Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz stepping 04
+Mar 26 14:50:48 localhost kernel: Performance Events: unsupported p6 CPU model 61 no PMU driver, software events only.
+Mar 26 14:50:48 localhost kernel: NMI watchdog disabled (cpu0): hardware events not enabled
+Mar 26 14:50:48 localhost kernel: Brought up 1 CPUs
+Mar 26 14:50:48 localhost kernel: Total of 1 processors activated (3200.00 BogoMIPS).
+Mar 26 14:50:48 localhost kernel: devtmpfs: initialized
+Mar 26 14:50:48 localhost kernel: regulator: core version 0.5
+Mar 26 14:50:48 localhost kernel: NET: Registered protocol family 16
+Mar 26 14:50:48 localhost kernel: ACPI: bus type pci registered
+Mar 26 14:50:48 localhost kernel: PCI: Using configuration type 1 for base access
+Mar 26 14:50:48 localhost kernel: bio: create slab <bio-0> at 0
+Mar 26 14:50:48 localhost kernel: ACPI: Executed 1 blocks of module-level executable AML code
+Mar 26 14:50:48 localhost kernel: ACPI: Interpreter enabled
+Mar 26 14:50:48 localhost kernel: ACPI: (supports S0 S5)
+Mar 26 14:50:48 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+Mar 26 14:50:48 localhost kernel: ACPI: No dock devices found.
+Mar 26 14:50:48 localhost kernel: PCI: Ignoring host bridge windows from ACPI; if necessary, use "pci=use_crs" and report a bug
+Mar 26 14:50:48 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Mar 26 14:50:48 localhost kernel: PCI host bridge to bus 0000:00
+Mar 26 14:50:48 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+Mar 26 14:50:48 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x00000000-0x7fffffffff]
+Mar 26 14:50:48 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+Mar 26 14:50:48 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+Mar 26 14:50:48 localhost kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+Mar 26 14:50:48 localhost kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
+Mar 26 14:50:48 localhost kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
+Mar 26 14:50:48 localhost kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
+Mar 26 14:50:48 localhost kernel: vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+Mar 26 14:50:48 localhost kernel: vgaarb: loaded
+Mar 26 14:50:48 localhost kernel: vgaarb: bridge control possible 0000:00:02.0
+Mar 26 14:50:48 localhost kernel: SCSI subsystem initialized
+Mar 26 14:50:48 localhost kernel: usbcore: registered new interface driver usbfs
+Mar 26 14:50:48 localhost kernel: usbcore: registered new interface driver hub
+Mar 26 14:50:48 localhost kernel: usbcore: registered new device driver usb
+Mar 26 14:50:48 localhost kernel: PCI: Using ACPI for IRQ routing
+Mar 26 14:50:48 localhost kernel: NetLabel: Initializing
+Mar 26 14:50:48 localhost kernel: NetLabel:  domain hash size = 128
+Mar 26 14:50:48 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4
+Mar 26 14:50:48 localhost kernel: NetLabel:  unlabeled traffic allowed by default
+Mar 26 14:50:48 localhost kernel: Switching to clocksource kvm-clock
+Mar 26 14:50:48 localhost kernel: pnp: PnP ACPI init
+Mar 26 14:50:48 localhost kernel: ACPI: bus type pnp registered
+Mar 26 14:50:48 localhost kernel: pnp: PnP ACPI: found 4 devices
+Mar 26 14:50:48 localhost kernel: ACPI: ACPI bus type pnp unregistered
+Mar 26 14:50:48 localhost kernel: NET: Registered protocol family 2
+Mar 26 14:50:48 localhost kernel: IP route cache hash table entries: 32768 (order: 6, 262144 bytes)
+Mar 26 14:50:48 localhost kernel: TCP established hash table entries: 131072 (order: 9, 2097152 bytes)
+Mar 26 14:50:48 localhost kernel: TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+Mar 26 14:50:48 localhost kernel: TCP: Hash tables configured (established 131072 bind 65536)
+Mar 26 14:50:48 localhost kernel: TCP reno registered
+Mar 26 14:50:48 localhost kernel: NET: Registered protocol family 1
+Mar 26 14:50:48 localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Mar 26 14:50:48 localhost kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Mar 26 14:50:48 localhost kernel: Trying to unpack rootfs image as initramfs...
+Mar 26 14:50:48 localhost kernel: Freeing initrd memory: 20127k freed
+Mar 26 14:50:48 localhost kernel: platform rtc_cmos: registered platform RTC device (no PNP device found)
+Mar 26 14:50:48 localhost kernel: sha256_ssse3: Using AVX optimized SHA-256 implementation
+Mar 26 14:50:48 localhost kernel: futex hash table entries: 256 (order: 2, 16384 bytes)
+Mar 26 14:50:48 localhost kernel: audit: initializing netlink socket (disabled)
+Mar 26 14:50:48 localhost kernel: type=2000 audit(1522075831.715:1): initialized
+Mar 26 14:50:48 localhost kernel: HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Mar 26 14:50:48 localhost kernel: VFS: Disk quotas dquot_6.5.2
+Mar 26 14:50:48 localhost kernel: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Mar 26 14:50:48 localhost kernel: msgmni has been set to 1985
+Mar 26 14:50:48 localhost kernel: ksign: Installing public key data
+Mar 26 14:50:48 localhost kernel: Loading keyring
+Mar 26 14:50:48 localhost kernel: - Added public key 2163146EC4595AB0
+Mar 26 14:50:48 localhost kernel: - User ID: CentOS (Kernel Module GPG key)
+Mar 26 14:50:48 localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+Mar 26 14:50:48 localhost kernel: io scheduler noop registered
+Mar 26 14:50:48 localhost kernel: io scheduler anticipatory registered
+Mar 26 14:50:48 localhost kernel: io scheduler deadline registered
+Mar 26 14:50:48 localhost kernel: io scheduler cfq registered (default)
+Mar 26 14:50:48 localhost kernel: pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+Mar 26 14:50:48 localhost kernel: pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+Mar 26 14:50:48 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Mar 26 14:50:48 localhost kernel: ACPI: AC Adapter [AC] (off-line)
+Mar 26 14:50:48 localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Mar 26 14:50:48 localhost kernel: ACPI: Power Button [PWRF]
+Mar 26 14:50:48 localhost kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+Mar 26 14:50:48 localhost kernel: ACPI: Sleep Button [SLPF]
+Mar 26 14:50:48 localhost kernel: [Firmware Bug]: No valid trip found
+Mar 26 14:50:48 localhost kernel: GHES: HEST is not enabled!
+Mar 26 14:50:48 localhost kernel: Non-volatile memory driver v1.3
+Mar 26 14:50:48 localhost kernel: Linux agpgart interface v0.103
+Mar 26 14:50:48 localhost kernel: crash memory driver: version 1.1
+Mar 26 14:50:48 localhost kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Mar 26 14:50:48 localhost kernel: ACPI: Battery Slot [BAT0] (battery present)
+Mar 26 14:50:48 localhost kernel: brd: module loaded
+Mar 26 14:50:48 localhost kernel: loop: module loaded
+Mar 26 14:50:48 localhost kernel: input: Macintosh mouse button emulation as /devices/virtual/input/input2
+Mar 26 14:50:48 localhost kernel: Fixed MDIO Bus: probed
+Mar 26 14:50:48 localhost kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Mar 26 14:50:48 localhost kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Mar 26 14:50:48 localhost kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Mar 26 14:50:48 localhost kernel: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+Mar 26 14:50:48 localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+Mar 26 14:50:48 localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+Mar 26 14:50:48 localhost kernel: mice: PS/2 mouse device common for all mice
+Mar 26 14:50:48 localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+Mar 26 14:50:48 localhost kernel: rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+Mar 26 14:50:48 localhost kernel: rtc0: alarms up to one day, 114 bytes nvram
+Mar 26 14:50:48 localhost kernel: cpuidle: using governor ladder
+Mar 26 14:50:48 localhost kernel: cpuidle: using governor menu
+Mar 26 14:50:48 localhost kernel: EFI Variables Facility v0.08 2004-May-17
+Mar 26 14:50:48 localhost kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+Mar 26 14:50:48 localhost kernel: usbcore: registered new interface driver hiddev
+Mar 26 14:50:48 localhost kernel: usbcore: registered new interface driver usbhid
+Mar 26 14:50:48 localhost kernel: usbhid: v2.6:USB HID core driver
+Mar 26 14:50:48 localhost kernel: GRE over IPv4 demultiplexor driver
+Mar 26 14:50:48 localhost kernel: TCP cubic registered
+Mar 26 14:50:48 localhost kernel: Initializing XFRM netlink socket
+Mar 26 14:50:48 localhost kernel: NET: Registered protocol family 17
+Mar 26 14:50:48 localhost kernel: registered taskstats version 1
+Mar 26 14:50:48 localhost kernel: rtc_cmos rtc_cmos: setting system clock to 2018-03-26 14:50:22 UTC (1522075822)
+Mar 26 14:50:48 localhost kernel: Initalizing network drop monitor service
+Mar 26 14:50:48 localhost kernel: Freeing unused kernel memory: 1316k freed
+Mar 26 14:50:48 localhost kernel: Write protecting the kernel read-only data: 10240k
+Mar 26 14:50:48 localhost kernel: Freeing unused kernel memory: 668k freed
+Mar 26 14:50:48 localhost kernel: Freeing unused kernel memory: 1556k freed
+Mar 26 14:50:48 localhost kernel: dracut: dracut-004-409.el6
+Mar 26 14:50:48 localhost kernel: device-mapper: uevent: version 1.0.3
+Mar 26 14:50:48 localhost kernel: device-mapper: ioctl: 4.33.1-ioctl (2015-8-18) initialised: dm-devel@redhat.com
+Mar 26 14:50:48 localhost kernel: udev: starting version 147
+Mar 26 14:50:48 localhost kernel: ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+Mar 26 14:50:48 localhost kernel: input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+Mar 26 14:50:48 localhost kernel: dracut: Starting plymouth daemon
+Mar 26 14:50:48 localhost kernel: dracut: rd_NO_MD: removing MD RAID activation
+Mar 26 14:50:48 localhost kernel: scsi0 : ata_piix
+Mar 26 14:50:48 localhost kernel: scsi1 : ata_piix
+Mar 26 14:50:48 localhost kernel: ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+Mar 26 14:50:48 localhost kernel: ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+Mar 26 14:50:48 localhost kernel: ahci 0000:00:0d.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 26 14:50:48 localhost kernel: ahci: SSS flag set, parallel bus scan disabled
+Mar 26 14:50:48 localhost kernel: ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+Mar 26 14:50:48 localhost kernel: ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+Mar 26 14:50:48 localhost kernel: scsi2 : ahci
+Mar 26 14:50:48 localhost kernel: ata3: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840100 irq 21
+Mar 26 14:50:48 localhost kernel: Refined TSC clocksource calibration: 1598.040 MHz.
+Mar 26 14:50:48 localhost kernel: ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Mar 26 14:50:48 localhost kernel: ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+Mar 26 14:50:48 localhost kernel: ata3.00: 83886080 sectors, multi 128: LBA48 NCQ (depth 31/32)
+Mar 26 14:50:48 localhost kernel: ata3.00: configured for UDMA/133
+Mar 26 14:50:48 localhost kernel: scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+Mar 26 14:50:48 localhost kernel: sd 2:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)
+Mar 26 14:50:48 localhost kernel: sd 2:0:0:0: [sda] Write Protect is off
+Mar 26 14:50:48 localhost kernel: sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Mar 26 14:50:48 localhost kernel: sda: sda1 sda2
+Mar 26 14:50:48 localhost kernel: sd 2:0:0:0: [sda] Attached SCSI disk
+Mar 26 14:50:48 localhost kernel: dracut: Scanning devices sda2  for LVM logical volumes VolGroup/lv_swap VolGroup/lv_root 
+Mar 26 14:50:48 localhost kernel: dracut: inactive '/dev/VolGroup/lv_root' [37.54 GiB] inherit
+Mar 26 14:50:48 localhost kernel: dracut: inactive '/dev/VolGroup/lv_swap' [1.97 GiB] inherit
+Mar 26 14:50:48 localhost kernel: EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts: 
+Mar 26 14:50:48 localhost kernel: dracut: Mounted root filesystem /dev/mapper/VolGroup-lv_root
+Mar 26 14:50:48 localhost kernel: dracut: Loading SELinux policy
+Mar 26 14:50:48 localhost kernel: type=1403 audit(1522075825.499:2): policy loaded auid=4294967295 ses=4294967295
+Mar 26 14:50:48 localhost kernel: dracut: 
+Mar 26 14:50:48 localhost kernel: dracut: Switching root
+Mar 26 14:50:48 localhost kernel: udev: starting version 147
+Mar 26 14:50:48 localhost kernel: e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Mar 26 14:50:48 localhost kernel: e1000: Copyright (c) 1999-2006 Intel Corporation.
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:03.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:03.0: eth0: (PCI:33MHz:32-bit) 08:00:27:40:17:62
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:03.0: eth0: Intel(R) PRO/1000 Network Connection
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:08.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:08.0: eth1: (PCI:33MHz:32-bit) 08:00:27:50:e3:04
+Mar 26 14:50:48 localhost kernel: e1000 0000:00:08.0: eth1: Intel(R) PRO/1000 Network Connection
+Mar 26 14:50:48 localhost kernel: vboxguest 0000:00:04.0: PCI INT A -> GSI 20 (level, low) -> IRQ 20
+Mar 26 14:50:48 localhost kernel: vgdrvHeartbeatInit: Setting up heartbeat to trigger every 2000 milliseconds
+Mar 26 14:50:48 localhost kernel: input: Unspecified device as /devices/pci0000:00/0000:00:04.0/input/input6
+Mar 26 14:50:48 localhost kernel: vboxguest: misc device minor 57, IRQ 20, I/O port d020, MMIO at 00000000f0400000 (size 0x400000)
+Mar 26 14:50:48 localhost kernel: Intel ICH 0000:00:05.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 26 14:50:48 localhost kernel: intel8x0_measure_ac97_clock: measured 52316 usecs (12095 samples)
+Mar 26 14:50:48 localhost kernel: intel8x0: measured clock 231191 rejected
+Mar 26 14:50:48 localhost kernel: intel8x0_measure_ac97_clock: measured 51377 usecs (12096 samples)
+Mar 26 14:50:48 localhost kernel: intel8x0: measured clock 235436 rejected
+Mar 26 14:50:48 localhost kernel: intel8x0_measure_ac97_clock: measured 50964 usecs (12209 samples)
+Mar 26 14:50:48 localhost kernel: intel8x0: measured clock 239561 rejected
+Mar 26 14:50:48 localhost kernel: intel8x0: clocking to 48000
+Mar 26 14:50:48 localhost kernel: piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+Mar 26 14:50:48 localhost kernel: sd 2:0:0:0: Attached scsi generic sg0 type 0
+Mar 26 14:50:48 localhost kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: 
+Mar 26 14:50:48 localhost kernel: Adding 2064380k swap on /dev/mapper/VolGroup-lv_swap.  Priority:-1 extents:1 across:2064380k 
+Mar 26 14:50:48 localhost kernel: NET: Registered protocol family 10
+Mar 26 14:50:48 localhost kernel: lo: Disabled Privacy Extensions
+Mar 26 14:50:48 localhost kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 26 14:50:48 localhost kernel: type=1305 audit(1522075848.010:3): audit_pid=1036 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 26 14:50:48 localhost rpc.statd[1102]: Version 1.2.3 starting
+Mar 26 14:50:48 localhost sm-notify[1103]: Version 1.2.3 starting
+Mar 26 14:50:49 localhost vboxadd-service.sh: Starting VirtualBox Guest Addition service.
+Mar 26 14:50:49 localhost kernel: VBoxService 5.1.18 r114002 (verbosity: 0) linux.amd64 (Mar 15 2017 16:30:21) release log
+Mar 26 14:50:49 localhost kernel: 00:00:00.000435 main     Log opened 2018-03-26T14:50:49.612057000Z
+Mar 26 14:50:49 localhost kernel: 00:00:00.005582 main     OS Product: Linux
+Mar 26 14:50:49 localhost kernel: 00:00:00.005676 main     OS Release: 2.6.32-642.el6.x86_64
+Mar 26 14:50:49 localhost kernel: 00:00:00.005727 main     OS Version: #1 SMP Tue May 10 17:27:01 UTC 2016
+Mar 26 14:50:49 localhost kernel: 00:00:00.005766 main     Executable: /opt/VBoxGuestAdditions-5.1.18/sbin/VBoxService
+Mar 26 14:50:49 localhost kernel: 00:00:00.005767 main     Process ID: 1194
+Mar 26 14:50:49 localhost kernel: 00:00:00.005768 main     Package type: LINUX_64BITS_GENERIC
+Mar 26 14:50:49 localhost kernel: 00:00:00.007036 main     5.1.18 r114002 started. Verbose level = 0
+Mar 26 14:50:49 localhost vboxadd-service.sh: VirtualBox Guest Addition service started.
+Mar 26 14:50:49 localhost kernel: 00:00:00.052304 vminfo   Error: Unable to connect to system D-Bus (1/3): Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory
+Mar 26 14:50:49 localhost kdump: No crashkernel parameter specified for running kernel
+Mar 26 14:50:54 localhost kernel: 00:00:05.101028 vminfo   Error: Unable to connect to system D-Bus (2/3): Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory
+Mar 26 14:50:57 localhost kernel: ADDRCONF(NETDEV_UP): eth1: link is not ready
+Mar 26 14:50:57 localhost kernel: e1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 26 14:50:57 localhost kernel: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+Mar 26 14:50:59 localhost kernel: 00:00:10.137149 vminfo   Error: Unable to connect to system D-Bus (3/3): Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory
+Mar 27 02:08:59 localhost yum[2803]: Updated: libgcc-4.4.7-18.el6_9.2.x86_64
+Mar 27 02:09:00 localhost yum[2803]: Updated: setup-2.8.14-23.el6.noarch
+Mar 27 02:09:00 localhost yum[2803]: Updated: centos-release-6-9.el6.12.3.x86_64
+Mar 27 02:09:00 localhost yum[2803]: Updated: 12:dhcp-common-4.1.1-53.P1.el6.centos.3.x86_64
+Mar 27 02:09:05 localhost yum[2803]: Updated: kernel-firmware-2.6.32-696.23.1.el6.noarch
+Mar 27 02:09:08 localhost yum[2803]: Updated: tzdata-2018c-1.el6.noarch
+Mar 27 02:09:09 localhost yum[2803]: Updated: bash-4.1.2-48.el6.x86_64
+Mar 27 02:09:17 localhost yum[2803]: Updated: glibc-common-2.12-1.209.el6_9.2.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: glibc-2.12-1.209.el6_9.2.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: libcom_err-1.41.12-23.el6.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: nspr-4.13.1-1.el6.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: audit-libs-2.4.5-6.el6.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: nss-util-3.28.4-1.el6_9.x86_64
+Mar 27 02:09:23 localhost yum[2803]: Updated: krb5-libs-1.10.3-65.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: grep-2.20-6.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: libacl-2.2.49-7.el6_9.1.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: db4-4.7.25-22.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: 1:perl-Pod-Escapes-1.04-144.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: 4:perl-libs-5.10.1-144.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: 1:perl-Pod-Simple-3.13-144.el6.x86_64
+Mar 27 02:09:24 localhost yum[2803]: Updated: 1:perl-Module-Pluggable-3.90-144.el6.x86_64
+Mar 27 02:09:25 localhost yum[2803]: Updated: 3:perl-version-0.77-144.el6.x86_64
+Mar 27 02:09:32 localhost yum[2803]: Updated: 4:perl-5.10.1-144.el6.x86_64
+Mar 27 02:09:32 localhost yum[2803]: Updated: libudev-147-2.73.el6_8.2.x86_64
+Mar 27 02:09:33 localhost yum[2803]: Updated: glib2-2.28.8-9.el6.x86_64
+Mar 27 02:09:33 localhost yum[2803]: Updated: libuuid-2.17.2-12.28.el6_9.2.x86_64
+Mar 27 02:09:33 localhost yum[2803]: Updated: libblkid-2.17.2-12.28.el6_9.2.x86_64
+Mar 27 02:09:33 localhost yum[2803]: Updated: nss-softokn-3.14.3-23.3.el6_8.x86_64
+Mar 27 02:09:33 localhost yum[2803]: Updated: cpio-2.10-13.el6.x86_64
+Mar 27 02:09:34 localhost yum[2803]: Updated: libtirpc-0.2.1-13.el6_9.x86_64
+Mar 27 02:09:34 localhost yum[2803]: Updated: 2:tar-1.23-15.el6_8.x86_64
+Mar 27 02:09:34 localhost yum[2803]: Updated: 2:vim-minimal-7.4.629-5.el6_8.1.x86_64
+Mar 27 02:09:34 localhost yum[2803]: Updated: libss-1.41.12-23.el6.x86_64
+Mar 27 02:09:34 localhost yum[2803]: Updated: e2fsprogs-libs-1.41.12-23.el6.x86_64
+Mar 27 02:09:35 localhost yum[2803]: Updated: newt-0.52.11-4.el6.x86_64
+Mar 27 02:09:35 localhost yum[2803]: Updated: psmisc-22.6-24.el6.x86_64
+Mar 27 02:09:35 localhost yum[2803]: Updated: procps-3.2.8-45.el6_9.1.x86_64
+Mar 27 02:09:36 localhost yum[2803]: Updated: binutils-2.20.51.0.2-5.47.el6_9.1.x86_64
+Mar 27 02:09:36 localhost yum[2803]: Updated: net-tools-1.60-114.el6.x86_64
+Mar 27 02:09:36 localhost yum[2803]: Updated: expat-2.0.1-13.el6_8.x86_64
+Mar 27 02:09:36 localhost yum[2803]: Updated: plymouth-core-libs-0.8.3-29.el6.centos.x86_64
+Mar 27 02:09:36 localhost yum[2803]: Updated: libstdc++-4.4.7-18.el6_9.2.x86_64
+Mar 27 02:09:37 localhost yum[2803]: Updated: gmp-4.3.1-12.el6.x86_64
+Mar 27 02:09:37 localhost yum[2803]: Updated: coreutils-libs-8.4-46.el6.x86_64
+Mar 27 02:09:38 localhost yum[2803]: Updated: coreutils-8.4-46.el6.x86_64
+Mar 27 02:09:39 localhost yum[2803]: Updated: pam-1.1.1-24.el6.x86_64
+Mar 27 02:09:39 localhost yum[2803]: Updated: module-init-tools-3.9-26.el6.x86_64
+Mar 27 02:09:39 localhost yum[2803]: Updated: plymouth-scripts-0.8.3-29.el6.centos.x86_64
+Mar 27 02:09:40 localhost yum[2803]: Updated: hwdata-0.233-18.1.el6.noarch
+Mar 27 02:09:40 localhost yum[2803]: Updated: iputils-20071127-24.el6.x86_64
+Mar 27 02:09:40 localhost yum[2803]: Updated: plymouth-0.8.3-29.el6.centos.x86_64
+Mar 27 02:09:42 localhost yum[2803]: Updated: util-linux-ng-2.17.2-12.28.el6_9.2.x86_64
+Mar 27 02:09:43 localhost yum[2803]: Updated: initscripts-9.03.58-1.el6.centos.2.x86_64
+Mar 27 02:09:44 localhost kernel: udev: starting version 147
+Mar 27 02:09:44 localhost yum[2803]: Updated: udev-147-2.73.el6_8.2.x86_64
+Mar 27 02:09:44 localhost yum[2803]: Updated: device-mapper-libs-1.02.117-12.el6_9.1.x86_64
+Mar 27 02:09:44 localhost yum[2803]: Updated: device-mapper-1.02.117-12.el6_9.1.x86_64
+Mar 27 02:09:45 localhost yum[2803]: Updated: device-mapper-event-libs-1.02.117-12.el6_9.1.x86_64
+Mar 27 02:09:45 localhost yum[2803]: Updated: policycoreutils-2.0.83-30.1.el6_8.x86_64
+Mar 27 02:09:47 localhost yum[2803]: Updated: selinux-policy-3.7.19-307el6_9.3.noarch
+Mar 27 02:09:47 localhost yum[2803]: Updated: device-mapper-event-1.02.117-12.el6_9.1.x86_64
+Mar 27 02:09:48 localhost yum[2803]: Updated: lvm2-libs-2.02.143-12.el6_9.1.x86_64
+Mar 27 02:09:48 localhost yum[2803]: Updated: kpartx-0.4.9-100.el6_9.1.x86_64
+Mar 27 02:09:48 localhost yum[2803]: Updated: mdadm-3.3.4-8.el6.x86_64
+Mar 27 02:09:48 localhost yum[2803]: Updated: gzip-1.3.12-24.el6.x86_64
+Mar 27 02:09:49 localhost yum[2803]: Updated: dracut-004-409.el6_8.2.noarch
+Mar 27 02:09:49 localhost yum[2803]: Updated: dracut-kernel-004-409.el6_8.2.noarch
+Mar 27 02:09:49 localhost yum[2803]: Updated: rpcbind-0.2.0-13.el6_9.1.x86_64
+Mar 27 02:09:51 localhost yum[2803]: Updated: ca-certificates-2017.2.14-65.0.1.el6_9.noarch
+Mar 27 02:09:52 localhost yum[2803]: Updated: openssl-1.0.1e-57.el6.x86_64
+Mar 27 02:09:53 localhost yum[2803]: Updated: mysql-libs-5.1.73-8.el6_8.x86_64
+Mar 27 02:09:53 localhost yum[2803]: Updated: python-2.6.6-66.el6_8.x86_64
+Mar 27 02:10:01 localhost yum[2803]: Updated: python-libs-2.6.6-66.el6_8.x86_64
+Mar 27 02:10:02 localhost yum[2803]: Updated: yum-3.2.29-81.el6.centos.noarch
+Mar 27 02:10:03 localhost yum[2803]: Updated: yum-plugin-fastestmirror-1.1.30-40.el6.noarch
+Mar 27 02:10:03 localhost yum[2803]: Updated: nss-sysinit-3.28.4-4.el6_9.x86_64
+Mar 27 02:10:03 localhost yum[2803]: Updated: nss-3.28.4-4.el6_9.x86_64
+Mar 27 02:10:03 localhost yum[2803]: Updated: openssh-5.3p1-123.el6_9.x86_64
+Mar 27 02:10:04 localhost yum[2803]: Updated: nss-tools-3.28.4-4.el6_9.x86_64
+Mar 27 02:10:04 localhost yum[2803]: Updated: openldap-2.4.40-16.el6.x86_64
+Mar 27 02:10:04 localhost yum[2803]: Updated: libcurl-7.19.7-53.el6_9.x86_64
+Mar 27 02:10:06 localhost yum[2803]: Updated: 2:postfix-2.6.6-8.el6.x86_64
+Mar 27 02:10:06 localhost yum[2803]: Updated: cronie-anacron-1.4.4-16.el6_8.2.x86_64
+Mar 27 02:10:06 localhost yum[2803]: Updated: cronie-1.4.4-16.el6_8.2.x86_64
+Mar 27 02:10:07 localhost yum[2803]: Updated: 1:nfs-utils-1.2.3-75.el6_9.x86_64
+Mar 27 02:10:07 localhost yum[2803]: Updated: nfs-utils-lib-1.1.5-13.el6.x86_64
+Mar 27 02:10:08 localhost yum[2803]: Updated: curl-7.19.7-53.el6_9.x86_64
+Mar 27 02:10:08 localhost yum[2803]: Updated: sudo-1.8.6p3-29.el6_9.x86_64
+Mar 27 02:10:08 localhost yum[2803]: Updated: openssh-clients-5.3p1-123.el6_9.x86_64
+Mar 27 02:10:08 localhost yum[2803]: Updated: openssh-server-5.3p1-123.el6_9.x86_64
+Mar 27 02:10:09 localhost yum[2803]: Updated: 1:grub-0.97-99.el6.x86_64
+Mar 27 02:10:09 localhost yum[2803]: Updated: newt-python-0.52.11-4.el6.x86_64
+Mar 27 02:10:09 localhost yum[2803]: Updated: wget-1.12-10.el6.x86_64
+Mar 27 02:10:19 localhost yum[2803]: Installed: kernel-2.6.32-696.23.1.el6.x86_64
+Mar 27 02:10:19 localhost yum[2803]: Updated: rdma-6.9_4.1-3.el6.noarch
+Mar 27 02:10:19 localhost yum[2803]: Updated: kexec-tools-2.0.0-307.el6_9.1.x86_64
+Mar 27 02:10:20 localhost yum[2803]: Updated: lvm2-2.02.143-12.el6_9.1.x86_64
+Mar 27 02:11:02 localhost yum[2803]: Updated: selinux-policy-targeted-3.7.19-307el6_9.3.noarch
+Mar 27 02:11:03 localhost yum[2803]: Updated: 12:dhclient-4.1.1-53.P1.el6.centos.3.x86_64
+Mar 27 02:11:03 localhost yum[2803]: Updated: audit-2.4.5-6.el6.x86_64
+Mar 27 02:11:03 localhost yum[2803]: Updated: logrotate-3.7.8-28.el6.x86_64
+Mar 27 02:11:03 localhost yum[2803]: Updated: e2fsprogs-1.41.12-23.el6.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: db4-utils-4.7.25-22.el6.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: acl-2.2.49-7.el6_9.1.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: libgomp-4.4.7-18.el6_9.2.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: efibootmgr-0.5.4-15.el6.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: libxml2-2.7.6-21.el6_8.1.x86_64
+Mar 27 02:11:04 localhost yum[2803]: Updated: libgcrypt-1.4.5-12.el6_8.x86_64
+Mar 27 02:11:12 localhost rpcbind: rpcbind terminating on signal. Restart with "rpcbind -w"
+Mar 27 02:11:12 localhost auditd[1036]: The audit daemon is exiting.
+Mar 27 02:11:12 localhost kernel: type=1305 audit(1522116672.734:591): audit_pid=0 old=1036 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 27 02:11:12 localhost kernel: type=1305 audit(1522116672.839:592): audit_enabled=0 old=1 auid=500 ses=5 subj=unconfined_u:system_r:auditctl_t:s0 res=1
+Mar 27 02:11:12 localhost auditd[3877]: Started dispatcher: /sbin/audispd pid: 3879
+Mar 27 02:11:12 localhost audispd: No plugins found, exiting
+Mar 27 02:11:12 localhost kernel: type=1305 audit(1522116672.876:593): audit_pid=3877 old=0 auid=500 ses=5 subj=unconfined_u:system_r:auditd_t:s0 res=1
+Mar 27 02:11:12 localhost auditd[3877]: Init complete, auditd 2.4.5 listening for events (startup state enable)
+Mar 27 02:11:18 localhost rpc.statd[1102]: Caught signal 15, un-registering and exiting
+Mar 27 02:11:18 localhost rpc.statd[4056]: Version 1.2.3 starting
+Mar 27 02:11:18 localhost sm-notify[4057]: Version 1.2.3 starting
+Mar 27 02:12:23 localhost yum[14032]: Installed: 1:perl-Error-0.17015-4.el6.noarch
+Mar 27 02:12:24 localhost yum[14032]: Installed: rsync-3.0.6-12.el6.x86_64
+Mar 27 02:12:24 localhost yum[14032]: Installed: perl-Git-1.7.1-9.el6_9.noarch
+Mar 27 02:12:27 localhost yum[14032]: Installed: git-1.7.1-9.el6_9.x86_64
+Mar 27 02:13:25 localhost yum[14044]: Installed: epel-release-6-8.noarch
+Mar 27 02:13:40 localhost yum[14047]: Installed: python-crypto-2.0.1-22.el6.x86_64
+Mar 27 02:13:41 localhost yum[14047]: Installed: python-paramiko-1.7.5-2.1.el6.noarch
+Mar 27 02:13:41 localhost yum[14047]: Installed: python-markupsafe-0.9.2-4.el6.x86_64
+Mar 27 02:13:42 localhost yum[14047]: Installed: python-pyasn1-0.0.12a-1.el6.noarch
+Mar 27 02:13:42 localhost yum[14047]: Installed: python-keyczar-0.71c-1.el6.noarch
+Mar 27 02:13:43 localhost yum[14047]: Installed: python-crypto2.6-2.6.1-2.el6.x86_64
+Mar 27 02:13:43 localhost yum[14047]: Installed: python-six-1.9.0-2.el6.noarch
+Mar 27 02:13:43 localhost yum[14047]: Installed: python-simplejson-2.0.9-3.1.el6.x86_64
+Mar 27 02:13:44 localhost yum[14047]: Installed: python-httplib2-0.7.7-1.el6.noarch
+Mar 27 02:13:44 localhost yum[14047]: Installed: libyaml-0.1.3-4.el6_6.x86_64
+Mar 27 02:13:44 localhost yum[14047]: Installed: PyYAML-3.10-3.1.el6.x86_64
+Mar 27 02:13:44 localhost yum[14047]: Installed: sshpass-1.06-1.el6.x86_64
+Mar 27 02:13:44 localhost yum[14047]: Installed: python-setuptools-0.6.10-4el6_9.noarch
+Mar 27 02:13:46 localhost yum[14047]: Installed: python-babel-0.9.4-5.1.el6.noarch
+Mar 27 02:13:47 localhost yum[14047]: Installed: python-jinja2-26-2.6-3.el6.noarch
+Mar 27 02:14:04 localhost yum[14047]: Installed: ansible-2.4.2.0-1.el6.noarch
+Mar 27 02:14:07 localhost ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+Mar 27 02:14:08 localhost ansible-service: Invoked with name=iptables pattern=None enabled=False state=stopped sleep=None arguments= runlevel=default
+Mar 27 02:14:09 localhost ansible-yum: Invoked with allow_downgrade=False name=['libselinux-python'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 02:14:13 localhost yum[14249]: Installed: libselinux-python-2.0.94-7.el6.x86_64
+Mar 27 02:14:14 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=absent content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=False delimiter=None mode=None attributes=None backup=None
+Mar 27 02:14:14 localhost ansible-file: Invoked with directory_mode=None force=True remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=link content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/localtime selevel=None original_basename=None regexp=None validate=None src=/usr/share/zoneinfo/Asia/Tokyo seuser=None recurse=False delimiter=None mode=0644 attributes=None backup=None
+Mar 27 02:14:14 localhost ansible-lineinfile: Invoked with directory_mode=None force=None remote_src=None backrefs=False insertafter=None path=/etc/sysconfig/i18n owner=None follow=False line=LANG="ja_JP.UTF-8" group=None insertbefore=None unsafe_writes=None create=False state=present content=NOT_LOGGING_PARAMETER serole=None setype=None dest=/etc/sysconfig/i18n selevel=None regexp=^LANG= validate=None src=None seuser=None delimiter=None mode=None attributes=None backup=False
+Mar 27 02:14:15 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm removes=None creates=None chdir=None stdin=None
+Mar 27 02:14:15 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 27 02:14:18 localhost ansible-yum: Invoked with allow_downgrade=False name=['man'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 02:14:48 localhost yum[14520]: Installed: xz-4.999.9-0.5.beta.20091007git.el6.x86_64
+Mar 27 02:14:48 localhost yum[14520]: Installed: xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64
+Mar 27 02:14:49 localhost yum[14520]: Installed: man-1.6f-39.el6.x86_64
+Mar 27 02:14:49 localhost kernel: hrtimer: interrupt took 5919631 ns
+Mar 27 02:14:50 localhost ansible-yum: Invoked with allow_downgrade=False name=['httpd'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 02:15:20 localhost yum[14744]: Installed: apr-1.3.9-5.el6_9.1.x86_64
+Mar 27 02:15:20 localhost yum[14744]: Installed: apr-util-1.3.9-3.el6_0.1.x86_64
+Mar 27 02:15:21 localhost yum[14744]: Installed: httpd-tools-2.2.15-60.el6.centos.6.x86_64
+Mar 27 02:15:21 localhost yum[14744]: Installed: apr-util-ldap-1.3.9-3.el6_0.1.x86_64
+Mar 27 02:15:21 localhost yum[14744]: Installed: mailcap-2.1.31-2.el6.noarch
+Mar 27 02:15:22 localhost yum[14744]: Installed: httpd-2.2.15-60.el6.centos.6.x86_64
+Mar 27 02:15:23 localhost ansible-service: Invoked with name=httpd pattern=None enabled=True state=started sleep=None arguments= runlevel=default
+Mar 27 02:15:24 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/var/www/html owner=vagrant follow=False group=None unsafe_writes=None state=None content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/var/www/html selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=True delimiter=None mode=None attributes=None backup=None
+Mar 27 02:15:25 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/httpd/conf/httpd.conf checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 27 02:15:25 localhost ansible-copy: Invoked with directory_mode=None force=True remote_src=None owner=None follow=False local_follow=None group=None unsafe_writes=None setype=None content=NOT_LOGGING_PARAMETER serole=None dest=/etc/httpd/conf/httpd.conf selevel=None original_basename=httpd.conf.custom regexp=None validate=None src=/home/vagrant/.ansible/tmp/ansible-tmp-1522116924.67-160771545384608/source seuser=None delimiter=None mode=None attributes=None backup=True
+Mar 27 02:15:26 localhost ansible-yum: Invoked with allow_downgrade=False name=['gd-last'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=latest disablerepo=None update_cache=False enablerepo=remi exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 02:15:57 localhost yum[15136]: Installed: libjpeg-turbo-1.2.1-3.el6_5.x86_64
+Mar 27 02:15:58 localhost yum[15136]: Installed: freetype-2.3.11-17.el6.x86_64
+Mar 27 02:16:00 localhost yum[15136]: Installed: fontconfig-2.8.0-5.el6.x86_64
+Mar 27 02:16:00 localhost yum[15136]: Installed: libtiff-3.9.4-21.el6_8.x86_64
+Mar 27 02:16:00 localhost yum[15136]: Installed: 2:libpng-1.2.49-2.el6_7.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: libX11-common-1.6.4-3.el6.noarch
+Mar 27 02:16:01 localhost yum[15136]: Installed: libXau-1.0.6-4.el6.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: libxcb-1.12-4.el6.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: libX11-1.6.4-3.el6.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: libXpm-3.5.10-2.el6.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: libwebp-0.4.3-3.el6.x86_64
+Mar 27 02:16:01 localhost yum[15136]: Installed: gd-last-2.2.5-1.el6.remi.x86_64
+Mar 27 02:16:02 localhost ansible-yum: Invoked with allow_downgrade=False name=['php', 'php-common', 'php-pdo', 'php-cli', 'php-devel', 'php-mysqlnd', 'php-mbstring', 'php-gd', 'php-intl', 'php-xml'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=present disablerepo=None update_cache=False enablerepo=remi-php56 exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 02:17:28 localhost yum[15779]: Installed: autoconf-2.63-5.1.el6.noarch
+Mar 27 02:17:28 localhost yum[15779]: Installed: automake-1.11.1-4.el6.noarch
+Mar 27 02:17:30 localhost yum[15779]: Installed: libicu-last-50.1.2-11.el6.remi.x86_64
+Mar 27 02:17:30 localhost yum[15779]: Installed: libzip5-1.5.0-1.el6.remi.x86_64
+Mar 27 02:17:30 localhost yum[15779]: Installed: php-pecl-jsonc-1.3.10-2.el6.remi.5.6.x86_64
+Mar 27 02:17:31 localhost yum[15779]: Installed: php-common-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:31 localhost yum[15779]: Installed: php-pecl-zip-1.15.2-1.el6.remi.5.6.x86_64
+Mar 27 02:17:31 localhost yum[15779]: Installed: php-cli-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:32 localhost yum[15779]: Installed: php-pecl-jsonc-devel-1.3.10-2.el6.remi.5.6.x86_64
+Mar 27 02:17:33 localhost yum[15779]: Installed: php-devel-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:33 localhost yum[15779]: Installed: php-pdo-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:33 localhost yum[15779]: Installed: libxslt-1.1.26-2.el6_3.1.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: t1lib-5.1.2-6.el6_2.1.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: php-gd-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: php-xml-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: php-mysqlnd-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: php-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:34 localhost yum[15779]: Installed: php-intl-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:35 localhost yum[15779]: Installed: php-mbstring-5.6.34-1.el6.remi.x86_64
+Mar 27 02:17:35 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/php.ini checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 27 02:17:36 localhost ansible-copy: Invoked with directory_mode=None force=True remote_src=None owner=None follow=False local_follow=None group=None unsafe_writes=None setype=None content=NOT_LOGGING_PARAMETER serole=None dest=/etc/php.ini selevel=None original_basename=php.ini.custom regexp=None validate=None src=/home/vagrant/.ansible/tmp/ansible-tmp-1522117055.79-168483542086542/source seuser=None delimiter=None mode=None attributes=None backup=True
+Mar 27 02:17:36 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm removes=None creates=None chdir=None stdin=None
+Mar 27 02:17:36 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 27 02:17:39 localhost ansible-yum: Invoked with allow_downgrade=False name=['mysql', 'mysql-devel', 'mysql-server', 'mysql-utilities'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=present disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 27 13:10:49 localhost kernel: e1000: eth1 NIC Link is Down
+Mar 27 13:10:50 localhost kernel: e1000: eth0 NIC Link is Down
+Mar 27 13:10:51 localhost kernel: e1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 27 13:10:52 localhost kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 29 02:55:06 localhost dhclient[922]: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 7 (xid=0x77e36de3)
+Mar 29 02:55:06 localhost dhclient[922]: DHCPOFFER from 10.0.2.2
+Mar 29 02:55:06 localhost dhclient[922]: DHCPREQUEST on eth0 to 255.255.255.255 port 67 (xid=0x77e36de3)
+Mar 29 02:55:06 localhost dhclient[922]: DHCPACK from 10.0.2.2 (xid=0x77e36de3)
+Mar 29 02:55:08 localhost NET[21652]: /sbin/dhclient-script : updated /etc/resolv.conf
+Mar 29 02:55:08 localhost dhclient[922]: bound to 10.0.2.15 -- renewal in 34610 seconds.
+Mar 29 08:33:51 localhost ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+Mar 29 08:33:52 localhost ansible-service: Invoked with name=iptables pattern=None enabled=False state=stopped sleep=None arguments= runlevel=default
+Mar 29 08:33:53 localhost ansible-yum: Invoked with allow_downgrade=False name=['libselinux-python'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:34:03 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=absent content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=False delimiter=None mode=None attributes=None backup=None
+Mar 29 08:34:03 localhost ansible-file: Invoked with directory_mode=None force=True remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=link content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/localtime selevel=None original_basename=None regexp=None validate=None src=/usr/share/zoneinfo/Asia/Tokyo seuser=None recurse=False delimiter=None mode=0644 attributes=None backup=None
+Mar 29 08:34:04 localhost ansible-lineinfile: Invoked with directory_mode=None force=None remote_src=None backrefs=False insertafter=None path=/etc/sysconfig/i18n owner=None follow=False line=LANG="ja_JP.UTF-8" group=None insertbefore=None unsafe_writes=None create=False state=present content=NOT_LOGGING_PARAMETER serole=None setype=None dest=/etc/sysconfig/i18n selevel=None regexp=^LANG= validate=None src=None seuser=None delimiter=None mode=None attributes=None backup=False
+Mar 29 08:34:04 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm removes=None creates=None chdir=None stdin=None
+Mar 29 08:34:04 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 29 08:34:06 localhost ansible-yum: Invoked with allow_downgrade=False name=['man'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:34:16 localhost ansible-yum: Invoked with allow_downgrade=False name=['httpd'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:34:26 localhost ansible-service: Invoked with name=httpd pattern=None enabled=True state=started sleep=None arguments= runlevel=default
+Mar 29 08:34:26 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/var/www/html owner=vagrant follow=False group=None unsafe_writes=None state=None content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/var/www/html selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=True delimiter=None mode=None attributes=None backup=None
+Mar 29 08:34:26 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/httpd/conf/httpd.conf checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 08:34:27 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/httpd/conf/httpd.conf owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/httpd/conf/httpd.conf selevel=None original_basename=httpd.conf.custom regexp=None validate=None src=httpd.conf.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 08:34:27 localhost ansible-yum: Invoked with allow_downgrade=False name=['gd-last'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=latest disablerepo=None update_cache=False enablerepo=remi exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:34:48 localhost yum[22775]: Updated: gd-last-2.2.5-2.el6.remi.x86_64
+Mar 29 08:34:48 localhost ansible-yum: Invoked with allow_downgrade=False name=['php', 'php-common', 'php-pdo', 'php-cli', 'php-devel', 'php-mysqlnd', 'php-mbstring', 'php-gd', 'php-intl', 'php-xml'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=present disablerepo=None update_cache=False enablerepo=remi-php56 exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:34:49 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/php.ini checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 08:34:50 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/php.ini owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/php.ini selevel=None original_basename=php.ini.custom regexp=None validate=None src=php.ini.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 08:34:50 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm removes=None creates=None chdir=None stdin=None
+Mar 29 08:34:50 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 29 08:34:52 localhost ansible-yum: Invoked with allow_downgrade=False name=['mysql', 'mysql-devel', 'mysql-server', 'mysql-utilities'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=present disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:35:30 localhost yum[23145]: Installed: mysql-community-common-5.6.39-2.el6.x86_64
+Mar 29 08:35:31 localhost yum[23145]: Installed: mysql-community-libs-5.6.39-2.el6.x86_64
+Mar 29 08:35:35 localhost yum[23145]: Installed: mysql-community-client-5.6.39-2.el6.x86_64
+Mar 29 08:35:35 localhost yum[23145]: Installed: perl-DBI-1.609-4.el6.x86_64
+Mar 29 08:35:35 localhost yum[23145]: Installed: numactl-2.0.9-2.el6.x86_64
+Mar 29 08:35:35 localhost yum[23145]: Installed: mysql-connector-python-2.1.7-1.el6.x86_64
+Mar 29 08:35:36 localhost yum[23145]: Installed: mysql-utilities-1.6.5-1.el6.noarch
+Mar 29 08:35:47 localhost yum[23145]: Installed: mysql-community-server-5.6.39-2.el6.x86_64
+Mar 29 08:35:49 localhost yum[23145]: Installed: mysql-community-devel-5.6.39-2.el6.x86_64
+Mar 29 08:35:49 localhost yum[23145]: Installed: mysql-community-libs-compat-5.6.39-2.el6.x86_64
+Mar 29 08:35:49 localhost yum[23145]: Erased: mysql-libs
+Mar 29 08:35:50 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/my.cnf checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 08:35:50 localhost ansible-copy: Invoked with directory_mode=None force=True remote_src=None owner=None follow=False local_follow=None group=None unsafe_writes=None setype=None content=NOT_LOGGING_PARAMETER serole=None dest=/etc/my.cnf selevel=None original_basename=my.cnf.custom regexp=None validate=None src=/home/vagrant/.ansible/tmp/ansible-tmp-1522312550.29-246942086710477/source seuser=None delimiter=None mode=None attributes=None backup=True
+Mar 29 08:35:51 localhost ansible-service: Invoked with name=mysqld pattern=None enabled=True state=started sleep=None arguments= runlevel=default
+Mar 29 08:35:58 localhost ansible-yum: Invoked with allow_downgrade=False name=['gcc', 'openssl', 'openssl-devel', 'rpm-build', 'gcc-c++', 'bzip2', 'bzip2-devel', 'libtool', 'zlib', 'zlib-devel', 'httpd-devel', 'openssl-devel', 'curl-devel', 'ncurses-devel', 'gdbm-devel', 'readline', 'readline-devel', 'sqlite', 'sqlite-devel', 'libyaml-devel', 'libffi-devel', 'bison'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=present disablerepo=None update_cache=False enablerepo=remi,epel exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:37:57 localhost yum[24666]: Installed: apr-devel-1.3.9-5.el6_9.1.x86_64
+Mar 29 08:37:57 localhost yum[24666]: Installed: db4-cxx-4.7.25-22.el6.x86_64
+Mar 29 08:38:04 localhost yum[24666]: Installed: db4-devel-4.7.25-22.el6.x86_64
+Mar 29 08:38:04 localhost yum[24666]: Installed: libcom_err-devel-1.41.12-23.el6.x86_64
+Mar 29 08:38:05 localhost yum[24666]: Installed: libkadm5-1.10.3-65.el6.x86_64
+Mar 29 08:38:05 localhost yum[24666]: Installed: patch-2.6-6.el6.x86_64
+Mar 29 08:38:05 localhost yum[24666]: Installed: libsepol-devel-2.0.41-4.el6.x86_64
+Mar 29 08:38:05 localhost yum[24666]: Installed: libselinux-devel-2.0.94-7.el6.x86_64
+Mar 29 08:38:06 localhost yum[24666]: Installed: cpp-4.4.7-18.el6_9.2.x86_64
+Mar 29 08:38:06 localhost yum[24666]: Installed: elfutils-0.164-2.el6.x86_64
+Mar 29 08:38:08 localhost yum[24666]: Installed: libstdc++-devel-4.4.7-18.el6_9.2.x86_64
+Mar 29 08:38:08 localhost yum[24666]: Installed: keyutils-libs-devel-1.4-5.el6.x86_64
+Mar 29 08:38:08 localhost yum[24666]: Installed: krb5-devel-1.10.3-65.el6.x86_64
+Mar 29 08:38:09 localhost yum[24666]: Installed: libidn-devel-1.18-2.el6.x86_64
+Mar 29 08:38:09 localhost yum[24666]: Installed: cyrus-sasl-devel-2.1.23-15.el6_6.2.x86_64
+Mar 29 08:38:10 localhost yum[24666]: Installed: openldap-devel-2.4.40-16.el6.x86_64
+Mar 29 08:38:10 localhost yum[24666]: Installed: expat-devel-2.0.1-13.el6_8.x86_64
+Mar 29 08:38:10 localhost yum[24666]: Installed: apr-util-devel-1.3.9-3.el6_0.1.x86_64
+Mar 29 08:38:11 localhost yum[24666]: Installed: ncurses-devel-5.7-4.20090207.el6.x86_64
+Mar 29 08:38:11 localhost yum[24666]: Installed: unzip-6.0-5.el6.x86_64
+Mar 29 08:38:11 localhost yum[24666]: Installed: zlib-devel-1.2.3-29.el6.x86_64
+Mar 29 08:38:12 localhost yum[24666]: Installed: redhat-rpm-config-9.0.3-51.el6.centos.noarch
+Mar 29 08:38:14 localhost yum[24666]: Installed: kernel-headers-2.6.32-696.23.1.el6.x86_64
+Mar 29 08:38:15 localhost yum[24666]: Installed: glibc-headers-2.12-1.209.el6_9.2.x86_64
+Mar 29 08:38:15 localhost yum[24666]: Installed: glibc-devel-2.12-1.209.el6_9.2.x86_64
+Mar 29 08:38:17 localhost yum[24666]: Installed: gcc-4.4.7-18.el6_9.2.x86_64
+Mar 29 08:38:18 localhost yum[24666]: Installed: gdb-7.2-92.el6.x86_64
+Mar 29 08:38:18 localhost yum[24666]: Installed: rpm-build-4.8.0-55.el6.x86_64
+Mar 29 08:38:19 localhost yum[24666]: Installed: gcc-c++-4.4.7-18.el6_9.2.x86_64
+Mar 29 08:38:19 localhost yum[24666]: Installed: libtool-2.2.6-15.5.el6.x86_64
+Mar 29 08:38:20 localhost yum[24666]: Installed: openssl-devel-1.0.1e-57.el6.x86_64
+Mar 29 08:38:21 localhost yum[24666]: Installed: readline-devel-6.0-4.el6.x86_64
+Mar 29 08:38:21 localhost yum[24666]: Installed: httpd-devel-2.2.15-60.el6.centos.6.x86_64
+Mar 29 08:38:21 localhost yum[24666]: Installed: libcurl-devel-7.19.7-53.el6_9.x86_64
+Mar 29 08:38:21 localhost yum[24666]: Installed: sqlite-devel-3.6.20-1.el6_7.2.x86_64
+Mar 29 08:38:21 localhost yum[24666]: Installed: gdbm-devel-1.8.0-39.el6.x86_64
+Mar 29 08:38:22 localhost yum[24666]: Installed: libyaml-devel-0.1.3-4.el6_6.x86_64
+Mar 29 08:38:22 localhost yum[24666]: Installed: bzip2-devel-1.0.5-7.el6_0.x86_64
+Mar 29 08:38:22 localhost yum[24666]: Installed: libffi-devel-3.0.5-3.2.el6.x86_64
+Mar 29 08:38:23 localhost yum[24666]: Installed: bison-2.4.1-5.el6.x86_64
+Mar 29 08:38:27 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.rbenv removes=None creates=None chdir=None stdin=None
+Mar 29 08:38:28 localhost ansible-git: Invoked with executable=None refspec=None force=False track_submodules=False reference=None dest=/home/vagrant/.rbenv verify_commit=False clone=True umask=None update=True accept_hostkey=False ssh_opts=None repo=https://github.com/sstephenson/rbenv.git depth=None version=HEAD bare=False remote=origin key_file=None archive=None recursive=True
+Mar 29 08:38:31 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/home/vagrant/.bash_profile checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 08:38:31 localhost ansible-copy: Invoked with directory_mode=None force=True remote_src=None owner=None follow=False local_follow=None group=None unsafe_writes=None setype=None content=NOT_LOGGING_PARAMETER serole=None dest=/home/vagrant/.bash_profile selevel=None original_basename=bash_profile.custom regexp=None validate=None src=/home/vagrant/.ansible/tmp/ansible-tmp-1522312710.87-177561768455170/source seuser=None delimiter=None mode=None attributes=None backup=True
+Mar 29 08:38:31 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.rbenv/plugins/ruby-build removes=None creates=None chdir=None stdin=None
+Mar 29 08:38:31 localhost ansible-git: Invoked with executable=None refspec=None force=False track_submodules=False reference=None dest=/home/vagrant/.rbenv/plugins/ruby-build verify_commit=False clone=True umask=None update=True accept_hostkey=False ssh_opts=None repo=https://github.com/sstephenson/ruby-build.git depth=None version=HEAD bare=False remote=origin key_file=None archive=None recursive=True
+Mar 29 08:38:36 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.rbenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 08:38:37 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.rbenv/plugins/ruby-build _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 08:38:38 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "rbenv versions | grep 2.3.1" removes=None creates=None chdir=None stdin=None
+Mar 29 08:38:39 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "rbenv install 2.3.1 && rbenv rehash && rbenv global 2.3.1" removes=None creates=None chdir=None stdin=None
+Mar 29 08:46:23 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.pyenv removes=None creates=None chdir=None stdin=None
+Mar 29 08:46:23 localhost ansible-git: Invoked with executable=None refspec=None force=False track_submodules=False reference=None dest=/home/vagrant/.pyenv verify_commit=False clone=True umask=None update=True accept_hostkey=False ssh_opts=None repo=https://github.com/yyuu/pyenv.git depth=None version=HEAD bare=False remote=origin key_file=None archive=None recursive=True
+Mar 29 08:46:28 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.pyenv/plugins/pyenv-virtualenv removes=None creates=None chdir=None stdin=None
+Mar 29 08:46:29 localhost ansible-git: Invoked with executable=None refspec=None force=False track_submodules=False reference=None dest=/home/vagrant/.pyenv/plugins/pyenv-virtualenv verify_commit=False clone=True umask=None update=True accept_hostkey=False ssh_opts=None repo=https://github.com/yyuu/pyenv-virtualenv.git depth=None version=HEAD bare=False remote=origin key_file=None archive=None recursive=True
+Mar 29 08:46:31 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.pyenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 08:46:33 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.pyenv/plugins/pyenv-virtualenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 08:46:34 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "pyenv versions | grep 3.5.2" removes=None creates=None chdir=None stdin=None
+Mar 29 08:46:34 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "pyenv install 3.5.2 && pyenv rehash && pyenv global 3.5.2" removes=None creates=None chdir=None stdin=None
+Mar 29 08:50:40 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "node -v" removes=None creates=None chdir=None stdin=None
+Mar 29 08:50:40 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "curl -sL https://rpm.nodesource.com/setup | bash -" removes=None creates=None chdir=None stdin=None
+Mar 29 08:51:03 localhost ansible-yum: Invoked with allow_downgrade=False name=['nodejs'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:51:35 localhost yum[19778]: Installed: 1:libuv-0.10.34-1.el6.x86_64
+Mar 29 08:51:35 localhost yum[19778]: Installed: nodejs-0.10.48-3.el6.x86_64
+Mar 29 08:51:36 localhost ansible-yum: Invoked with allow_downgrade=False name=['npm'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-semver-2.1.0-1.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-inherits-2.0.0-4.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-mkdirp-0.3.5-3.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-graceful-fs-2.0.0-2.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-rimraf-2.2.2-1.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-fstream-0.1.24-1.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-slide-1.1.5-1.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-hoek-0.9.1-1.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-ini-1.1.0-3.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-lru-cache-2.3.0-3.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-osenv-0.0.3-5.el6.noarch
+Mar 29 08:52:09 localhost yum[20015]: Installed: nodejs-boom-0.4.2-2.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-block-stream-0.0.7-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-tar-0.1.18-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-which-1.0.5-8.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: 1:libuv-devel-0.10.34-1.el6.x86_64
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-ansi-0.2.1-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-npmlog-0.0.4-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-once-1.1.1-5.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-mime-1.2.11-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-chownr-0.0.1-9.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-retry-0.6.0-5.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-abbrev-1.0.4-6.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-nopt-2.1.2-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-cryptiles-0.2.2-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-sntp-0.2.4-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-hawk-1.0.0-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-sha-1.2.1-1.el6.noarch
+Mar 29 08:52:10 localhost yum[20015]: Installed: nodejs-cmd-shim-1.1.0-3.el6.noarch
+Mar 29 08:52:11 localhost yum[20015]: Installed: nodejs-proto-list-1.2.2-5.el6.noarch
+Mar 29 08:52:11 localhost yum[20015]: Installed: nodejs-config-chain-1.1.7-1.el6.noarch
+Mar 29 08:52:11 localhost yum[20015]: Installed: nodejs-npmconf-0.1.2-1.el6.noarch
+Mar 29 08:52:11 localhost yum[20015]: Installed: nodejs-github-url-from-git-1.1.1-2.el6.noarch
+Mar 29 08:52:11 localhost yum[20015]: Installed: nodejs-normalize-package-data-0.2.1-1.el6.noarch
+Mar 29 08:52:12 localhost yum[20015]: Installed: libicu-4.2.1-14.el6.x86_64
+Mar 29 08:52:12 localhost yum[20015]: Installed: 1:v8-3.14.5.10-25.el6.x86_64
+Mar 29 08:52:12 localhost yum[20015]: Installed: 1:v8-devel-3.14.5.10-25.el6.x86_64
+Mar 29 08:52:12 localhost yum[20015]: Installed: nodejs-oauth-sign-0.3.0-1.el6.noarch
+Mar 29 08:52:12 localhost yum[20015]: Installed: nodejs-npm-user-validate-0.0.3-1.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-qs-0.6.6-3.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-lockfile-0.4.2-1.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-forever-agent-0.5.0-1.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-child-process-close-0.1.1-2.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-chmodr-0.1.0-4.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-packaging-7-1.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-devel-0.10.48-3.el6.x86_64
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-assert-plus-0.1.4-1.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-opener-1.3.0-7.el6.noarch
+Mar 29 08:52:13 localhost yum[20015]: Installed: nodejs-mute-stream-0.0.4-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-read-1.0.5-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-promzard-0.2.0-6.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-aws-sign-0.3.0-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-async-0.2.10-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: http-parser-2.0-4.20121128gitcd01361.el6.x86_64
+Mar 29 08:52:14 localhost yum[20015]: Installed: http-parser-devel-2.0-4.20121128gitcd01361.el6.x86_64
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-node-uuid-1.4.1-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-json-stringify-safe-5.0.0-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-ctype-0.5.3-3.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: 1:nodejs-cookie-jar-0.3.0-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-editor-0.0.4-2.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-archy-0.0.2-8.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-sigmund-1.0.0-5.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-minimatch-0.2.12-2.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-glob-3.2.6-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-read-package-json-1.1.3-1.el6.noarch
+Mar 29 08:52:14 localhost yum[20015]: Installed: nodejs-read-installed-0.2.4-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-init-package-json-0.0.10-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-fstream-ignore-0.0.7-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-fstream-npm-0.1.5-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-delayed-stream-0.0.5-5.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-combined-stream-0.0.4-3.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-form-data-0.1.1-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-uid-number-0.0.3-7.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-tunnel-agent-0.3.0-1.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: gyp-0.1-0.6.1010svn.el6.noarch
+Mar 29 08:52:15 localhost yum[20015]: Installed: nodejs-asn1-0.1.11-3.el6.noarch
+Mar 29 08:52:16 localhost yum[20015]: Installed: nodejs-http-signature-0.10.0-3.el6.noarch
+Mar 29 08:52:16 localhost yum[20015]: Installed: nodejs-request-2.25.0-3.el6.noarch
+Mar 29 08:52:16 localhost yum[20015]: Installed: node-gyp-0.10.6-2.el6.noarch
+Mar 29 08:52:16 localhost yum[20015]: Installed: nodejs-npm-registry-client-0.2.28-3.el6.noarch
+Mar 29 08:52:17 localhost yum[20015]: Installed: npm-1.3.6-5.el6.noarch
+Mar 29 09:03:18 localhost ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+Mar 29 09:03:20 localhost ansible-service: Invoked with name=iptables pattern=None enabled=False state=stopped sleep=None arguments= runlevel=default
+Mar 29 09:03:21 localhost ansible-yum: Invoked with allow_downgrade=False name=['libselinux-python'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:03:31 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=absent content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=False delimiter=None mode=None attributes=None backup=None
+Mar 29 09:03:32 localhost ansible-file: Invoked with directory_mode=None force=True remote_src=None path=/etc/localtime owner=None follow=False group=None unsafe_writes=None state=link content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/localtime selevel=None original_basename=None regexp=None validate=None src=/usr/share/zoneinfo/Asia/Tokyo seuser=None recurse=False delimiter=None mode=0644 attributes=None backup=None
+Mar 29 09:03:32 localhost ansible-lineinfile: Invoked with directory_mode=None force=None remote_src=None backrefs=False insertafter=None path=/etc/sysconfig/i18n owner=None follow=False line=LANG="ja_JP.UTF-8" group=None insertbefore=None unsafe_writes=None create=False state=present content=NOT_LOGGING_PARAMETER serole=None setype=None dest=/etc/sysconfig/i18n selevel=None regexp=^LANG= validate=None src=None seuser=None delimiter=None mode=None attributes=None backup=False
+Mar 29 09:03:32 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://rpms.famillecollet.com/enterprise/remi-release-6.rpm removes=None creates=None chdir=None stdin=None
+Mar 29 09:03:32 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 29 09:03:34 localhost ansible-yum: Invoked with allow_downgrade=False name=['man'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:03:44 localhost ansible-yum: Invoked with allow_downgrade=False name=['httpd'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=latest disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:03:55 localhost ansible-service: Invoked with name=httpd pattern=None enabled=True state=started sleep=None arguments= runlevel=default
+Mar 29 09:03:55 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/var/www/html owner=vagrant follow=False group=None unsafe_writes=None state=None content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/var/www/html selevel=None original_basename=None regexp=None validate=None src=None seuser=None recurse=True delimiter=None mode=None attributes=None backup=None
+Mar 29 09:03:55 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/httpd/conf/httpd.conf checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 09:03:56 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/httpd/conf/httpd.conf owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/httpd/conf/httpd.conf selevel=None original_basename=httpd.conf.custom regexp=None validate=None src=httpd.conf.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 09:03:56 localhost ansible-yum: Invoked with allow_downgrade=False name=['gd-last'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=latest disablerepo=None update_cache=False enablerepo=remi exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:04:08 localhost ansible-yum: Invoked with allow_downgrade=False name=['php', 'php-common', 'php-pdo', 'php-cli', 'php-devel', 'php-mysqlnd', 'php-mbstring', 'php-gd', 'php-intl', 'php-xml'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=present disablerepo=None update_cache=False enablerepo=remi-php56 exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:04:10 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/php.ini checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 09:04:10 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/php.ini owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/php.ini selevel=None original_basename=php.ini.custom regexp=None validate=None src=php.ini.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 09:04:10 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -Uvh --force http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:10 localhost ansible-command: [WARNING] Consider using yum, dnf or zypper module rather than running rpm
+Mar 29 09:04:12 localhost ansible-yum: Invoked with allow_downgrade=False name=['mysql', 'mysql-devel', 'mysql-server', 'mysql-utilities'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=present disablerepo=None update_cache=False enablerepo=None exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:04:31 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/etc/my.cnf checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 09:04:32 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/etc/my.cnf owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/etc/my.cnf selevel=None original_basename=my.cnf.custom regexp=None validate=None src=my.cnf.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 09:04:32 localhost ansible-service: Invoked with name=mysqld pattern=None enabled=True state=started sleep=None arguments= runlevel=default
+Mar 29 09:04:33 localhost ansible-yum: Invoked with allow_downgrade=False name=['gcc', 'openssl', 'openssl-devel', 'rpm-build', 'gcc-c++', 'bzip2', 'bzip2-devel', 'libtool', 'zlib', 'zlib-devel', 'httpd-devel', 'openssl-devel', 'curl-devel', 'ncurses-devel', 'gdbm-devel', 'readline', 'readline-devel', 'sqlite', 'sqlite-devel', 'libyaml-devel', 'libffi-devel', 'bison'] list=None disable_gpg_check=False conf_file=None install_repoquery=True state=present disablerepo=None update_cache=False enablerepo=remi,epel exclude=None security=False validate_certs=True installroot=/ skip_broken=False
+Mar 29 09:04:41 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.rbenv removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:42 localhost ansible-stat: Invoked with checksum_algorithm=sha1 get_checksum=True path=/home/vagrant/.bash_profile checksum_algo=sha1 follow=False get_md5=False get_mime=True get_attributes=True
+Mar 29 09:04:42 localhost ansible-file: Invoked with directory_mode=None force=False remote_src=None path=/home/vagrant/.bash_profile owner=None follow=False group=None unsafe_writes=None state=file content=NOT_LOGGING_PARAMETER serole=None diff_peek=None setype=None dest=/home/vagrant/.bash_profile selevel=None original_basename=bash_profile.custom regexp=None validate=None src=bash_profile.custom seuser=None recurse=False delimiter=None mode=None attributes=None backup=yes
+Mar 29 09:04:42 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.rbenv/plugins/ruby-build removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:42 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.rbenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 09:04:44 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.rbenv/plugins/ruby-build _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 09:04:46 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "rbenv versions | grep 2.3.1" removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:47 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.pyenv removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:47 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=test -x /home/vagrant/.pyenv/plugins/pyenv-virtualenv removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:48 localhost ansible-git: Invoked with executable=None refspec=None force=False track_submodules=False reference=None dest=/home/vagrant/.pyenv/plugins/pyenv-virtualenv verify_commit=False clone=True umask=None update=True accept_hostkey=False ssh_opts=None repo=https://github.com/yyuu/pyenv-virtualenv.git depth=None version=HEAD bare=False remote=origin key_file=None archive=None recursive=True
+Mar 29 09:04:50 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.pyenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 09:04:52 localhost ansible-command: Invoked with warn=True executable=None chdir=/home/vagrant/.pyenv/plugins/pyenv-virtualenv _raw_params=git pull --rebase removes=None creates=None _uses_shell=False stdin=None
+Mar 29 09:04:53 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "pyenv versions | grep 3.5.2" removes=None creates=None chdir=None stdin=None
+Mar 29 09:04:54 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=True _raw_params=/bin/bash -lc "node -v" removes=None creates=None chdir=None stdin=None
+Mar 29 12:27:15 localhost kernel: imklog 5.8.10, log source = /proc/kmsg started.
+Mar 29 12:27:15 localhost rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="1198" x-info="http://www.rsyslog.com"] start
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys cpuset
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys cpu
+Mar 29 12:27:15 localhost kernel: Linux version 2.6.32-696.23.1.el6.x86_64 (mockbuild@x86-01.bsys.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-18) (GCC) ) #1 SMP Tue Mar 13 22:44:18 UTC 2018
+Mar 29 12:27:15 localhost kernel: Command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 29 12:27:15 localhost kernel: KERNEL supported cpus:
+Mar 29 12:27:15 localhost kernel:  Intel GenuineIntel
+Mar 29 12:27:15 localhost kernel:  AMD AuthenticAMD
+Mar 29 12:27:15 localhost kernel:  Centaur CentaurHauls
+Mar 29 12:27:15 localhost kernel: BIOS-provided physical RAM map:
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 0000000000000000 - 000000000009fc00 (usable)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 000000000009fc00 - 00000000000a0000 (reserved)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 0000000000100000 - 000000003fff0000 (usable)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 000000003fff0000 - 0000000040000000 (ACPI data)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 00000000fec00000 - 00000000fec01000 (reserved)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+Mar 29 12:27:15 localhost kernel: BIOS-e820: 00000000fffc0000 - 0000000100000000 (reserved)
+Mar 29 12:27:15 localhost kernel: SMBIOS version 2.5 @ 0xFFF60
+Mar 29 12:27:15 localhost kernel: SMBIOS 2.5 present.
+Mar 29 12:27:15 localhost kernel: Hypervisor detected: KVM
+Mar 29 12:27:15 localhost kernel: last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+Mar 29 12:27:15 localhost kernel: x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+Mar 29 12:27:15 localhost kernel: CPU MTRRs all blank - virtualized system.
+Mar 29 12:27:15 localhost kernel: init_memory_mapping: 0000000000000000-000000003fff0000
+Mar 29 12:27:15 localhost kernel: RAMDISK: 36c22000 - 37fefef0
+Mar 29 12:27:15 localhost kernel: ACPI: RSDP 00000000000e0000 00024 (v02 VBOX  )
+Mar 29 12:27:15 localhost kernel: ACPI: XSDT 000000003fff0030 0003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Mar 29 12:27:15 localhost kernel: ACPI: FACP 000000003fff00f0 000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Mar 29 12:27:15 localhost kernel: ACPI: DSDT 000000003fff0470 021FF (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Mar 29 12:27:15 localhost kernel: ACPI: FACS 000000003fff0200 00040
+Mar 29 12:27:15 localhost kernel: ACPI: APIC 000000003fff0240 00054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Mar 29 12:27:15 localhost kernel: ACPI: SSDT 000000003fff02a0 001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Mar 29 12:27:15 localhost kernel: Setting APIC routing to flat.
+Mar 29 12:27:15 localhost kernel: No NUMA configuration found
+Mar 29 12:27:15 localhost kernel: Faking a node at 0000000000000000-000000003fff0000
+Mar 29 12:27:15 localhost kernel: Bootmem setup node 0 0000000000000000-000000003fff0000
+Mar 29 12:27:15 localhost kernel:  NODE_DATA [0000000000009000 - 000000000003cfff]
+Mar 29 12:27:15 localhost kernel:  bootmap [000000000003d000 -  0000000000044fff] pages 8
+Mar 29 12:27:15 localhost kernel: (7 early reservations) ==> bootmem [0000000000 - 003fff0000]
+Mar 29 12:27:15 localhost kernel:  #0 [0000000000 - 0000001000]   BIOS data page ==> [0000000000 - 0000001000]
+Mar 29 12:27:15 localhost kernel:  #1 [0000006000 - 0000008000]       TRAMPOLINE ==> [0000006000 - 0000008000]
+Mar 29 12:27:15 localhost kernel:  #2 [0001000000 - 000204ba64]    TEXT DATA BSS ==> [0001000000 - 000204ba64]
+Mar 29 12:27:15 localhost kernel:  #3 [0036c22000 - 0037fefef0]          RAMDISK ==> [0036c22000 - 0037fefef0]
+Mar 29 12:27:15 localhost kernel:  #4 [000009f800 - 0000100000]    BIOS reserved ==> [000009f800 - 0000100000]
+Mar 29 12:27:15 localhost kernel:  #5 [000204c000 - 000204c13c]              BRK ==> [000204c000 - 000204c13c]
+Mar 29 12:27:15 localhost kernel:  #6 [0000008000 - 0000009000]          PGTABLE ==> [0000008000 - 0000009000]
+Mar 29 12:27:15 localhost kernel: found SMP MP-table at [ffff88000009fff0] 9fff0
+Mar 29 12:27:15 localhost kernel: crashkernel=auto resulted in zero bytes of reserved memory.
+Mar 29 12:27:15 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Mar 29 12:27:15 localhost kernel: kvm-clock: cpu 0, msr 0:1c3db81, boot clock
+Mar 29 12:27:15 localhost kernel: Zone PFN ranges:
+Mar 29 12:27:15 localhost kernel:  DMA      0x00000001 -> 0x00001000
+Mar 29 12:27:15 localhost kernel:  DMA32    0x00001000 -> 0x00100000
+Mar 29 12:27:15 localhost kernel:  Normal   0x00100000 -> 0x00100000
+Mar 29 12:27:15 localhost kernel: Movable zone start PFN for each node
+Mar 29 12:27:15 localhost kernel: early_node_map[2] active PFN ranges
+Mar 29 12:27:15 localhost kernel:    0: 0x00000001 -> 0x0000009f
+Mar 29 12:27:15 localhost kernel:    0: 0x00000100 -> 0x0003fff0
+Mar 29 12:27:15 localhost kernel: ACPI: PM-Timer IO Port: 0x4008
+Mar 29 12:27:15 localhost kernel: Setting APIC routing to flat.
+Mar 29 12:27:15 localhost kernel: ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+Mar 29 12:27:15 localhost kernel: ACPI: IOAPIC (id[0x01] address[0xfec00000] gsi_base[0])
+Mar 29 12:27:15 localhost kernel: IOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23
+Mar 29 12:27:15 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Mar 29 12:27:15 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+Mar 29 12:27:15 localhost kernel: Using ACPI (MADT) for SMP configuration information
+Mar 29 12:27:15 localhost kernel: SMP: Allowing 1 CPUs, 0 hotplug CPUs
+Mar 29 12:27:15 localhost kernel: PM: Registered nosave memory: 000000000009f000 - 00000000000a0000
+Mar 29 12:27:15 localhost kernel: PM: Registered nosave memory: 00000000000a0000 - 00000000000f0000
+Mar 29 12:27:15 localhost kernel: PM: Registered nosave memory: 00000000000f0000 - 0000000000100000
+Mar 29 12:27:15 localhost kernel: Allocating PCI resources starting at 40000000 (gap: 40000000:bec00000)
+Mar 29 12:27:15 localhost kernel: Booting paravirtualized kernel on KVM
+Mar 29 12:27:15 localhost kernel: NR_CPUS:4096 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1
+Mar 29 12:27:15 localhost kernel: PERCPU: Embedded 33 pages/cpu @ffff880002200000 s104088 r8192 d22888 u2097152
+Mar 29 12:27:15 localhost kernel: pcpu-alloc: s104088 r8192 d22888 u2097152 alloc=1*2097152
+Mar 29 12:27:15 localhost kernel: pcpu-alloc: [0] 0 
+Mar 29 12:27:15 localhost kernel: kvm-clock: cpu 0, msr 0:2218b81, primary cpu clock
+Mar 29 12:27:15 localhost kernel: Built 1 zonelists in Node order, mobility grouping on.  Total pages: 258346
+Mar 29 12:27:15 localhost kernel: Policy zone: DMA32
+Mar 29 12:27:15 localhost kernel: Kernel command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16  rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet
+Mar 29 12:27:15 localhost kernel: PID hash table entries: 4096 (order: 3, 32768 bytes)
+Mar 29 12:27:15 localhost kernel: x86/fpu: xstate_offset[2]: 0240, xstate_sizes[2]: 0100
+Mar 29 12:27:15 localhost kernel: xsave/xrstor: enabled xstate_bv 0x7, cntxt size 0x340
+Mar 29 12:27:15 localhost kernel: Memory: 996180k/1048512k available (5516k kernel code, 392k absent, 51940k reserved, 6912k data, 1332k init)
+Mar 29 12:27:15 localhost kernel: Kernel/User page tables isolation: enabled
+Mar 29 12:27:15 localhost kernel: Hierarchical RCU implementation.
+Mar 29 12:27:15 localhost kernel: NR_IRQS:33024 nr_irqs:256
+Mar 29 12:27:15 localhost kernel: Console: colour VGA+ 80x25
+Mar 29 12:27:15 localhost kernel: console [tty0] enabled
+Mar 29 12:27:15 localhost kernel: allocated 4194304 bytes of page_cgroup
+Mar 29 12:27:15 localhost kernel: please try 'cgroup_disable=memory' option if you don't want memory cgroups
+Mar 29 12:27:15 localhost kernel: Detected 1599.999 MHz processor.
+Mar 29 12:27:15 localhost kernel: Calibrating delay loop (skipped) preset value.. 3199.99 BogoMIPS (lpj=1599999)
+Mar 29 12:27:15 localhost kernel: pid_max: default: 32768 minimum: 301
+Mar 29 12:27:15 localhost kernel: Security Framework initialized
+Mar 29 12:27:15 localhost kernel: SELinux:  Initializing.
+Mar 29 12:27:15 localhost kernel: Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Mar 29 12:27:15 localhost kernel: Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Mar 29 12:27:15 localhost kernel: Mount-cache hash table entries: 256
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys ns
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys cpuacct
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys memory
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys devices
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys freezer
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys net_cls
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys blkio
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys perf_event
+Mar 29 12:27:15 localhost kernel: Initializing cgroup subsys net_prio
+Mar 29 12:27:15 localhost kernel: CPU: Physical Processor ID: 0
+Mar 29 12:27:15 localhost kernel: mce: CPU supports 0 MCE banks
+Mar 29 12:27:15 localhost kernel: using mwait in idle threads.
+Mar 29 12:27:15 localhost kernel: FEATURE SPEC_CTRL Not Present
+Mar 29 12:27:15 localhost kernel: FEATURE IBPB_SUPPORT Not Present
+Mar 29 12:27:15 localhost kernel: Spectre V2 : Mitigation: Full retpoline
+Mar 29 12:27:15 localhost kernel: alternatives: switching to unfair spinlock
+Mar 29 12:27:15 localhost kernel: SMP alternatives: switching to UP code
+Mar 29 12:27:15 localhost kernel: Freeing SMP alternatives: 38k freed
+Mar 29 12:27:15 localhost kernel: ACPI: Core revision 20090903
+Mar 29 12:27:15 localhost kernel: ftrace: converting mcount calls to 0f 1f 44 00 00
+Mar 29 12:27:15 localhost kernel: ftrace: allocating 22028 entries in 87 pages
+Mar 29 12:27:15 localhost kernel: Enabling x2apic
+Mar 29 12:27:15 localhost kernel: Enabled x2apic
+Mar 29 12:27:15 localhost kernel: APIC routing finalized to physical x2apic.
+Mar 29 12:27:15 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Mar 29 12:27:15 localhost kernel: CPU0: Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz stepping 04
+Mar 29 12:27:15 localhost kernel: Performance Events: unsupported p6 CPU model 61 no PMU driver, software events only.
+Mar 29 12:27:15 localhost kernel: NMI watchdog disabled (cpu0): hardware events not enabled
+Mar 29 12:27:15 localhost kernel: Brought up 1 CPUs
+Mar 29 12:27:15 localhost kernel: Total of 1 processors activated (3199.99 BogoMIPS).
+Mar 29 12:27:15 localhost kernel: devtmpfs: initialized
+Mar 29 12:27:15 localhost kernel: regulator: core version 0.5
+Mar 29 12:27:15 localhost kernel: NET: Registered protocol family 16
+Mar 29 12:27:15 localhost kernel: ACPI: bus type pci registered
+Mar 29 12:27:15 localhost kernel: PCI: Using configuration type 1 for base access
+Mar 29 12:27:15 localhost kernel: bio: create slab <bio-0> at 0
+Mar 29 12:27:15 localhost kernel: ACPI: Executed 1 blocks of module-level executable AML code
+Mar 29 12:27:15 localhost kernel: ACPI: Interpreter enabled
+Mar 29 12:27:15 localhost kernel: ACPI: (supports S0 S5)
+Mar 29 12:27:15 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+Mar 29 12:27:15 localhost kernel: ACPI: No dock devices found.
+Mar 29 12:27:15 localhost kernel: PCI: Ignoring host bridge windows from ACPI; if necessary, use "pci=use_crs" and report a bug
+Mar 29 12:27:15 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Mar 29 12:27:15 localhost kernel: PCI host bridge to bus 0000:00
+Mar 29 12:27:15 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+Mar 29 12:27:15 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x00000000-0x7fffffffff]
+Mar 29 12:27:15 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+Mar 29 12:27:15 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+Mar 29 12:27:15 localhost kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+Mar 29 12:27:15 localhost kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
+Mar 29 12:27:15 localhost kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
+Mar 29 12:27:15 localhost kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
+Mar 29 12:27:15 localhost kernel: vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+Mar 29 12:27:15 localhost kernel: vgaarb: loaded
+Mar 29 12:27:15 localhost kernel: vgaarb: bridge control possible 0000:00:02.0
+Mar 29 12:27:15 localhost kernel: SCSI subsystem initialized
+Mar 29 12:27:15 localhost kernel: usbcore: registered new interface driver usbfs
+Mar 29 12:27:15 localhost kernel: usbcore: registered new interface driver hub
+Mar 29 12:27:15 localhost kernel: usbcore: registered new device driver usb
+Mar 29 12:27:15 localhost kernel: PCI: Using ACPI for IRQ routing
+Mar 29 12:27:15 localhost kernel: NetLabel: Initializing
+Mar 29 12:27:15 localhost kernel: NetLabel:  domain hash size = 128
+Mar 29 12:27:15 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4
+Mar 29 12:27:15 localhost kernel: NetLabel:  unlabeled traffic allowed by default
+Mar 29 12:27:15 localhost kernel: Switching to clocksource kvm-clock
+Mar 29 12:27:15 localhost kernel: pnp: PnP ACPI init
+Mar 29 12:27:15 localhost kernel: ACPI: bus type pnp registered
+Mar 29 12:27:15 localhost kernel: pnp: PnP ACPI: found 4 devices
+Mar 29 12:27:15 localhost kernel: ACPI: ACPI bus type pnp unregistered
+Mar 29 12:27:15 localhost kernel: NET: Registered protocol family 2
+Mar 29 12:27:15 localhost kernel: IP route cache hash table entries: 32768 (order: 6, 262144 bytes)
+Mar 29 12:27:15 localhost kernel: TCP established hash table entries: 131072 (order: 9, 2097152 bytes)
+Mar 29 12:27:15 localhost kernel: TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+Mar 29 12:27:15 localhost kernel: TCP: Hash tables configured (established 131072 bind 65536)
+Mar 29 12:27:15 localhost kernel: TCP reno registered
+Mar 29 12:27:15 localhost kernel: NET: Registered protocol family 1
+Mar 29 12:27:15 localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Mar 29 12:27:15 localhost kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Mar 29 12:27:15 localhost kernel: Trying to unpack rootfs image as initramfs...
+Mar 29 12:27:15 localhost kernel: Freeing initrd memory: 20279k freed
+Mar 29 12:27:15 localhost kernel: platform rtc_cmos: registered platform RTC device (no PNP device found)
+Mar 29 12:27:15 localhost kernel: sha256_ssse3: Using AVX optimized SHA-256 implementation
+Mar 29 12:27:15 localhost kernel: futex hash table entries: 256 (order: 2, 16384 bytes)
+Mar 29 12:27:15 localhost kernel: audit: initializing netlink socket (disabled)
+Mar 29 12:27:15 localhost kernel: type=2000 audit(1522326415.539:1): initialized
+Mar 29 12:27:15 localhost kernel: HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Mar 29 12:27:15 localhost kernel: VFS: Disk quotas dquot_6.5.2
+Mar 29 12:27:15 localhost kernel: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Mar 29 12:27:15 localhost kernel: msgmni has been set to 1985
+Mar 29 12:27:15 localhost kernel: ksign: Installing public key data
+Mar 29 12:27:15 localhost kernel: Loading keyring
+Mar 29 12:27:15 localhost kernel: - Added public key D44616C2464AD913
+Mar 29 12:27:15 localhost kernel: - User ID: CentOS (Kernel Module GPG key)
+Mar 29 12:27:15 localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+Mar 29 12:27:15 localhost kernel: io scheduler noop registered
+Mar 29 12:27:15 localhost kernel: io scheduler anticipatory registered
+Mar 29 12:27:15 localhost kernel: io scheduler deadline registered
+Mar 29 12:27:15 localhost kernel: io scheduler cfq registered (default)
+Mar 29 12:27:15 localhost kernel: pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+Mar 29 12:27:15 localhost kernel: pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+Mar 29 12:27:15 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Mar 29 12:27:15 localhost kernel: ACPI: AC Adapter [AC] (on-line)
+Mar 29 12:27:15 localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Mar 29 12:27:15 localhost kernel: ACPI: Power Button [PWRF]
+Mar 29 12:27:15 localhost kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+Mar 29 12:27:15 localhost kernel: ACPI: Sleep Button [SLPF]
+Mar 29 12:27:15 localhost kernel: [Firmware Bug]: No valid trip found
+Mar 29 12:27:15 localhost kernel: GHES: HEST is not enabled!
+Mar 29 12:27:15 localhost kernel: Non-volatile memory driver v1.3
+Mar 29 12:27:15 localhost kernel: Linux agpgart interface v0.103
+Mar 29 12:27:15 localhost kernel: crash memory driver: version 1.1
+Mar 29 12:27:15 localhost kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Mar 29 12:27:15 localhost kernel: brd: module loaded
+Mar 29 12:27:15 localhost kernel: loop: module loaded
+Mar 29 12:27:15 localhost kernel: input: Macintosh mouse button emulation as /devices/virtual/input/input2
+Mar 29 12:27:15 localhost kernel: Fixed MDIO Bus: probed
+Mar 29 12:27:15 localhost kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Mar 29 12:27:15 localhost kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Mar 29 12:27:15 localhost kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Mar 29 12:27:15 localhost kernel: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+Mar 29 12:27:15 localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+Mar 29 12:27:15 localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+Mar 29 12:27:15 localhost kernel: mice: PS/2 mouse device common for all mice
+Mar 29 12:27:15 localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+Mar 29 12:27:15 localhost kernel: rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+Mar 29 12:27:15 localhost kernel: rtc0: alarms up to one day, 114 bytes nvram
+Mar 29 12:27:15 localhost kernel: cpuidle: using governor ladder
+Mar 29 12:27:15 localhost kernel: cpuidle: using governor menu
+Mar 29 12:27:15 localhost kernel: EFI Variables Facility v0.08 2004-May-17
+Mar 29 12:27:15 localhost kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+Mar 29 12:27:15 localhost kernel: ACPI: Battery Slot [BAT0] (battery present)
+Mar 29 12:27:15 localhost kernel: usbcore: registered new interface driver hiddev
+Mar 29 12:27:15 localhost kernel: usbcore: registered new interface driver usbhid
+Mar 29 12:27:15 localhost kernel: usbhid: v2.6:USB HID core driver
+Mar 29 12:27:15 localhost kernel: GRE over IPv4 demultiplexor driver
+Mar 29 12:27:15 localhost kernel: TCP cubic registered
+Mar 29 12:27:15 localhost kernel: Initializing XFRM netlink socket
+Mar 29 12:27:15 localhost kernel: NET: Registered protocol family 17
+Mar 29 12:27:15 localhost kernel: registered taskstats version 1
+Mar 29 12:27:15 localhost kernel: rtc_cmos rtc_cmos: setting system clock to 2018-03-29 12:26:47 UTC (1522326407)
+Mar 29 12:27:15 localhost kernel: Initalizing network drop monitor service
+Mar 29 12:27:15 localhost kernel: Freeing unused kernel memory: 1332k freed
+Mar 29 12:27:15 localhost kernel: Write protecting the kernel read-only data: 10240k
+Mar 29 12:27:15 localhost kernel: Freeing unused kernel memory: 608k freed
+Mar 29 12:27:15 localhost kernel: Freeing unused kernel memory: 1540k freed
+Mar 29 12:27:15 localhost kernel: dracut: dracut-004-409.el6_8.2
+Mar 29 12:27:15 localhost kernel: device-mapper: uevent: version 1.0.3
+Mar 29 12:27:15 localhost kernel: device-mapper: ioctl: 4.33.1-ioctl (2015-8-18) initialised: dm-devel@redhat.com
+Mar 29 12:27:15 localhost kernel: udev: starting version 147
+Mar 29 12:27:15 localhost kernel: ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+Mar 29 12:27:15 localhost kernel: input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+Mar 29 12:27:15 localhost kernel: dracut: Starting plymouth daemon
+Mar 29 12:27:15 localhost kernel: dracut: rd_NO_MD: removing MD RAID activation
+Mar 29 12:27:15 localhost kernel: scsi0 : ata_piix
+Mar 29 12:27:15 localhost kernel: scsi1 : ata_piix
+Mar 29 12:27:15 localhost kernel: ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+Mar 29 12:27:15 localhost kernel: ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+Mar 29 12:27:15 localhost kernel: ahci 0000:00:0d.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 29 12:27:15 localhost kernel: ahci: SSS flag set, parallel bus scan disabled
+Mar 29 12:27:15 localhost kernel: ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+Mar 29 12:27:15 localhost kernel: ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+Mar 29 12:27:15 localhost kernel: scsi2 : ahci
+Mar 29 12:27:15 localhost kernel: ata3: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840100 irq 21
+Mar 29 12:27:15 localhost kernel: ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Mar 29 12:27:15 localhost kernel: ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+Mar 29 12:27:15 localhost kernel: ata3.00: 83886080 sectors, multi 128: LBA48 NCQ (depth 31/32)
+Mar 29 12:27:15 localhost kernel: ata3.00: configured for UDMA/133
+Mar 29 12:27:15 localhost kernel: scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+Mar 29 12:27:15 localhost kernel: Refined TSC clocksource calibration: 1599.873 MHz.
+Mar 29 12:27:15 localhost kernel: sd 2:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)
+Mar 29 12:27:15 localhost kernel: sd 2:0:0:0: [sda] Write Protect is off
+Mar 29 12:27:15 localhost kernel: sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Mar 29 12:27:15 localhost kernel: sda: sda1 sda2
+Mar 29 12:27:15 localhost kernel: sd 2:0:0:0: [sda] Attached SCSI disk
+Mar 29 12:27:15 localhost kernel: dracut: Scanning devices sda2  for LVM logical volumes VolGroup/lv_swap VolGroup/lv_root 
+Mar 29 12:27:15 localhost kernel: dracut: inactive '/dev/VolGroup/lv_root' [37.54 GiB] inherit
+Mar 29 12:27:15 localhost kernel: dracut: inactive '/dev/VolGroup/lv_swap' [1.97 GiB] inherit
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): INFO: recovery required on readonly filesystem
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): write access will be enabled during recovery
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): orphan cleanup on readonly fs
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): 18 orphan inodes deleted
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): recovery complete
+Mar 29 12:27:15 localhost kernel: EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts: 
+Mar 29 12:27:15 localhost kernel: dracut: Mounted root filesystem /dev/mapper/VolGroup-lv_root
+Mar 29 12:27:15 localhost kernel: dracut: Loading SELinux policy
+Mar 29 12:27:15 localhost kernel: type=1403 audit(1522326412.521:2): policy loaded auid=4294967295 ses=4294967295
+Mar 29 12:27:15 localhost kernel: dracut: 
+Mar 29 12:27:15 localhost kernel: dracut: Switching root
+Mar 29 12:27:15 localhost kernel: udev: starting version 147
+Mar 29 12:27:15 localhost kernel: e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Mar 29 12:27:15 localhost kernel: e1000: Copyright (c) 1999-2006 Intel Corporation.
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:03.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:03.0: eth0: (PCI:33MHz:32-bit) 08:00:27:40:17:62
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:03.0: eth0: Intel(R) PRO/1000 Network Connection
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:08.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:08.0: eth1: (PCI:33MHz:32-bit) 08:00:27:50:e3:04
+Mar 29 12:27:15 localhost kernel: e1000 0000:00:08.0: eth1: Intel(R) PRO/1000 Network Connection
+Mar 29 12:27:15 localhost kernel: Intel ICH 0000:00:05.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 29 12:27:15 localhost kernel: intel8x0_measure_ac97_clock: measured 51574 usecs (12152 samples)
+Mar 29 12:27:15 localhost kernel: intel8x0: measured clock 235622 rejected
+Mar 29 12:27:15 localhost kernel: intel8x0_measure_ac97_clock: measured 50274 usecs (12167 samples)
+Mar 29 12:27:15 localhost kernel: intel8x0: measured clock 242013 rejected
+Mar 29 12:27:15 localhost kernel: intel8x0_measure_ac97_clock: measured 51333 usecs (12217 samples)
+Mar 29 12:27:15 localhost kernel: intel8x0: measured clock 237995 rejected
+Mar 29 12:27:15 localhost kernel: intel8x0: clocking to 48000
+Mar 29 12:27:15 localhost kernel: piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+Mar 29 12:27:15 localhost kernel: sd 2:0:0:0: Attached scsi generic sg0 type 0
+Mar 29 12:27:15 localhost kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: 
+Mar 29 12:27:15 localhost kernel: Adding 2064380k swap on /dev/mapper/VolGroup-lv_swap.  Priority:-1 extents:1 across:2064380k 
+Mar 29 12:27:15 localhost kernel: NET: Registered protocol family 10
+Mar 29 12:27:15 localhost kernel: lo: Disabled Privacy Extensions
+Mar 29 12:27:15 localhost kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 29 12:27:15 localhost kernel: e1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 29 12:27:15 localhost kernel: ADDRCONF(NETDEV_UP): eth1: link is not ready
+Mar 29 12:27:15 localhost kernel: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+Mar 29 12:27:15 localhost kernel: type=1305 audit(1522294034.798:3): audit_pid=1176 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 29 12:27:15 localhost rpc.statd[1242]: Version 1.2.3 starting
+Mar 29 12:27:15 localhost sm-notify[1243]: Version 1.2.3 starting
+Mar 29 12:27:15 localhost vboxadd-service.sh: Starting VirtualBox Guest Addition service.
+Mar 29 12:27:16 localhost kdump: No crashkernel parameter specified for running kernel
+Mar 29 12:27:34 localhost kernel: ADDRCONF(NETDEV_UP): eth1: link is not ready
+Mar 29 12:27:36 localhost kernel: e1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 29 12:27:36 localhost kernel: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready

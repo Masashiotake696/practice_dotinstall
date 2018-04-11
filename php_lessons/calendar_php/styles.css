@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  margin: 15px auto;
+  border: 1px solid gray;
+  border-collapse: collapse; /* border-collapseはセルのボーダーの表示の仕方を指定する。collapseとした場合は隣接するセルのボーダーを重ねて表示、separateとした場合は間隔をあけて表示する。 */
+}
+
+th {
+  background: #eee;
+}
+
+th, td {
+  padding: 7px;
+  text-align: center;
+}
+
+.youbi_0 {
+  color: red;
+}
+
+.youbi_6 {
+  color: blue;
+}
+
+.today {
+  font-weight: bold;
+}
+
+.gray {
+  color: #dedede;
+}
