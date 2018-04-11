@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>スクロール実験</title>
+  </head>
+  <body style="text-align: center;">
+    <h1>スクロール実験</h1>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <div id="back-to-top" style="position: fixed; right: 5px; bottom: 5px;"><a href="#">↑</a></div>
+    <script>
+      $(function() {
+        // #back-to-topを非表示にする
+        $('#back-to-top').hide();
+
+        // スクロールが十分にされたら#baeck-to-topを表示する。スクロールが戻ったらまた非表示にする
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 60) {
+            $('#back-to-top').fadeIn();
+          } else {
+            $('#back-to-top').fadeOut();
+          }
+        });
+
+        // #back-to-topがクリックされたら上に戻る
+        $('#back-to-top a').click(function() {
+          // .animate( properties [, duration] [, easing] [, complete] )
+          // properties ... 最終的に変化させるCSSのキーとあたいのマップ値
+          // duration ... アニメーションする時間を指定
+          // easing ... イージング(緩急)の種類を指定
+          // complete ... アニメーションが完了した時に実行したい処理を指定
+          $('html, body').animate({
+            scrollTop: 0
+          }, 500); // 0.5秒
+          return false; // その後起きることが起きないようにする。この場合はa要素のclickなので、「リンクをクリックした→リンク先に遷移する」と言う動作がキャンセルされる。
+        });
+      });
+    </script>
+  </body>
+</html>

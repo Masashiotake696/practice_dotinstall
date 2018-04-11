@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery入門</title>
+    <style>
+      .myStyle {
+        border: 5px solid green;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>jQueryの練習</p>
+
+    <!-- <a href="http://google.com" data-sitename="google">Google</a> -->
+
+    <!-- <input type="text" value="hello"> -->
+
+    <!-- <p><a href="http://google.com">Google</a></p>
+    <p><a href="http://yahoo.co.jp">Yahoo</a></p>
+    <p><a href="http://dotinstall.com">Dotinstall</a></p> -->
+
+    <!-- <ul id="main">
+      <li>0</li>
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li>
+        3
+        <ul id="sub">
+          <li>3-0</li>
+          <li>3-1</li>
+          <li class="item">3-2</li>
+          <li class="item">3-3</li>
+          <li>3-4</li>
+        </ul>
+      </li>
+    </ul> -->
+
+    <!-- <ul>
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ul> -->
+
+    <!-- <div id="box" style="width: 100px; height: 100px; background-color: red;"></div> -->
+
+    <!-- <input type="text" id="name">
+    <select id="members" name="members">
+      <option>taguchi</option>
+      <option>fkoji</option>
+      <option>dotinstall</option>
+    </select> -->
+
+    <!-- <button>Add!</button> -->
+
+    <!-- <button>もっと読む</button>
+    <div id="result"></div> -->
+
+    <p>
+      <input type="text" name="name" id="name">
+      <input type="button" value="greet" id="greet">
+    </p>
+    <div id="result"></div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      // $(document).ready(function() {
+      $(function() { // 省略記法
+        /* 用語説明 */
+        // セレクタ：処理対象となるDOM(Document Object Model)要素を指定する記法。$("")の中に書く。html要素の場合はそのままpやh1,ulなどと書く。id要素の場合は「#」をつける。class要素の場合は「.」をつける
+        // DOMとはhtmlの各要素、例えば<p>や<img>などの要素にアクセスする仕組みのこと。
+        // メソッド：処理対象に対して行いたい処理。メソッドを繋げて書くことをメソッドチェーンと呼ぶ。
+
+        /* pセレクタに対してcssメソッド */
+        // $('p').css('color', 'red').hide('slow');
+        /* id="sub"に対してcssメソッド */
+        // $("#sub").css('color', 'red');
+        /* class="item"に対してcssメソッド */
+        // $(".item").css('color', 'red');
+
+        /* セレクタ記法 */
+        // > ... 直下の子要素
+        //  (空白) ... それ以下の要素
+        //  , ... 複数の要素
+        // + ... 隣接する要素
+        // $("#main > .item").css('color', 'red');
+        // $("#main .item").css('color', 'red');
+        // $("p, .item").css('color', 'red');
+        // $(".item + .item").css('color', 'red');
+
+        /* フィルタ */
+        // :eq() ... eq(equalの意味)を使って何番目かを指定。添字は0から始まる
+        // $("#sub > li:eq(2)").css('color', 'red');
+        // :gt(), :lt() ... gt(greater thanの意味)を使って何番目より大きい要素, lt(less thanの意味)を使って何番目より小さい要素を指定。添字は0から始まる
+        // $("#sub > li:gt(1)").css('color', 'red');
+        // :even, :odd ...
+        // $("#sub > li:odd").css('color', 'red');
+        // :contains() ... 要素の中身に何があるかを指定できる(特定の文字列を含む要素を指定できる)
+        // $("#sub > li:contains(0)").css('color', 'red');
+        // :first, :last ... 一番上の要素、一番下の要素を指定。
+        // $("#sub > li:last").css('color', 'red');
+
+        /* メソッドを使ったDOM要素の指定 */
+        // parent(), children() ... ある要素の親要素、子要素を指定
+        // $("#sub").parent().css('color', 'red');
+        // $("#sub").children().css('color', 'red');
+        // next(), prev() ... ある要素の前、後を指定
+        // $("#sub > li:eq(2)").next().css('color', 'red');
+        // $("#sub > li:eq(2)").prev().css('color', 'red');
+        // siblings() ... 兄弟要素を指定
+        // $("#sub > li:eq(2)").siblings().css('color', 'red');
+
+        /* 属性セレクタ */
+        // = ... 等しい
+        // != ... 等しくない
+        // *= ... 〜を含む
+        // ^= ... 先頭から〜で始まる
+        // $= ... 後尾が〜で終わる
+        // $('a[href="http://google.com"]').css('background-color', 'red');
+        // $('a[href!="http://google.com"]').css('background-color', 'red');
+        // $('a[href*="dotinstall"]').css('background-color', 'red');
+        // $('a[href$="jp"]').css('background-color', 'red');
+
+        /* メソッドについて */
+        // .css ... cssの値を変える
+        // $('p').css('color', 'red').css('background-color', 'blue');
+        // 現在設定されている値を取得する
+        // console.log($('p').css('color'));
+        // .addClass ... クラスを適応する
+        // $('p').addClass('myStyle');
+        // .removeClass ... クラスを外す
+        // $('p').removeClass('myStyle');
+        // .attr ... htmlの属性の値を取得したり変更したりする
+        // console.log($('a').attr("href"));
+        // $('a').attr("href", "http://google.co.jp");
+        // .data ... 何らかのカスタム属性の値を取得する。HTML5ではdata-...でカスタム属性をつけるルールがある。
+        // console.log($('a').data('sitename'));
+
+        /* タグの中身を操作 */
+        // text
+        // テキストの中身を書き換える
+        // $('p').text('just changed');
+        // html
+        // テキストの中身を変更し、htmlのタグを含めたい場合に使用する
+        // $('p').html('<a href="">click me!</a>');
+        // val
+        // フォーム部品のvalueを取得する、書き換える
+        // console.log($('input').val());
+        // $('input').val('hello, again!');
+        // remove, empty
+        // empty ... 中身をなくす。要素自体は無くならない
+        // $('p').empty();
+        // remove ... 要素自体をなくす
+        // $('p').remove();
+
+        /* 要素を追加 */
+        // before, after -> insertBefore, insertAfter
+        // var li = $('<li>').text('just added');
+        // $('ul > li:eq(1)').before(li);
+        // $('ul > li:eq(1)').after(li);
+        // li.insertBefore($('ul > li:eq(1)'));
+        // li.insertAfter($('ul > li:eq(1)'));
+        // prepend(先頭), append(末尾) -> prependTo, appendTo
+        // $('ul').prepend(li);
+        // $('ul').append(li);
+        // li.prependTo($('ul'));
+        // li.appendTo($('ul'));
+
+        /* エフェクト(視覚効果) ... 第二引数に関数を取れる(エフェクト後の処理) */
+        // hide, show
+        // $('#box').hide();
+        // $('#box').hide('slow');
+        // $('#box').hide(800); // 引数はミリ秒
+        // fadeOut, fadeIn
+        // $('#box').fadeOut();
+        // $('#box').fadeOut('slow');
+        // $('#box').fadeOut(800); // 引数はミリ秒
+        // $('div').hide().fadeIn(800); // 引数はミリ秒
+        // toggle ... 表示されていたら消す、消されていたら表示する。何回かやると交互に実行される(消えたり現れたりを繰り返す)。
+        // $('#box').toggle(800);
+        // 第二引数に関数を取る
+        // $('#box').fadeOut(800, function() {
+        //   alert("gone!"); // fadeoutした後にこの処理を実行する
+        // });
+
+        /* イベント */
+        // click
+        // $('#box').click(function() {
+        //   alert("hi!");
+        // });
+        // mouseover(マウスが要素にかかった時), mouseout(マウスが離れた時), mousemove(マウスが動いた時)
+        // $('#box')
+        //   .mouseover(function() {
+        //     $(this).css('background-color', 'green');
+        //   })
+        //   .mouseout(function() {
+        //     $(this).css('background-color', 'red');
+        //   })
+        //   .mousemove(function(e) { // eはイベントオブジェクト
+        //     $(this).text(e.pageX);
+        //   });
+
+        /* focus, blur, change */
+        // focus ... フォーカスが当たった時
+        // blur ... フォーカスが外れた時
+        // $('#name')
+        //   .focus(function() {
+        //     $(this).css('background-color', 'red');
+        //   })
+        //   .blur(function() {
+        //     $(this).css('background', 'white');
+        //   });
+        // change ... 値が変わった時
+        // $('#members').change(function() {
+        //   alert('changed!');
+        // });
+
+        /* jQueryで動的に作られた要素に対してイベントを割り当てる */
+        // ボタンを押すたびにこの要素の前にp要素を動的に作る
+        // $('button').click(function() {
+        //   var p = $('<p>').text('vanish!').addClass('vanish');
+        //   $(this).before(p);
+        // });
+        // vanishクラスが当てられた要素をクリックするたびに上記のp要素を消す
+        // これは動作しない。clickイベントはドキュメントが読み込まれた時に設定するが、読み込まれた時点ではvanishクラスがついた要素は存在しないため。
+        // $('.vanish').click(function() {
+        //   $(this).remove();
+        // });
+        // 読み込まれた時に存在しない要素に対してイベントを作るにはonを使う
+        // 親要素に対してイベントを設定する。これはイベントのバブリングと呼ばれるもので、ある要素で発生したイベントが親要素へどんどん伝達していく。
+        // .on(event [, selector] [,data], handler)
+        // event ... clickなどのイベントを指定
+        // selector ... セレクタを指定
+        // data ... イベントに渡したいデータをマップ値で指定
+        // handler ... 関数を指定
+        // $('body').on('click', '.vanish', function() { // 親要素を指定する
+        //   $(this).remove();
+        // });
+
+        /* Ajax(Asynchronous JavaScript + XML) */
+        // JavaScriptを使ってサーバーと通信しつつページを書き換える手法
+        // 今まではサーバーと通信するには別のURLにアクセスしたりフォームを使う必要があったが、それだと動作が遅い → Ajaxではページ全体を切り替えるのではなく、JavaScriptを使ってページ内から通信を行い、その結果を使ってページの一部を書き換える。
+        // .load() ... サーバー側の情報を読み込む
+        // $('button').click(function() {
+        //   $('#result').load('more.html');
+        // });
+        // Ajaxの通信は非同期で行われる。
+        // $('button').click(function() {
+        //   $('#result').load('more.html', function() { // コールバック関数。非同期処理が終わった後にこの処理をする
+        //     $('#message').css('color', 'red');
+        //   });
+        // });
+        // Ajaxでパラメータを渡したい場合は$.post()や$.get()を使う
+        // $.post() ... データを更新する場合
+        // $.get() ... データを単に取得する場合
+        $('#greet').click(function() {
+          // 第一引数 ... サーバー側のファイル名
+          // 第二引数 ... パラメータ
+          // 第三引数 ... コールバック関数(読み込みが終わった後にどういう処理をしたいか)
+          $.get('greet.php', {
+            name: $('#name').val()
+          }, function(data) { // greet.phpの結果はコールバック関数の引数に入れることができる
+            $('result').html(data.message + '(' + data.length + ')');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

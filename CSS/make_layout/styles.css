@@ -1,0 +1,273 @@
+/*
+  ブラウザ組み込みのスタイルシート
+    User Agent Stylesheet
+    ブラウザ各社が勝手に仕様を決めているため、このままでは異なるブラウザで異なる見た目になってしまう。
+    そのため、どのブラウザでも同じような見た目にするための調整が必要。
+    - reset.css
+      一旦ほとんど全てのスタイルをリセットする。それぞれの要素に必要なスタイルを自分でつけていく。
+      html5doctorのサイトで配布されているのを使うのが主流。以下のURLからコピペして使う。
+      http://html5doctor.com/html-5-reset-stylesheet/
+    - normalize.css
+      User Agent Stylesheetの良いところも考慮しつつ、必要な調整だけを行っている。
+      以下のURLからダウンロード
+      https://necolas.github.io/normalize.css/
+  Chromeのデベロッパツール
+    Mac: Command + Option + i
+    コンソールはESCキーで消すことができる。
+  親要素に対して中央揃えにしたい場合は、
+  margin: auto 0; (上下のmarginを0、左右のmarginはauto(中央揃え)にする)
+  とする。
+*/
+body {
+  margin: 0;
+  background: slategray;
+}
+
+#eyecatch {
+  background: url('eyecatch.jpg') no-repeat;
+  background-size: cover;
+  background-position: 50% 20%;
+  height: 100px;
+}
+
+header {
+  background: tomato;
+}
+
+ul#menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 0;
+}
+
+ul#menu > li {
+  display: inline-block;
+}
+
+ul#menu > li > a {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background: orange;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+}
+
+ul#menu > li > a:hover {
+  opacity: .5;
+  transition-duration: 0.8s;
+}
+
+main {
+  background: skyblue;
+  padding: 15px 0;
+}
+
+/*#left, #right {
+  box-sizing: border-box;
+  padding: 10px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 180px;
+  margin-right: 20px;
+}
+
+#right {
+  background: lightgreen;
+  float: left;
+  width: 300px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 180px;
+}
+
+#right {
+  background: lightgreen;
+  float: right;
+  width: 300px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 100px;
+}
+
+#center {
+  background: seagreen;
+  float: left;
+  width: 300px;
+}
+
+#right {
+  background: lightgreen;
+  float: left;
+  width: 100px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 100px;
+  margin-right: 10px;
+}
+
+#center {
+  background: seagreen;
+  float: left;
+  width: 280px;
+}
+
+#right {
+  background: lightgreen;
+  float: left;
+  width: 100px;
+  margin-left: 10px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 100px;
+  margin-right: 10px;
+}
+
+#center {
+  background: seagreen;
+  float: left;
+  width: 280px;
+}
+
+#right {
+  background: lightgreen;
+  float: right;
+  width: 100px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 20%;
+}
+
+#center {
+  background: seagreen;
+  float: left;
+  width: 60%;
+}
+
+#right {
+  background: lightgreen;
+  float: left;
+  width: 20%;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 100px;
+}
+
+#center {
+  background: seagreen;
+  margin: 0 100px;
+}
+
+#right {
+  background: lightgreen;
+  float: right;
+  width: 100px;
+}*/
+
+/*#left {
+  background: limegreen;
+  float: left;
+  width: 100px;
+}
+
+#right {
+  background: lightgreen;
+  margin-left: 100px;
+}*/
+
+/*.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}*/
+
+/*.clear {
+  overflow: hidden;
+}*/
+
+/*main .product {
+  position: relative;
+  display: inline-block;
+}
+
+main .price {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 10px;
+  font-weight: bold;
+  background: white;
+}
+
+.product > img {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+}*/
+
+ul#lessons {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul#lessons h2, ul#lessons p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+ul#lessons li {
+  overflow: hidden;
+}
+
+ul#lessons li:not(:last-child) {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.lesson_img {
+  float: left;
+  width: 50px;
+}
+
+.lesson_info {
+  float: right;
+  width: 440px;
+}
+
+footer {
+  clear: both;
+  background: slategray;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  /*background: pink;*/
+}

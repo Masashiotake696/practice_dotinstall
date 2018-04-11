@@ -1,0 +1,177 @@
+<!--
+■セクションについて
+header: ヘッダ情報
+footer: フッタ情報
+nav: ナビゲーション
+article: 独立しているコンテンツ
+aside: 副次的なコンテンツ
+section: それ以外の情報の塊
+h1-h6:
+
+■グルーピングのためのタグ
+p: 段落
+hr: 水平線
+pre: 改行や字下げを保持
+blockquote: 引用
+div: スタイリング
+
+■リストについて
+ol (ordered list) / ul (unordered list) / li (list item)
+dl (definition list) / dt (definition term) / dd (definition description)
+
+■テキストレベルのマークアップタグ
+strong: 強調
+br: 改行(break line)
+span: スタイリング
+
+■フォーム
+form (action, method)
+input (
+  text,
+  submit,
+  password,
+  hidden,
+  checkbox,
+  radio
+)
+textarea
+button
+label
+select (option)
+** HTML5以降**
+input (
+  email,
+  number,
+  date
+)
+
+タグ
+  カテゴリー : どの分類か？
+  コンテンツモデル : どのカテゴリーのタグを入れられるか？
+    トランスペアレント : 親要素のコンテンツモデルを使ってね
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8">
+    <meta name="description" content="初めてのHTML文章です。">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>初めてのHTML</title>
+  </head>
+  <body>
+    <header>
+      <h1>美味しご飯！</h1>
+      <nav>
+        - ホーム
+        - このサイトについて
+      </nav>
+    </header>
+
+    <section>
+      <h1>今月の美味しいご飯</h1>
+      <article>
+        <h1>美味しいご飯 #2</h1>
+        <p>担々麺</p>
+      </article>
+    </section>
+
+    <section>
+      <h1>新着の美味しご飯</h1>
+      <article>
+        <h1>美味しいご飯 #2</h1>
+        <p>しゃぶしゃぶ</p>
+      </article>
+      <article>
+        <h1>美味しいご飯 #3</h1>
+        <p>ブリ鍋</p>
+      </article>
+      <hr>
+      <p>ところで・・・</p>
+      <pre>
+        美味しいな
+          みんなで食べたら
+            美味しいな<blockquote>大竹将司</blockquote>
+      </pre>
+    </section>
+
+    <section>
+      <h1>本日のレシピ</h1>
+      <p>卵かけご飯</p>
+      <h2>材料</h2>
+      <ul>
+        <li>卵</li>
+        <li>醤油</li>
+        <li>ごはん</li>
+      </ul>
+      <h2>手順</h2>
+      <ol>
+        <li>混ぜる</li>
+        <li>かける</li>
+      </ol>
+      <h2>定義</h2>
+      <dl>
+        <dt>卵かけごはん</dt>
+        <dd>美味しいやつ</dd>
+      </dl>
+    </section>
+
+    <section>
+      <form action="survey.php" method="post">
+        <p>メールアドレス：<input type="email" name="email"></p>
+        <p>パスワード : <input type="password" name="password"></p>
+        <p>料金 : <input type="number" name="price"></p>
+        <p>誕生日 : <input type="date" name="birthday"></p>
+        <p>
+          コメント：
+          <textarea name="comment" cols="100" rows="5">初期値だよ</textarea>
+        </p>
+        <p>
+          Phone:
+          <label><input type="checkbox" name="phone" value="android">Android</label>
+          <label><input type="checkbox" name="phone" value="iphone">iPhone</label>
+        </p>
+        <p>
+          Color:
+          <input type="radio" name="color" value="red" id="red">
+          <label for="red">Red</label>
+          <input type="radio" name="color" value="blue" id="blue">
+          <label for="blue">Blue</label>
+        </p>
+        <p> <!-- 単数選択 -->
+          City:
+          <select name="city">
+            <option value="tokyo">Tokyo</option>
+            <option value="nagoya">Nagoya</option>
+            <option value="osaka">Osaka</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="fukuoka">Fukuoka</option>
+          </select>
+        </p>
+        <p> <!-- 複数選択 -->
+          City:
+          <select name="city" multiple size="5">
+            <option value="tokyo">Tokyo</option>
+            <option value="nagoya">Nagoya</option>
+            <option value="osaka">Osaka</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="fukuoka">Fukuoka</option>
+          </select>
+        </p>
+        <p>
+          <button type="submit"><strong>送信するぜ！</strong></button>
+        </p>
+        <p><input type="submit" value="送信" disabled></p>
+      </form>
+    </section>
+
+    <aside>
+      <h1>オススメレシピ本</h1>
+      - book1
+      - book2
+      - book3
+    </aside>
+
+    <footer>このサイトは@otakeによって運営されています。</footer>
+  </body>
+</html>

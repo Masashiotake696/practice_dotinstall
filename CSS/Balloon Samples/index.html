@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Balloon Samples</title>
+    <style>
+      body {
+        padding: 0 10px 40px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .ex1 {
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+      }
+      .ex2 {
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        border-color: red blue pink green;
+      }
+      .ex3 {
+        width: 0;
+        height: 0;
+        background-color: #eee;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        border-color: red blue pink green;
+      }
+      .ex4-1 {
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        /* transparentは背景を透過させる */
+        border-color: red transparent transparent transparent;
+      }
+      .ex4-2 {
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        /* transparentは背景を透過させる */
+        border-color: transparent red transparent transparent;
+      }
+      .ex4-3 {
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        /* transparentは背景を透過させる */
+        border-color: transparent transparent red transparent;
+      }
+      .ex4-4 {
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 20px;
+        /* transparentは背景を透過させる */
+        border-color: transparent transparent transparent red;
+      }
+      .ex5 {
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 40px 20px 20px 0;
+        /* transparentは背景を透過させる */
+        border-color: red blue pink green;
+        transform: skewX(-15deg);
+      }
+      .balloon1-1 {
+        width: 200px;
+        height: 100px;
+        background-color: #eee;
+        border-radius: 3px;
+        position: relative;
+      }
+      .balloon1-1:before {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -20px; /* 上の三角形と下の三角形の高さを足した分だけ下にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 10px;
+        border-color: #eee transparent transparent transparent;
+      }
+      .balloon1-2 {
+        width: 200px;
+        height: 100px;
+        background-color: #eee;
+        border-radius: 3px;
+        position: relative;
+      }
+      .balloon1-2:before {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -25px; /* 上の三角形と下の三角形の高さを足した分だけ左にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 15px 20px 10px 0;
+        border-color: #eee transparent transparent transparent;
+      }
+      .balloon2-1 {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        position: relative;
+      }
+      .balloon2-1:before {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -20px; /* 上の三角形と下の三角形の高さを足した分だけ下にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 10px;
+        border-color: #eee transparent transparent transparent;
+      }
+      /* 三角形も枠線だけにしたいが、もともとborderで三角形を作っているため、三角形に対してborderを設定することはできない。そこで、三角形の上に白い三角形を重ねて、上に1pxずらすというテクニックを使う */
+      .balloon2-1:after {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -19px; /* 上の三角形と下の三角形の高さを足した分だけ下にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 10px;
+        border-color: #fff transparent transparent transparent;
+      }
+      .balloon2-2 {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        position: relative;
+      }
+      .balloon2-2:before {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -25px; /* 上の三角形と下の三角形の高さを足した分だけ左にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 15px 20px 10px 0;
+        border-color: #eee transparent transparent transparent;
+      }
+      /* 三角形も枠線だけにしたいが、もともとborderで三角形を作っているため、三角形に対してborderを設定することはできない。そこで、三角形の上に白い三角形を重ねて、上に1pxずらすというテクニックを使う。しかし、左側の辺は垂直であるため、そのまま消えてしまっている。そこで、これを回避するために三角形の上に乗せた方の三角形は横幅を少し狭目にする。 */
+      .balloon2-2:after {
+        content: '';
+        position: absolute;
+        right: 20px; /* 左の三角形と右の三角形の高さを足した分だけ左にずらす */
+        bottom: -24px; /* 上の三角形と下の三角形の高さを足した分だけ左にずらす */
+        width: 0;
+        height: 0;
+        /* borderの境界線は斜めになる */
+        border-style: solid;
+        border-width: 15px 19px 10px 0;
+        border-color: #fff transparent transparent transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Ex1</h2>
+    <div class="ex1">
+    </div>
+    <h2>Ex2</h2>
+    <div class="ex2">
+    </div>
+    <h2>Ex3</h2>
+    <div class="ex3">
+    </div>
+    <h2>Ex4-1</h2>
+    <div class="ex4-1">
+    </div>
+    <h2>Ex4-2</h2>
+    <div class="ex4-2">
+    </div>
+    <h2>Ex4-3</h2>
+    <div class="ex4-3">
+    </div>
+    <h2>Ex4-4</h2>
+    <div class="ex4-4">
+    </div>
+    <h2>Ex5</h2>
+    <div class="ex5">
+    </div>
+    <h2>Balloon1-1</h2>
+    <div class="balloon1-1">
+    </div>
+    <h2>Balloon1-2</h2>
+    <div class="balloon1-2">
+    </div>
+    <h2>Balloon2-1</h2>
+    <div class="balloon2-1">
+    </div>
+    <h2>Balloon2-2</h2>
+    <div class="balloon2-2">
+    </div>
+  </body>
+</html>

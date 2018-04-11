@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/* common */
+body {
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f8f8f8;
+}
+
+p {
+  line-height: 2;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto; /* marginの中央配置 */
+}
+
+section {
+  padding: 60px 0;
+}
+
+section h2 {
+  text-align: center;
+  margin: 0 0 60px;
+}
+
+/* 偶数番目のsectionに対して背景色を変える */
+section:nth-child(even) {
+  background-color: #fff;
+}
+
+/* header */
+.header-mobile-menu {
+  float: right;
+  font-size: 24px;
+  cursor: pointer; /* カーソルポインター */
+}
+
+/* min-width: 820px以外で非表示にする */
+.header-pc-menu {
+  display: none;
+}
+
+/* features */
+.features img {
+  width: 100%;
+}
+
+.features .item {
+  margin-bottom: 60px;
+}
+
+/* featuresクラスの最後のitemクラスのmargin-bottomを0にする */
+.features .item:last-child {
+  margin-bottom: 0;
+}
+
+/* news */
+.news .item {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.news .item:last-child {
+  margin-bottom: 0;
+}
+
+/* pタグだけ左揃えにする */
+.news p {
+  text-align: left;
+}
+
+/* how-to-use */
+.how-to-use iframe {
+  /* iframe-wrapperに対して絶対配置にして縦幅と横幅共に100%にする */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.iframe-wrapper {
+  /* padding-topかpadding-bottomを%で指定するとそれがwidthに対する比率になる */
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  color: #ccc;
+  padding: 60px 0;
+}
+
+/* medium (横幅が570px以上になった時だけ読み込まれる) */
+@media (min-width: 570px) {
+  /* features */
+  /* pタグを横幅の45%とする */
+  .features p {
+    width: 45%;
+  }
+
+  /* imgタグを横幅の50%とする */
+  .features img {
+    width: 50%;
+  }
+
+  /* floatして、paddingタグを横幅の5%(imgタグとpタグの残り)とする */
+  .right-side {
+    float: right;
+    padding-left: 5%;
+  }
+
+  /* floatして、paddingタグを横幅の5%(imgタグとpタグの残り)とする */
+  .left-side {
+    float: left;
+    padding-right: 5%;
+  }
+
+  /* clearfix */
+  .features .item {
+    overflow: hidden;
+  }
+
+  /* news */
+  .news .container {
+    display: flex;
+    justify-content: space-between; /* 横幅に対して均等配置 */
+  }
+
+  .news .item {
+    width: 30%; /* itemの幅を規定 */
+  }
+
+  .news .item img {
+    width: 100%; /* imgの大きさをitemいっぱいにする */
+  }
+}
+
+/* large (横幅が820px以上になった時だけ読み込まれる) */
+@media (min-width: 820px) {
+  /* containerの大きさを固定(絶対値に)する */
+  .container {
+    width: 820px;
+  }
+
+  /* min-width: 820pxの時にheader-mobile-menuを非表示にする。 */
+  .header-mobile-menu {
+    display: none;
+  }
+
+  /* min-width: 820pxの時にheader-pc-menuを表示する。 */
+  .header-pc-menu {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+  }
+
+  .header-pc-menu > li {
+    display: inline-block; /* リストを横並びにする */
+    width: 60px;
+    text-align: center;
+    cursor: pointer; /* カーソルポインター */
+  }
+}

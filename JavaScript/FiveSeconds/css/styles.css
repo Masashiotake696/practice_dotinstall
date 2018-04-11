@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.container {
+  font-family: 'Courier New', sans-serif;
+  width: 300px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+#target, #result {
+  font-size: 32px;
+  margin-bottom: 15px;
+  background-color: #ccc;
+  height: 60px; /* heightとline-heightを同じ値にすることで縦方向で中央揃えにする */
+  line-height: 60px;
+}
+
+#start {
+  float: left;
+}
+
+#stop {
+  float: right;
+}
+
+#start, #stop {
+  cursor: pointer;
+  font-size: 18px;
+  width: 145px;
+  background-color: #eee;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: 0 6px 0 #ccc;
+  user-select: none;
+}
+
+/* ゲーム結果が表示されるまでは色を薄くする */
+#result.standby {
+  opacity: 0.5;
+}
+
+#result.perfect {
+  background-color: #fa5858;
+  color: #fff;
+}
+
+#start.pushed, #stop.pushed {
+  margin-top: 3px;
+  box-shadow: 0 3px 0 #ccc;
+}

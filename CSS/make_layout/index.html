@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Layout Practice</title>
+    <link rel="stylesheet" href="normalize.css">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <ul id="menu">
+          <li><a href="">Menu 1</a></li>
+          <li><a href="">Menu 2</a></li>
+          <li><a href="">Menu 3</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="eyecatch">
+      <div class="container">
+        eyecatch
+      </div>
+    </div>
+    <main>
+      <!-- <div class="container clearfix"> -->
+      <!-- <div class="container clear"> -->
+      <!-- <div class="clearfix">
+        <div id="left">Left</div>
+        <div id="center">Center</div>
+        <div id="right">Right</div>
+      </div> -->
+
+      <!-- floatする要素はそうでない要素より先に書かなくては行けない -->
+      <!-- <div class="clearfix">
+        <div id="left">Left</div>
+        <div id="right">Right</div>
+        <div id="center">Center</div>
+      </div> -->
+
+      <!-- <div class="clearfix">
+        <div id="left">Left</div>
+        <div id="right">Right</div>
+      </div> -->
+
+      <!-- <div class="container">
+        <div class="product">
+          <img  src="eyecatch.jpg" alt="eyecatch">
+          <span class="price">$100.00</span>
+        </div>
+      </div> -->
+
+      <div class="container">
+        <ul id="lessons">
+          <li>
+            <div class="lesson_img">
+              <img src="eyecatch.jpg" width="50" height="50">
+            </div>
+            <div class="lesson_info">
+              <h2>HTML入門</h2>
+              <p>Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML.</p>
+            </div>
+          </li>
+          <li>
+            <div class="lesson_img">
+              <img src="eyecatch.jpg" width="50" height="50">
+            </div>
+            <div class="lesson_info">
+              <h2>HTML入門</h2>
+              <p>Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML.</p>
+            </div>
+          </li>
+          <li>
+            <div class="lesson_img">
+              <img src="eyecatch.jpg" width="50" height="50">
+            </div>
+            <div class="lesson_info">
+              <h2>HTML入門</h2>
+              <p>Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML. Intro to HTML.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        footer
+      </div>
+    </footer>
+  </body>
+</html>

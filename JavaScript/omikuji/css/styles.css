@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body {
+  background-color: #efefef;
+}
+
+#btn {
+  margin: 30px auto 0;
+  width: 200px;
+  height: 200px;
+  /* 角丸を無くす */
+  border-radius: 50%;
+  background-color: #ef454a;
+  /* 文字列を中央寄せにする */
+  text-align: center;
+  /* heightと高さを同じにして文字列の上下位置を中央にする */
+  line-height: 200px;
+  color: #fff;
+  font-size: 42px;
+  font-weight: bold;
+  /* カーソルをポインターにする */
+  cursor: pointer;
+  /* 透過度をhover時と差をつける */
+  opacity: 0.9;
+  /*
+    ボタンに影をつける
+      水平方向は影なし、
+      垂直方向は下に10pxの影、
+      影のぼかしは無し
+   */
+  box-shadow: 0 10px 0 #d1483e;
+  /* ボタンに縁をつける */
+  border: 3px solid #d1483e;
+  /* 要素のテキスト選択をできないようにする */
+  user-select: none;
+}
+
+/* 透過度をhover時と差をつける */
+#btn:hover {
+  opacity: 1;
+}
+
+#btn.pushed {
+  /* ボタン押下時に下に押し込まれたようにする。ただ、これだけだとボタン全体が下がるだけになる。 */
+  margin-top: 36px;
+  /* box-shadowが10pxで6px押し込んだので4pxとする */
+  box-shadow: 0 4px 0 #d1483e;
+}

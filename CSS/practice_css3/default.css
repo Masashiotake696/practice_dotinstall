@@ -1,0 +1,612 @@
+/*
+値の指定
+  長さ
+  px, em, %, rem
+  rem(emの拡張)
+    root要素に対するhtml(root em)
+    htmlに指定したfont-sizeを常に基準にする
+色の指定
+  rgb, rgba, hsl / hsla
+  rgba ... Red, Green, Blue, Alpha（0(完全な透明)~1(完全な不透明)）
+  hsl / hsla ... hはHue(色相), sはSaturation(彩度), lはLightness(明るさ), aはAlpha
+    Hue 0-360 (色相)
+    (カラーホイールという色の種類が並べられた円のどの辺りの角度の色を使うかを0~360で指定)
+    Saturation 0-100% (彩度)
+    Lightness 0-100% (明るさ)
+    Alpha 0-1 (透明度)
+要素全体を透明にする
+  opacity 0~1で指定 (透明度)
+属性セレクタ
+  [CSS2.1]
+  - a[href] ... aのhref属性が存在するか
+  - a[href="foo"] ... aのhref属性がfooという値か
+  - a[href~="foo"] ... aのhref属性スペース区切りだった時にfooという値を含むか
+  [CSS3]
+  - a[href^="foo"] ... aのhref属性がfooから始まるか
+  - a[href$="foo"] ... aのhref属性がfooで終わるか
+  - a[href*="foo"] ... aのhref属性にfooが含まれるか
+擬似クラス
+  [CSS2.1]
+  - :first-child ... 子要素のうち一番初めの要素
+
+  [CSS3]
+  - :last-child ... 子要素のうち一番最後の要素
+  - :nth-child() ... 子要素のうち先頭から数えて()内で指定した順番の要素
+  - :nth-last-child() ... 子要素のうち後尾から数えて()内で指定した順番の要素
+  - :only-child ... 子要素が一つだけの要素
+  - :first-of-type ... 子要素のうち特定のタグで一番初めの要素
+  - :last-of-type ... 子要素のうち特定のタグで一番最後の要素
+  - :nth-of-type() ... 子要素のうち特定のタグで先頭から数えて()内で指定した順番の要素
+  - :nth-last-of-type() ... 子要素のうち特定のタグで後尾から数えて()内で指定した順番の要素
+  - :only-of-type ... 子要素のうち特定のタグで一つだけの要素
+  - :not() ... 子要素のうち()内で指定した要素以外の要素
+  - :empty ... 子要素のうち要素の中身が空の要素
+  - :enabled ... form部品の子要素のうち状態がenabledの要素
+  - :disabled ... form部品の子要素のうち状態がdisabledの要素
+  - :checked ... checkboxの子要素のうち状態がcheckedの要素
+角丸
+  border-radius: 30px ... 30pxの半径の円で丸まっている
+  楕円
+    border-radius: 30px(水平方向の半径) / 15px(垂直方向の半径)
+  個別指定
+    キーワード指定
+      border-top-left-radius (左上)
+      border-top-right-radius (右上)
+      border-bottom-left-radius (左下)
+      border-bottom-right-radius (右下)
+    数値を複数個与えて指定
+      border-radius : 30px; (数値一つ指定: 全ての角丸)
+      border-radius : 30px 20px; (数値二つ指定: 一つ目の数値が左上と右下、二つ目の数値が右上と左下)
+      border-radius: 30px 20px 10px; (数値三つ指定: 一つ目の数値が左上、二つ目の数値が右上と左下、三つ目の数値が右下)
+      border-radius: 30px 20px 10px 5xp; (数値四つ指定: 左上から時計回りに指定)
+  単位
+    px, em, %
+    Ex.) 50%とすると正円
+背景画像
+  サイズ指定 backgroud-size
+    数値指定(px, em, rem, %)
+      background-size: 30px; (数値一つ指定: 横幅(高さは画像の縦横比を保持するように自動的に計算される))
+      background-size: 30px 15px; (数値二つ指定: 横幅と高さ)
+    キーワード指定
+      backgroud-size: cover; (画像の縦横比を保持しつつ、画像の背景領域をカバーするように配置。大きさによっては不要な部分が切り取られる)
+      backgroud-size: contain; (画像の縦横比を保持しつつ、必ず画像の全体が表示されるように配置)
+  配置領域の指定 backgroud-position
+    キーワード指定
+      left, center, right, top, bottom
+    %値指定
+      左上からの距離を横方向, 縦方向の順で%で指定
+    数値指定
+      左上からの距離を横方向, 縦方向の順で数値(px, em)で指定
+  複数指定
+    カンマ指定で行う
+    backgroud: url('0001.png'), url('0002.png');
+  グラデーション
+    線形グラデーション linear-gradient()
+      backgroud-image: linear-gradient(skyblue, blue);
+        ※生成されるのは画像。よって、背景に指定したい場合はbackgroud-colorではなくbackgroud-image
+      グラデーションの方向
+        デフォルトは上から下
+        キーワード指定
+          toキーワードを使って、top, bottom, left, rightの組み合わせで指定
+        角度指定
+          degで指定。0degで真上に向かう。角度は時計回り。
+      色の複数指定
+        カンマで区切る
+        linear-gradient(lightgreen, skyblue, blue);
+      色の割合指定
+        %やpxなどで指定。
+        linear-gradient(lightgreen 10%, skyblue 70%, blue);
+      グラデーションの繰り返し
+        repeating-linear-gradient(lightgreen, skyblue 20px); (lightgreenからskyblueを20pxで繰り返す)
+    円形グラデーション radial-gradient()
+      中心点の指定
+        atを使用する。デフォルトは中心
+        キーワード指定
+          center, top, bottom , left, right
+          radial-gradient(at center, skyblue, blue);
+        数値(px, em, rem, %)指定
+          左上を基点として、一つ目の値が横方向、二つ目の値が縦方向
+          radial-gradient(at 30px 40px, skyblue, blue);
+      サイズ指定
+        楕円
+          一つ目の値で横方向、二つ目の値で縦方向 (ellipseは楕円の意味)
+          radial-gradient(ellipse 20px 30px at 30px 40px, skyblue, blue);
+        正円
+          値を一つ指定
+          ※正円の場合は単位に%が使えない
+          radial-gradient(circle 20px at 30px 40px, skyblue, blue);
+        キーワード指定
+          最終的な形状が取るべき大きさを記述する。デフォルトはfarthest-corner
+          closest-side : 中心から最も近い辺に接する
+          closest-corner : 中心から最も近い頂点に接する
+          farthest-side : 中心から最も遠い辺に接する
+          farthest-corner : 中心から最も遠い頂点に接する
+      色の複数指定
+        カンマで区切る
+        radial-gradient(lightgreen, skyblue, blue);
+      色の割合指定
+        %やpxなどで指定。
+        radial-gradient(lightgreen 10%, skyblue 70%, blue);
+      グラデーションの繰り返し
+        repeating-radial-gradient(skyblue, blue 20px); (skyblueからblueを20pxで繰り返す)
+影をつける
+  四角い領域 box-shadow
+    基本指定
+      box-shadow: 10px 20px 4px 10px rgba(0, 0, 0, .4);
+      一つ目の値: 影のx座標(正の値を指定すると右へ、負の値を指定すると左へ)
+      二つ目の値: 影のy座標(正の値を指定すると下へ、負の値を指定すると上へ)
+      三つ目の値: 影のボカし
+      四つ目の値: 影を大きくしたり小さく(マイナス値を指定)したり
+    影を内側につける
+      insetキーワードを使用
+      box-shadow: 10px 20px rgba(0, 0, 0, .4) inset;
+    複数指定
+      カンマ区切りで指定
+      box-shadow: 10px 20px rgba(0, 0, 0, .4) inset, 10px 20px skybule;
+  テキスト text-shadow
+    box-shadowと同じ
+    ※四つ目の値を指定できない、insetがつけられない
+要素を変形
+  要素の移動距離を指定
+    transform: translate();
+      ()内に大きさ(px, em, remなど)を指定する。
+      transform: translate(20px, 40px); x方向に20px, y方向に40px移動
+      transform: translateX(20px); x方向にのみ20px移動
+      transform: translateY(20px); y方向にのみ20px移動
+  要素の倍率を指定
+    transform: scale();
+      要素の()内に倍率を指定する
+      transform: scale(0.5, 1.5); x方向に0.5倍, y方向に1.5倍移動
+      transform: scaleX(0.5); x方向にのみ0.5倍
+      transform: scaleY(1.5); y方向にのみ1.5倍移動
+  要素の傾斜を指定
+    transform: skew();
+      ()内に角度を指定する。
+      transform: skew(10deg, 20deg); x方向に10度, y方向に20度傾ける
+      ransform: skewX(10deg); x方向にのみ10度傾ける
+      transform: skewY(20deg); y方向にのみ20度傾ける
+  要素の回転を指定
+    transform: rotate();
+      ()内に角度を指定する。
+      transform: rotate(30deg); 時計回りに30度回転する
+  要素の移動や拡大縮小などの基点の変更
+    transform-origin: 50% 50%; (デフォルト値)
+    数値指定
+      transform-origin: 0 0; (基点を左上にする)
+    キーワード指定
+      left, center, right, top, bottom
+      transform-origin: top left; (基点を左上に変更する)
+ベンダープレフィックス(接頭辞)
+  ベンダープレフィックスとは、ブラウザベンダーが独自の拡張機能を実装したり、草案段階の使用を先行実装する場合に、それが拡張機能であることを明示するためにつける識別子のこと。
+  主要ブラウザのベンダープレフィックス
+    -moz- (Firefox)
+    -webkit- (Google Chrome, Safari)
+    -o- (Opera)
+    -ms- (Internet Explorer)
+    Ex.) transformをSafariで動かす場合
+      -webkit-transform: rotate(30deg); (transformをSafariで動かす場合は-webkit-をつけた命令も入れておかないといけない)
+要素のアニメーション
+  どのプロパティを変化の対象にするか
+    キーワード
+      all ... 全てのプロパティが変化する(初期値)
+      none ... どのプロパティも変化しない
+      プロパティ名 ... 変化させるプロパティ名のリストをカンマ区切りで指定
+    Ex.) transition-property: backgroud-color, width, height;
+  変化にかかる時間
+    transition-duration: 2s; (2秒)
+  変化のタイミング・進行割合を指定する
+    キーワード
+      ease ... 開始と完了を滑らかにする(初期値)
+      linear ... 一定速度
+      ease-in ... 開始がゆっくり
+      ease-out ... 終了がゆっくり
+      ease-in-out .. 開始と終了がゆっくり
+    Ex.) transition-timing-function: ease;
+  変化が開始するまでに何秒かかるかを指定
+    transition-delay: 0.8s; (8秒)
+  一気に指定
+    transitionプロパティを使用。順不同。
+    ※時間に関する値が出てきたら、最初はduration、その後がdelayになる
+    transition: all 2s ease 0.8s;
+複雑なアニメーション
+  要素にキーフレームアニメーションを適用する場合の、アニメーションの名を指定する
+    -webkit-animation-name: slidein;
+  変化にかかる時間
+    -webkit-animation-duration: 1s;
+  変化のタイミング
+    -webkit-animation-timing-function: ease;
+  変化が開始するまでに何秒かかるか
+    -webkit-animation-delay: .1s;
+  アニメーションの繰り返しを指定
+    キーワード指定: infinite(無限に再生を繰り返す)
+    数値指定: 数値で再生回数を指定(初期値は1)
+    -webkit-animation-iteration-count: infinite;
+  アニメーションの再生の向きを指定
+    キーワード
+      normal ... アニメーションを毎回順方向に再生する。デフォルト値
+      reverse ... アニメーションを毎回逆方向に再生する。
+      alternate ... アニメーションを毎回反転させ、初回は順方向に再生する。
+      alternate-reverse ... アニメーションを毎回反転させ、初回は逆方向に再生する。
+    -webkit-animation-direction: alternate;
+  キーフレームとうアニメーションの途中途中での状態を指定
+    @-webkit-keyframes slidein {
+      0%{
+        margin-left: 100%;
+        backgroud: white;
+      }
+      70%{
+        margin-left: 50%;
+        backgroud: blue;
+      }
+      100% {
+        margin-left: 0%;
+      }
+    }
+box-sizing
+  CSSのwidthやheightにpaddingやborderを含めた値にする。
+  キーワード
+    content-box ... paddingとborderを幅と高さに含めない(初期値)
+    border-box ... paddingとborderを幅と高さに含める
+    inherit ... 親要素の値を継承する
+  Ex.) box-sizing: border-box;
+*/
+
+/* 長さ */
+html {
+  font-size: 32px;
+}
+h1 {
+  /* 親要素htmlの2倍で64px */
+  /*font-size: 2em;*/
+  /* root要素htmlの2倍で64px */
+  font-size: 2rem;
+}
+span {
+  /* 親要素h1の0.5倍32px */
+  /*font-size: 0.5rem;*/
+  /* root要素htmlの0.5倍で16px */
+  font-size: 0.5rem;
+}
+
+/* 色 */
+/*div {
+  width: 100px;
+  height: 50px;
+}
+#box1 {
+  background: rgb(255, 100, 100);
+}
+#box2 {
+  background: rgba(255, 100, 100, 0.2);
+}
+#box3 {
+  background: hsla(210, 100%, 50%, 0.7);
+}
+#box4 {
+  background: hsla(210, 100%, 40%, 0.7);
+}*/
+
+/* 要素全体を透明にする(opacity) */
+/*body {
+  background: skyblue;
+}
+img {
+  border: 7px solid blue;
+  background: red;
+  opacity: 0.3;
+}*/
+
+/* 属性セレクタ */
+/*a[href^="http"] {
+  color: orange;
+}*/
+/*a[href$=".com"] {
+  color: orange;
+}*/
+/*a[href*=".co.jp"] {
+  color: orange;
+}*/
+
+/* 擬似クラス */
+/*li:last-child {
+  background: violet;
+}*/
+/*li:nth-child(3) {
+  background: violet;
+}*/
+/*li:nth-child(odd) {
+  background: violet;
+}*/
+/*li:nth-child(even) {
+  background: violet;
+}*/
+/*li:nth-child(3n+1) {
+  background: violet;
+}*/
+/*li:nth-last-child(4) {
+  background: violet;
+}*/
+/*li:only-child {
+  background: violet;
+}*/
+/*p:first-of-type {
+ background: violet;
+}*/
+/*p:last-of-type {
+ background: violet;
+}*/
+/*p:nth-of-type(3) {
+ background: violet;
+}*/
+/*p:nth-last-of-type(3) {
+ background: violet;
+}*/
+/*h2:only-of-type {
+ background: violet;
+}*/
+/*li:not(.target) {
+  background: violet;
+}*/
+/*li:empty {
+  background: violet;
+}*/
+/*input[type="text"]:enabled {
+  background: violet;
+}*/
+/*input[type="text"]:disabled {
+  background: violet;
+}*/
+/*input[type="checkbox"]:checked + label {
+  background: violet;
+}*/
+
+/* border-radius */
+/*div {
+  width: 200px;
+  height: 200px;
+  background: skyblue;
+}*/
+/*div {
+  border-radius: 30px;
+}*/
+/*div {
+  border-radius: 30px / 15px;
+}*/
+/*div {
+  border-bottom-right-radius: 30px;
+}*/
+/*div {
+  border-radius: 10px 20px 30px;
+}*/
+/*div {
+  border-radius: 50%;
+}*/
+/*div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url('test.jpg');
+  background-position: center;
+  background-size: cover;
+}*/
+
+/* background-size */
+/*body {
+  margin: 0;
+}*/
+/*header {
+  width: 100%;
+  height: 130px;
+  background: url('background.png') no-repeat skyblue;
+}*/
+/*header {
+  background-size: 50%;
+}*/
+/*header {
+  background-size: 50% 100%;
+}*/
+/*header {
+  background-size: cover;
+}*/
+/*header {
+  background-size: contain;
+  background-position: center;
+}*/
+
+/* 背景画像の複数指定 */
+/*header {
+  width: 200px;
+  height: 200px;
+  background:
+    url('favicon.png') no-repeat 0 0,
+    url('test.jpg') no-repeat 30px 30px,
+    url('test.jpg') no-repeat bottom right;
+}*/
+
+/* 線形グラデーション */
+/*div {
+  width: 200px;
+  height: 200px;
+}*/
+/*div {
+  background-image: linear-gradient(skyblue, blue);
+}*/
+/*div {
+  background-image: linear-gradient(to top right, skyblue, blue);
+}*/
+/*div {
+  background-image: linear-gradient(180deg, skyblue, blue);
+}*/
+/*div {
+  background-image: linear-gradient(lightgreen, skyblue, blue);
+}*/
+/*div {
+  background-image: linear-gradient(lightgreen 10%, skyblue 70%, blue);
+}*/
+/*div {
+  background-image: repeating-linear-gradient(lightgreen, skyblue 20px);
+}*/
+
+/* 円形グラデーション */
+/*div {
+  width: 200px;
+  height: 200px;
+}*/
+/*div {
+  background-image: radial-gradient(skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(at right, skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(at 30px 40px, skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(ellipse 20px 30px at 30px 40px, skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(circle 20px at 30px 40px, skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(farthest-side at 10px 50px, skyblue, blue);
+}*/
+/*div {
+  background-image: radial-gradient(lightgreen, skyblue, blue);
+}*/
+/*div {
+  background-image: repeating-radial-gradient(skyblue, blue 20px);
+}*/
+
+/* 影をつける(box-shadow, text-shadow) */
+/*body {
+  background: #eee;
+}
+div {
+  width: 200px;
+  height: 100px;
+  background: #fff;
+  box-shadow: 10px 20px 4px 10px rgba(0, 0, 0, .4) inset, 10px 20px skyblue;
+}
+h1 {
+  text-shadow: 2px 2px;
+}*/
+
+/* 要素を変形 */
+/*div {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+#box1 {
+  background: skyblue;
+  opacity: .5;
+}
+#box2 {
+  background: orange;
+  opacity: .5;
+}*/
+/*#box2 {
+  transform: translate(20px, 40px);
+}*/
+/*#box2 {
+  transform: translateX(20px);
+}*/
+/*#box2 {
+  transform: translateY(40px);
+}*/
+/*#box2 {
+  transform: scale(0.5, 1.5);
+}*/
+/*#box2 {
+  transform: skew(10deg, 20deg);
+}*/
+/*#box2 {
+  transform: rotate(30deg);
+}*/
+/*#box2 {
+  transform-origin: top left;
+}*/
+/*#box2 {
+  transform-origin: 0 0;
+}*/
+/* ベンダープレフィックス */
+/*#box2 {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}*/
+
+/* transition */
+/*div {
+  width: 100px;
+  height: 50px;
+  background: skyblue;
+}
+div {
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+  transition-delay: 0.2s;
+}
+div {
+  transition: all 2s ease 0.8s;
+}
+div:hover {
+  width: 200px;
+  height: 50px;
+  background: blue;
+}*/
+
+/* animation */
+/*div {
+  width: 50px;
+  height: 50px;
+  background: skyblue;
+}
+div {
+  -webkit-animation-name: slidein;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: .1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes slidein {
+  0%{
+    margin-left: 100%;
+    background: white;
+  }
+  70%{
+    margin-left: 50%;
+    background: blue;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}*/
+
+/* box-sizing */
+/*body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 320px;
+  height: 100px;
+  background: skyblue;
+}
+.box {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  float: left;
+
+  padding: 10px;
+  border-bottom: 30px solid #ccc;
+}
+.box + .box {
+  margin-left: 10px;
+}*/

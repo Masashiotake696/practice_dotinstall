@@ -1,0 +1,407 @@
+/*
+■セレクタ
+♦︎書き方
+  セレクタ {
+    プロパティ名: 値;
+  }
+
+♦︎基本的なセレクタ
+* : ユニバーサルセレクタ
+要素名 : p, h1, divなど
+#id
+.class
+
+■セレクタ記法
+以下で意味が違ってくる
+a, b : 同じクラスを複数のセレクタに適応する
+a b : aセレクタ階層にあるbセレクタ全てにクラスを適応する
+a > b : aセレクタの直下にあるbセレクタにだけクラスを適応する
+a + b : aセレクタの次に来るbセレクタにクラスを適応する
+ab : aセレクタかつbセレクタに対してクラスを適応する
+
+■属性セレクタ
+属性のあるなし、属性の値に応じてスタイルを適応する
+
+■擬似クラス
+ある要素が特定の状態にある場合にスタイルを適応する
+
+■擬似要素
+ある要素の一部を指定する場合にスタイルを適応する
+
+■セレクタの詳細度
+複数のセレクタがあった場合に、どのセレクタが優先されるかを決めるためのルール。セレクタを指定すると、4つの数値で詳細度が決まる。それらを(a)~(d)と呼ぶことにする。
+詳細度（以下が入るたびに1がカウントされる）
+  (a)style=""
+  (b)id
+  (c)クラス/属性/擬似クラス
+  (d)要素/擬似要素
+  (a)の方から比べていって、大きい方が優先されるという仕組み
+
+■プロパティの値指定方法
+  ♦︎長さ
+    絶対的な指定
+      px...画面一つ一つの点、ピクセル
+    相対的な指定
+      em...ベースとなっている親要素のフォントサイズに対して何倍かを指定。何文字分かとも言える。
+      %...ベースとなっている親要素の幅や大きさの何パーセントかを指定。
+  ♦︎色
+    名前
+    RGB(Red, Green, Blueを16進数や数値、パーセントで指定する。
+    16進数の場合は0からf、もしくは00からffで指定。
+    数値の場合は0から255
+    パーセントで指定する場合は0%から100%)
+  ♦︎ボックスモデル
+    HTML要素の領域のスタイルを設定する
+    padding...ボーダーと要素の間にある内側の余白
+      一気に指定する場合
+        与える値が1個の場合 all
+        与える値が2個の場合 top/bottom right/left
+        与える値が3個の場合 top right/left bottom
+        与える値が4個の場合 top right bottom left
+    margin...ボーダーの外にある親要素との間の余白
+      一気に指定する場合
+        与える値が1個の場合 all
+        与える値が2個の場合 top/bottom right/left
+        与える値が3個の場合 top right/left bottom
+        与える値が4個の場合 top right bottom left
+      marginの相殺
+        上下にブロックボックスが並んだ場合、その間のmarginは結合されて大きな方のmarginになる
+    border
+      border-color: 境界線の色
+      border-width: 境界線の幅
+      border-style: 境界線のスタイル
+        solid: 実線
+        dotted: 点線
+        dashed: 破線
+        double: 2重線
+        inset, outset: 立体的に見せる線
+    text
+      color: 文字色
+      font-size: 文字サイズ
+      font-family: フォントの種類(優先度の高いものから順に書く。Ex) Arial, Helvetica )
+      font-weight: 太字にするか(太字: bold, 元に戻したい: normal)
+      text-align(テキストアライン): 行揃え(right/center/left)
+      text-decoration: underline(下線), line-through(打ち消し線), none(下線の削除)
+    list
+      list-style-type: リストの前にあるマーカーを変えるプロパティ。disc(黒丸), circle(白丸), square(四角), decimal(連番), lower-alpha(a,b,cといったアルファベット)
+      list-style-image: 画像のファイル名を指定すると画像をマーカーにする
+      list-style-position: inside(マーカーをリストの中に入れる), outside(デフォルト)
+      list-style: プロパティを一気に指定する。順不同かつ省略可能
+    cursor
+      カーソルの形状を変えるプロパティ
+    background
+      background-color: 背景色
+        Ex. background-color: silver;
+      background-image: 背景を画像にする
+        Ex. background-image: url('favicon.png');
+      background-repeat: 背景画像のリピートの仕方を指定。
+        Ex.
+        ・リピートなし
+        background-repeat: no-repeat;
+        ・x方向にだけリピート
+        background-repeat: repeat-x;
+        ・y方向にだけリピート
+        background-repeat: repeat-y;
+      background-position: 背景画像をどの位置から表示するか。x方向とy方向の値を2つ指定する。top, left, centerといったキーワードも使える。
+        Ex.
+        ・x方向(右)に10px, y方向(下)に20px
+        background-position: 10px 20px;
+        ・上中央に表示
+        background-position: top center;
+      background-attachment: スクロールをした時に背景画像をどのように表示するか。scroll(スクロールと一緒に移動), fixed(スクロールと一緒に移動しない)の二つから選べる。
+      background: プロパティを一気に指定。順不同かつ省略可能
+    display: 要素の配置方法を指定。HTMLのそれぞれの要素は、それがどのように配置されるのかが予め初期値としてブラウザによって決められている。
+      ブロックボックス: 下に積み重なって配置されていくボックス
+        ブロックレベル要素: ブロックボックスを生成する要素(h1やpなど)
+      インラインボックス: 左に詰められて配置されていくボックス
+        インラインレベル要素: インランボックスを生成する要素(spanやaなど)
+      block: ブロックボックス
+      inline: インラインボックス
+      list-item: リストのように左にマーカーを持たせる
+      inline-block: インラインレベル要素のように左に詰められていくが、ブロックレベル要素の性質を持つ
+      none: 表示しない
+      table: 表組みのレイアウトを実現する
+    position: 要素のの位置を調整する。
+      static: positionプロパティの初期値。配置方法を指定しない。
+      relative: staticの位置からずらして表示(相対位置への配置)する
+      fixed: スクロールしても位置を固定しておきたい要素に使用。通常の要素の配置から外れるため、後続の要素があたかもこの要素が無いように配置される
+      absolute: 親要素のpositionの値が何かによって配置の基準点を変える。親要素がstaticの時はウィンドウの左上が基準点になる。親要素の左上を基準点にしたい場合はstatic以外を指定する。
+    z-index, overflow
+      z-index
+        要素の重なり順を指定する。
+        ※「position: static;」以外の要素に対してのみ有効。
+        ※z-indexの値が大きいほど上に来る。
+      overflow
+        ブロック要素の中のコンテンツがその幅と高さを超えて存在するときに、どういった表示方法にするか。
+        キーワード
+          visible ... そのまま表示する
+          hidden ... はみ出た部分を非表示にする
+          scroll ... スクロールをさせて表示する
+    line-height, vertical-align
+      line-height
+        行ボックス(行単位の四角い領域)の高さを規定する。
+        以下例を用いて説明する。
+        Ex.)
+        p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        font-sizeはフォントの上から下までの高さを規定するプロパティ。
+        line-heightは行ボックスの高さを規定するプロパティ。
+        line-heightの24pxからfont-sizeの18pxを引いた残りの6pxは上下に均等に3pxずつ配置される。
+        line-heightの指定方法
+          数値
+            line-height: 24px;
+          font-sizeに対して何倍か
+            line-height: 1.5; (単位無しで指定する)
+      vertical-align
+        縦方向の揃え位置を指定する。
+        例えば、文章の途中や前後に画像などのインラインレベルの要素を表示したい場合に、どの縦位置に表示するのかを指定するためのプロパティ。
+        キーワード
+          baseline ... 親要素のフォントのベースラインに揃える。(デフォルト値)
+          top ... 行ボックスの上(top)
+          bottom ... 行ボックスの下(bottom)
+          middle ... 行ボックスの中央ではなく、英小文字の中央を通る線とそのインライン要素の中央を揃える。
+    float, clear
+      float
+        指定した要素を通常の位置から切り離して、左右に寄せるためのプロパティ。通常の配置の流れから外して、ちょうどそれだけ浮いているように配置する。それ以外の要素はあたかもそれがないように、下にどんどん配置される。
+        ※行ボックスの中身はfloatを避けて配置する。
+        ※floatされた要素はブロックボックスを生成するので、幅をつけてあげるのが決まり。
+        キーワード
+          right ... 右に寄せる
+          left ... 左に寄せる
+      clear
+        floatを解除してfloatした要素の下に配置するためのプロパティ。
+        ※clearはブロックレベル要素にしか適応できない
+        キーワード
+          right ... 右にfloatした要素の下に配置する
+          left ... 左にfloatした要素の下に配置する
+          both ... floatがrightでもleftでもfloatを解除
+*/
+
+
+/* セレクタ記法 */
+  /* h1セレクタとpセレクタにクラスを適応 */
+  /*h1, p { color: skyblue; }*/
+  /* divセレクタ階層にあるspanセレクタにクラスを適応 */
+  /*div span { color: skyblue; }*/
+  /* divセレクタ直下にあるspanセレクタにクラスを適応 */
+  /*div > span { color: skyblue; }*/
+  /* pセレクタの次に来るpセレクタにクラスを適応 */
+  /*p + p { color: skyblue; } */
+  /* pセレクタかつ.pointsセレクタにクラスを適応 */
+  /*p.points { color: skyblue; } */
+
+/* 属性セレクタ */
+  /* aタグ内にtitle属性のある場合にクラスを適応 */
+  /*a[title] { color: skyblue; }*/
+  /* href属性が"http://google.com"の場合にクラスを適応 */
+  /*a[href="http://google.com"] { color: orange; }*/
+  /* class属性の値がスペース区切りでsearchが含まれている場合にクラスを適応 */
+  /*a[class~="search"] { color: violet; }*/
+
+/* 擬似クラス */
+  /* ulセレクタにあるliセレクタの内一つ目の要素に対してクラスを適応 */
+  /*ul li:first-child { color: skyblue; }*/
+
+  /* 未訪問のリンクに対してクラスを適応 */
+  /*a:link { color: violet; }*/
+  /* 訪問済みのリンクに対してクラスを適応 */
+  /*a:visited { color: orange; }*/
+  /* ホバー時のリンクに対してクラスを適応 */
+  /*a:hover { color: pink; }*/
+  /* 選択中のリンクに対してクラスを適応 */
+  /*a:active { color: red; }*/
+  /* インプットセレクタにフォーカスが当たった時にクラスを適応 */
+  /*input:focus { background: red; }*/
+
+/* 擬似要素 */
+  /* pセレクタの一行目の文字列に対してクラスを適応 */
+  /*p:first-line { color: skyblue; }*/
+
+  /* pセレクタの一文字目の文字列に対してクラスを適応 */
+  /*p:first-letter { color: skyblue; }*/
+
+  /* ある要素の子要素の先頭に要素を追加 */
+  /*p:before { content: " -->";}*/
+
+  /* ある要素の子要素の末尾に要素を追加 */
+  /*p:after { content: "<-- "}*/
+
+/* 詳細度 */
+  /* 0(style属性ではないので0),0(idが入っていないので0),0(属性が入っていないので0),1(要素名aが入っているので1) */
+  /*a { color: skyblue; }*/
+  /* 0, 0, 1(クラスが入っているので1), 1*/
+  /*a.link { color: pink; }*/
+  /* 0, 0, 1(クラスが入っているので1), 1 (同じ詳細度の場合は後に書いた方が優先される)*/
+  /*a.search { color: orange; }*/
+  /* 0, 1(idが入っているので1), 0, 1 (優先度は上から順なので、0,0,0,1よりも0,1,0,1の方が優先度は高い)*/
+  /*a#site { color: blue; }*/
+  /* 0,0,0,1だが!importantを付けることで優先度が一番になる */
+  /*a { color: skyblue !important; }*/
+
+/* プロパティの値を指定 */
+  /* 文字サイズについて */
+    /* ピクセル指定 */
+    /*body { font-size: 16px; }*/
+    /* em指定(親要素がbodyなので、その2倍で32px) */
+    /*h1 { font-size: 2em; }*/
+    /* %指定(親要素がbodyなので、その150%で24px) */
+    /*h2 { font-size: 150%; }*/
+  /* 文字色について */
+    /* 名前で指定 */
+    /*h1 { color: blue; }*/
+    /* RGBで指定 */
+      /* 16進数 */
+        /* 1桁表現 */
+        /*h1 { color: #00f; }*/
+        /* 2桁表現 */
+        /*h1 { color: "0000ff"; }*/
+      /* 数値で指定 */
+        /*h1 { color: rgb(0, 0, 255); }*/
+      /* パーセントで指定 */
+        /*h1 { color: rgb(0%, 0%, 100%); }*/
+
+/* ボックスモデル */
+  /* 親要素の高さを指定する。これをすることでdivのheightの%指定が有効になる */
+  /*body, html { height: 100%; }*/
+  /*body { margin: 0; }*/
+  /*div {*/
+    /*background: silver;*/
+    /*width: 200px;*/
+    /* 親要素に対して50%の幅 */
+    /*width: 50%;*/
+    /*height: 100px;*/
+    /* これだけだと動作しない。高さに関しては親要素の高さを明示的に示さないといけない。 */
+    /*height: 50%;*/
+
+    /* 境界線 */
+    /*border-color: orange;*/
+    /*border-width: 4px;*/
+    /*border-style: dotted;*/
+    /* 上を一気に指定(順不同かつ省略可能) */
+    /*border: orange 4px dotted;*/
+    /* borderを上だけや左だけなど指定 */
+    /*border-top: orange 4px dotted;*/
+
+    /* padding */
+    /* 上下が10px, 左右が50px */
+    /*padding: 10px 50px;*/
+    /* 上が10px, 右が20px, 下が30px, 左が40px */
+    /*padding: 10px 20px 30px 40px;*/
+  /*}*/
+
+  /* margin */
+  /*div#box1 {*/
+    /*background: silver;*/
+    /* 上が10px, 左右が20px, 下が30px */
+    /*margin: 10px 20px 30px;*/
+  /*}*/
+
+  /*div#box2 {*/
+    /*background: orange;*/
+    /* 上下左右20px */
+    /*margin: 20px;*/
+  /*}*/
+
+  /* textについて */
+  /*p {*/
+    /*color: silver;*/
+    /*font-size: 24px;*/
+    /*font-family: Arial;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*text-decoration: underline line-through;*/
+  /*}*/
+
+  /* listについて */
+  /*ul {*/
+    /*list-style: inside decimal;*/
+    /*list-style: outside lower-alpha;*/
+    /*list-style: url('favicon.png');*/
+  /*}*/
+
+  /* cursorについて */
+  /*.help { cursor: help; }*/
+  /*.dragme { cursor: move; }*/
+  /*.clickme { cursor: pointer;; }*/
+  /*.smile { cursor: url('favicon.png'), auto; }*/
+
+  /* backgroundについて */
+  /*body {*/
+    /*background-color: silver;*/
+    /*background-image: url('favicon.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-repeat: repeat-x;*/
+    /*background-repeat: repeat-y;*/
+    /*background-position: 10px 20px;*/
+    /*background-position: top center;*/
+    /*background-attachment: scroll;*/
+    /*background-attachment: fixed;*/
+    /*background: url('favicon.png') no-repeat scroll;*/
+  /*}*/
+
+  /* displayについて */
+  /*h1, p, span, a {*/
+    /*border: 1px solid black;*/
+  /*}*/
+  /*h1, p {*/
+    /*display: inline;*/
+    /* インラインにするとブロックレベル要素と違い幅と高さの指定が無効になる。インラインレベル要素だが幅と高さを指定したい場合はinline-blockを使う */
+    /*display: inline-block;*/
+    /*width: 120px;*/
+  /*}*/
+  /*span {*/
+    /* ある要素を非表示にする場合 */
+    /*display: none;*/
+  /*}*/
+  /*.containter {
+    display: table;
+    width: 300px;
+  }*/
+  /*.box {
+    display: table-cell;
+    width: 100px;
+  }*/
+  /*.row {
+    display: table-row;
+  }*/
+  /*.gray { background: gray; }*/
+  /*.silver { background: silver; }*/
+  /*.orange { background: orange; }*/
+
+  /* position */
+  /*body { margin: 0; }*/
+  /*#box1 {
+    width: 100px;
+    height: 50px;
+    background: gray;
+    position: relative;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }*/
+  /*#box2 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    background: silver;
+  }*/
+  /*#box3 {
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: orange;
+  }*/
+
+  p {
+    border: 1px solid black;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
