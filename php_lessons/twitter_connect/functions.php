@@ -5,6 +5,6 @@ function h($s) {
 }
 
 function goHome() {
-  header('Location: ' . $_SERVER['HTTP_HOST']);
+  header('Location: http://' . $_SERVER['HTTP_HOST']);
   exit;
 }
