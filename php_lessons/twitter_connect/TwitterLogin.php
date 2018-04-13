@@ -14,7 +14,7 @@ class TwitterLogin {
         →_redirectFlow()メソッドを実行
   */
   public function login() {
-    if(!isset($_GET['oauth_token']) || !isset($GET['oauth_verifier'])) {
+    if(!isset($_GET['oauth_token']) || !isset($_GET['oauth_verifier'])) {
       $this->_redirectFlow();
     } else {
       $this->_callbackFlow();
@@ -44,7 +44,15 @@ class TwitterLogin {
       'oauth_verifier' => $_GET['oauth_verifier']
     ]);
 
-    var_dump($tokens);
+    $user = new User();
+    $user->saveTokens();
+
+    $_SESSION['me'] = $user->getUser($tokens['user_id']);
+
+    unset($_SESSION['oauth_token']);
+    unset($_SESSION['oauth_token_secret']);
+
+    goHome();
   }
 
   /*
