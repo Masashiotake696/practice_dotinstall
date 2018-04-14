@@ -2,6 +2,7 @@
 
 namespace MyApp\Controller;
 
+/* 新しいユーザーを登録するためのコントローラー */
 class Signup extends \MyApp\Controller {
   public function run() {
     if(!$this->isLoggedIn()) {
@@ -28,28 +29,42 @@ class Signup extends \MyApp\Controller {
     try {
       $this->_validate();
     } catch(\MyApp\Exception\InvalidEmail $e) {
-      // echo $e->getMessage();
-      // exit;
+      // emailのバリデーションエラーをセット
       $this->setErrors('email', $e->getMessage());
     } catch(\MyApp\Exception\InvalidPassword $e) {
-      // echo $e->getMessage();
-      // exit
+      // passwordのバリデーションエラーをセット
       $this->setErrors('password', $e->getMessage());
     }
 
-    // echo "Success";
-    // exit;
+    // パスワードエラーが出た時にも入力したemailの値を保持するためにemailの値をセット
+    $this->setValues('email', $_POST['email']);
 
     if($this->hasError()) {
       return;
     } else {
       // ユーザーの作成
+      try {
+        $userModel = new \MyApp\Model\User();
+        $userModel->create([
+          'email' => $_POST['email'],
+          'password' => $_POST['password']
+        ]);
+      } catch(\MyApp\Exception\DuplicateEmail $e) { // emailが既に存在している場合にエラー出力する
+        $this->setErrors('email', $e->getMessage());
+        return;
+      }
 
       // ログインページにリダイレクト
+      header('Location: ' .SITE_URL . '/login.php');
+      exit;
     }
   }
 
   private function _validate() {
+    if(!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
+      echo 'Invalid Token!';
+      exit;
+    }
     /*
       ■filter_var()
         指定したフィルタでデータをフィルタリングする。

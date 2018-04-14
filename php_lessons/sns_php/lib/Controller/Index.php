@@ -2,6 +2,7 @@
 
 namespace MyApp\Controller;
 
+/* ユーザー一覧を表示するためのコントローラー */
 class Index extends \MyApp\Controller {
   public function run() {
     // ログインしていない場合

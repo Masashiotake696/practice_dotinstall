@@ -4,7 +4,7 @@
 
 require_once(__DIR__ . '/../config/config.php');
 
-// $app = new MyApp\Controller\Index();
+// $app = new MyApp\Controller\Login();
 // $app->run();
 
 // echo 'login screen';
