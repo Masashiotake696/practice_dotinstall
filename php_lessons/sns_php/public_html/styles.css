@@ -35,10 +35,27 @@ input[type="text"], input[type="password"] {
 
 .fs12 {
   font-size: 12px;
+  font-weight: normal;
 }
 
 .err {
   color: #ff3d00;
   font-weight: bold;
   font-size: 13px;
+}
+
+form#logout { /* ab : aセレクタかつbセレクタに対してクラスを適応する */
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+ul > li {
+  padding: 3px 0;
 }

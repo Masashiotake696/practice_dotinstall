@@ -4,6 +4,7 @@ namespace MyApp\Model;
 
 /* ユーザーモデル */
 class User extends \MyApp\Model {
+  // ユーザーの作成
   public function create($values) {
     $stmt = $this->db->prepare("insert into users (email, password, created, modified) values (:email, :password, now(), now())");
     /*
@@ -29,5 +30,35 @@ class User extends \MyApp\Model {
     if($res === false) {
       throw new \MyApp\Exception\DuplicateEmail();
     }
+  }
+
+  // ログイン処理
+  public function login($values) {
+    // 該当するレコードを抽出
+    $stmt = $this->db->prepare("select * from users where email = :email");
+    $stmt->execute([
+      ':email' => $values['email']
+    ]);
+    // 抽出結果をオブジェクトで取得する
+    $stmt->setFetchMode(\PDO::FETCH_CLASS, 'stdClass'); // setFetchMode() ... この文に対するデフォルトのフェッチモードを設定する。第一引数にフェッチモード、第二引数にオブジェクトを指定する。
+    $user = $stmt->fetch(); // fetch() ... 結果セットから次の行を取得する
+
+    // メールがマッチしなかった場合
+    if(empty($user)) {
+      throw new \MyApp\Exception\UnmatchEmailOrPassword();
+    }
+
+    // パスワードがマッチしなかった場合
+    if(!password_verify($values['password'], $user->password)) { // password_verify() ... パスワードがハッシュにマッチするかどうかを調べる。第一引数にユーザーのパスワード、第二引数にpassword_hash()が作ったハッシュを指定する。
+      throw new \MyApp\Exception\UnmatchEmailOrPassword();
+    }
+
+    return $user;
+  }
+
+  public function findAll() {
+    $stmt = $this->db->query("select * from users order by id");
+    $stmt->setFetchMode(\PDO::FETCH_CLASS, 'stdClass');
+    return $stmt->fetchAll();
   }
 }

@@ -8,6 +8,7 @@ namespace MyApp;
     ・エラーのセット、エラーのゲット、エラーの有無確認
     ・バリューのセット、バリューのゲット
     ・ログイン状態の確認
+    ・ログインしているユーザー情報の取得
   を行う
 */
 class Controller {
@@ -53,4 +54,7 @@ class Controller {
     return isset($_SESSION['me']) && !empty($_SESSION['me']);
   }
 
+  public function me() {
+    return $this->isLoggedIn() ? $_SESSION['me'] : null;
+  }
 }

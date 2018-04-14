@@ -1,14 +1,13 @@
 <?php
 
-// æ–°è¦�ç™»éŒ²
+// 新規登録ページ
 
 require_once(__DIR__ . '/../config/config.php');
 
+// インスタンス化
 $app = new MyApp\Controller\Signup();
 $app->run();
 
-// echo 'login screen';
-// exit;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,7 +26,7 @@ $app->run();
         <p>
           <input type="password" name="password" placeholder="password">
         </p>
-        <p class="err"><?= h($app->getErrors('password')); ?></p>
+        <p class="err"><?= h($app->getErrors('password')); ?></p> <!-- エラーを取得して表示 -->
         <div class="btn" onclick="document.getElementById('signup').submit()">Sign Up</div>
         <p class="fs12"><a href="/login.php">Log In</a></p>
         <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>"> <!-- CSRF対策(セッションのトークンを記述)  -->
