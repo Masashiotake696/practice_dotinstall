@@ -2,6 +2,6 @@
 
 namespace MyApp\Exception;
 
-class InvalidEmail extends \Exception {
+class InvalidPassword extends \Exception {
   protected $message = 'Invalid Password!';
 }

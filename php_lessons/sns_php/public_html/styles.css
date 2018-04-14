@@ -36,3 +36,9 @@ input[type="text"], input[type="password"] {
 .fs12 {
   font-size: 12px;
 }
+
+.err {
+  color: #ff3d00;
+  font-weight: bold;
+  font-size: 13px;
+}
