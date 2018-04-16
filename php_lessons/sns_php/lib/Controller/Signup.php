@@ -5,7 +5,7 @@ namespace MyApp\Controller;
 /* 新しいユーザーを登録するためのコントローラー */
 class Signup extends \MyApp\Controller {
   public function run() {
-    if(!$this->isLoggedIn()) {
+    if($this->isLoggedIn()) {
       // ログインしていたらホームに飛ばす
       header('Location: ' . SITE_URL);
       exit;
