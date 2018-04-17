@@ -1,0 +1,51 @@
+■Vagrantとは？
+  仮想マシンを簡単に立ち上げるためのツール
+  ▼利点
+    これまでは手作業でローカル開発環境を整えるために仮想マシンを立ち上げてきたが、Vagrantを1回設定してしまえば、何度でも同じ構成で何回でもマシンを立ち上げることができる。
+  ▼公式サイト
+    www.vagrantup.com
+  ▼注意事項
+    Vagrantは仮想マシンを作るためのツールだが、準備として仮想マシンを作るソフトウェア自体が別途必要。
+      例) VirtualBox, VMWare, Amazon EC2などがある
+  ▼仮想マシンを立ち上げる手順
+    1. Boxを取得する
+      Boxとは仮想マシンのテンプレート。色々な構成の仮想マシンが考えられるが、そのテンプレートがWeb上にたくさん配布されている(vagrant boxesで検索)ので、まずはそれを取得する。
+        ♦︎方法
+          「DOCUMENT → Getting Started → Boxes」の順でWebページを移動する。
+          vagrant box add コマンドを使ってBoxを取得する。
+          今どういうBoxがあるかは「vagrant box list」で見ることができる
+          例)
+            ・vagrant box add hashicorp/precise64 (※preciseはUbuntuOSのバージョン名)
+            ・vagrant box add centos64 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box (centOS7.0系の64bitバージョン)
+    2. テンプレートをもとに自分にあった設定にして仮想マシンを初期化する
+      「vagrant init Box名」とすることで、初期化されてVagrantfileができる。Vagrantfileの設定を元に仮想マシンを立ち上げていく。
+    3. 仮想マシンを起動する
+      Vagrantfileがあるフォルダで「vagrant up」とする。
+  ▼vagrant コマンド
+    ・vagrant box add (Boxを追加する)
+    ・vagrant box list (追加したBoxのリストを表示)
+      ./.vagrant.d/boxes を見てもわかる
+    ・vagrant box -h (vagrant box と合わせて使えるコマンドが表示される)
+    ・vagrant box remove (追加したBoxを削除する)
+    ・vagrant init box名 (box名を元に初期化したVagrantfileを作成)
+    ・vagrant up (仮想マシンを起動する)
+    ・vagrant status (状態を表示)
+    ・vagrant suspend (スリープさせる)
+    ・vagrant resume (復帰させる)
+    ・vagrant halt (終了させる)
+    ・vagrant reload (再起動する。何らかの設定を変えた後に使う)
+    ・vagrant destroy (仮想マシン自体を削除する。Vagrantfile自体は残る)
+    ・vagrant ssh (ssh接続をして、仮想マシンの中にvagrantユーザーで入る。ディレクトリは/home/vagrant)
+    ・exit (仮想マシンから出る)
+  ▼CentOSで使えるコマンド
+    ♦︎Webサーバを立ち上げてページを表示してみる
+    (※CentOSでは/var/www/htmlにWebページを置く)
+      ・sudo yum -y install httpd (Webサーバをインストール)
+      ・sudo service httpd start (Webサーバを立ち上げる)
+      ・sudo chkconfig httpd on (再起動してもWebサーバが立ち上がるように設定する)
+      ・sudo service iptables stop (ファイアーウォールを切断する。ローカル開発環境の場合はこれで問題ない)
+      ・sudo chkconfig iptables off (再起動してもiptablesが立ち上がらないようにする)
+  ▼Vagrantfile
+    ♦︎ネットワーク設定
+      ネットワークの設定はnetwork辺りにある。
+      :private_networkのコメントを外して、ipアドレスを設定する(今回は192.168.33.10とする)
