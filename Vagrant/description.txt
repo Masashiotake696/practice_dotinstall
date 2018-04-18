@@ -36,6 +36,7 @@
     ・vagrant reload (再起動する。何らかの設定を変えた後に使う)
     ・vagrant destroy (仮想マシン自体を削除する。Vagrantfile自体は残る)
     ・vagrant ssh (ssh接続をして、仮想マシンの中にvagrantユーザーで入る。ディレクトリは/home/vagrant)
+    ・vagrant package (Boxを作成する)
     ・exit (仮想マシンから出る)
   ▼CentOSで使えるコマンド
     ♦︎Webサーバを立ち上げてページを表示してみる
@@ -74,9 +75,11 @@
         sudo chkconfig httpd on
       4. vagrant provision
         (すでに仮想マシンが立ち上がっているので、Provisionだけを再実行する)
-
-
-
+  ▼自分でBoxを作る
+    Vagrantfileをある程度の設定をした後で、何回も使いまわすと言う時には自分でBowを作る。手順は以下。
+    1. パッケージにしたい仮想マシンのVagrantfileがあるディレクトリで「vagrant package」とするとpackage.boxができる。
+    2. これをシステムに追加したい場合は、「vagrant box add 作成したいbox名 package.box」
+    3. 追加されたboxは「~/.vagrant.d/boxes」に配置されるので、手順1で作成されたpackage.boxは削除してもいい。
 
   ▼別子)Chefについて
     ♦︎Chefとは？
