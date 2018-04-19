@@ -80,6 +80,23 @@
     1. パッケージにしたい仮想マシンのVagrantfileがあるディレクトリで「vagrant package」とするとpackage.boxができる。
     2. これをシステムに追加したい場合は、「vagrant box add 作成したいbox名 package.box」
     3. 追加されたboxは「~/.vagrant.d/boxes」に配置されるので、手順1で作成されたpackage.boxは削除してもいい。
+  ▼plugin
+    ♦︎プラグインのコマンド
+      ・vagrant plugin -h (プラグイン関係のコマンドを表示)
+      ・vagrant plugin list (プラグインの一覧を表示)
+      ・vagrant plugin install プラグイン名
+      ・vagrant plugin uninstall プラグイン名 (プラグインをアンインストールする)
+    ♦︎プラグイン例
+      ■sahara
+        ♦︎概要
+          sandboxモードを有効にする。OSの途中の状態を記憶しておき、好きな時にそこまでロールバックできる。仮想マシンで何らかのプログラムをインストールしたり、変更を加えた後にいまいちだったから変更を破棄したい時に使える機能。
+        ♦︎使用方法
+          ・vagrant sandbox on (sandboxモードを開始する)
+          ・vagrant sandbox status (sandboxの状態を表示)
+          ・vagrant sandbox rollback (vagrant sandbox on をした時の状態に戻す)
+          ・vagrant sandbox commit (vagrant sandbox on をした後の変更を保存する。※ただし、このコマンドは仮想マシンが立ち上がっていると非常に遅いので、いったん vagrant suspend や vagrant halt などでマシンを止めてから実行する。)
+          ・vagrant sandbox off (sandboxモードを終了する。※ただし、このコマンドは仮想マシンが立ち上がっていると非常に遅いので、いったん vagrant suspend や vagrant halt などでマシンを止めてから実行する。)
+
 
   ▼別子)Chefについて
     ♦︎Chefとは？
