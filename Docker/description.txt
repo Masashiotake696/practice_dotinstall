@@ -1,0 +1,145 @@
+【Docker】
+
+■概要
+  軽量な仮想化環境を実現するためのツール。
+  OSやアプリケーションを設定したものを丸ごと実行イメージとして保存できるので、Dockerが導入されている別のマシンにそのまま持っていくことができる。
+  よく「Build once, run anywhere」と呼ばれたりするが、このツールがあることで環境の違いを意識することなく簡単にアプリケーションを導入することができる。
+■詳細
+  仮想化にはホスト型仮想化とコンテナ型仮想化がある。
+    ・ホスト型仮想化(VMWare, VirtualBox)
+      アプリケーションを実行するためにまずゲストOSを起動させなければならず、CPUやメモリ、ディスクなどのリソースも多く消費する。
+    ・コンテナ型仮想化(Docker)
+      コンテナはホストOSから見ると単一のプロセスとして扱われ、カーネル部分をホストOSと共有するため、リソース使用量が非常に少ない。コンテナ型仮想化はOS上に他のプロセスから隔離されたアプリケーション実行環境を構築することで、仮想的な動作環境をホスト型仮想化より少ないコンピュータリソースで実現することを可能としている。
+■Dockerを導入するメリット
+  1. アプリケーションを少ないリソースで効率よく実行できる
+    コンテナ型仮想化は従来のホスト型仮想化で必要であったハードウェアのエミュレートを必要としないため、より少ないコンピュータリソースで効率よく実行することができる。
+  2. Infrastructure as Codeによってインフラ環境のバージョン管理ができる
+    Infrastructure as Codeとはインフラ環境の状態をソースコードとして管理し、その内容を自動的にサーバへ設定する仕組み。Dockerはイメージの構成を「Dockerfile」、コンテナの構成を「docker-compose.yml」というテキストファイルに記述できるため、gitなどのバージョン管理システムでインフラ環境の状態を記憶することができる。
+  3. Immutable Infrastructureを実現することができる
+    Immutable Infrastructureとはアプリの実行環境を使い捨てとして、環境を都度作り直すことにより構成変更を行う方法。サーバの状態は全てDockerfileに記述されているため、いつでも古い状態のサーバを廃棄してパッチのつぎはぎがない綺麗な状態のサーバを再構築することができる。
+■Dockerを使うために最低限理解しておくべきこと
+  ・Dockerイメージ
+      DockerイメージとはOSやアプリケーションを含んだテンプレートのこと。OSによって固有であるユーザーランド部(OSが動作するのに必要な、カーネル以外の部分)のイメージのことをベース・イメージと呼び、ベース・イメージにはカーネル部は含まれない。Docker StoreではCentOSやUbuntuなど大抵のOSのベース・イメージが公開されている。また、OSとアプリケーションがセットになっているイメージも同サイト上で公開されている。
+  ・Dockerコンテナ
+      Dockerコンテナは元となるDockerイメージから生成された仮想サーバのこと。同じDockerイメージから複数のコンテナを生成することもできる。Dockerコンテナはホストマシン上の一つのプロセスとして実行される。
+■公式サイト
+  https://www.docker.io/
+■今回の環境
+  UbuntuをVagrantで立ち上げて、そこにDockerをインストールする。
+■Ubuntuのboxを取得
+  vagrant box add trusty64 http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+■Dockerのインストール
+  このドキュメントを参照(URL: https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce-1)
+  DockerにはCE(無償のコミュニティエディション)とEE(商用版)があり、今回はCEをインストールする。
+  ♦︎手順
+    Dockerレポジトリをインストールしてセットアップした後に、Docker CEをインストールする。
+    【Dockerレポジトリのインストールとセットアップ】
+    1. sudo apt-get update (apt(Advanced Package Toolの略で、Linuxのパッケージを操作するためのコマンドラインツール)パッケージをアップデート)
+    2. sudo apt-get install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        software-properties-common
+      (aptがHTTPS経由でリポジトリを使用できるようにパッケージをインストール)
+    3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - (Dockerの公式GPG Key(GnuPG(GNU Privacy Guard)という暗号化ソフトで生成される公開鍵のこと。Linuxの場合、apt-getコマンドやyumコマンドを使ってインターネットから入手できるパッケージが正しい配布先のものかどうかのチェックに使用する)を追加する。)
+    4. sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   (安定したリポジトリを設定するために上記のコマンドを使用する。エッジやテストリポジトリからビルドをインストールする場合でも、常に安定したリポジトリが必要。エッジまたはテストリポジトリを追加するには、上記のコマンドでstableの後にedgeまたはtest(またはその両方)を追加する。)
+  【Docker CEのインストール】
+   1. sudo apt-get update (aptパッケージをアップデート)
+   2. sudo apt-get install docker-ce (最新バージョンのDocker CEをインストールする。)
+   3. sudo docker run hello-world (Docker CEがきちんとインストールされたかをhello-worldイメージを実行することで確認する)
+■作業の流れ
+  Ubuntuに入れたDockerを「Docker installed OS」とする。
+  1. Docker installed OSにOSやアプリケーションが入った実行イメージ(OSやアプリケーションを含んだテンプレート)を用意する(以下ではDockerが運営している「Docker Index」というイメージの共有サイトを使用する)
+  2. Docker Indexにイメージがあるので、それをDocker installed OSに引っ張ってくる。この時に使用するコマンドは「docker pull」
+  3. イメージが用意できるので、それを実行する。この時に使用するコマンドは「docker run」。実行するとコンテナと言うものができる。
+  4. コンテナで色々な設定をしたり、アプリケーションを作ったり、何らかのものをインストールしたりして自分好みの設定になったら、その状態から新たなイメージを作ることができる。イメージを作る時に使用するコマンドは「docker commit」
+  5. 作成したイメージを他のマシンで動かしたい場合には、そのまま他のマシンにコピーしても良いが、Docker Indexを使う場合は「docker push」と言うコマンドを使うとこのイメージと全く同じものがDocker Indexに入るので、Dockerをインストールした他のOSにこの環境を移行したい場合はDocker Indexからまた「docker pull」をすれば良い。
+  6. 上記と同じようにDockerイメージを用意したら「docker run」で実行することができる。
+  ※Docker IndexのURLは https://index.docker.io/
+  ※Docker Indexのサイトからイメージを検索しても良いが、ターミナルから「sudo docker search イメージ名」とすることで同じように検索することができる。
+■実際にやってみる
+  ♦︎イメージの操作
+    今回はcentosイメージを使う。
+    ・sudo docker pull centos
+        Docker Indexからcentosイメージを引っ張ってくる
+    ・sudo docker images
+        イメージの一覧を表示する。
+        一覧は左からイメージ名、タグ(それぞれのバージョン)、ID(イメージの実態)、作成日時、容量を表している
+    ・sudo docker inspect イメージ名:タグ名
+        イメージの詳細を表示する。
+        タグを省略した場合は、「sodo docker inspect イメージ名:latest」と同じ意味になる。
+        「イメージ名:タグ名」の代わりにIDを指定することもできる
+    ・sudo docker rmi イメージ名:タグ名
+        イメージを削除する。rmiはremove imageの意味。
+        タグを省略した場合は、「sodo docker inspect イメージ名:latest」と同じ意味になる。
+        「イメージ名:タグ名」の代わりにIDを指定することもできる
+    ・sudo docker commit ID イメージ名
+        イメージを作成する。イメージ名は慣習的に「ユーザ名/わかりやすい名前」となっている。
+    ・sudo docker tag 変更前のイメージ名 変更後のイメージ名
+        変更前のイメージ名の代わりにイメージIDを指定することもできる
+    ・sudo docker push
+        作成したイメージをDocker Indexにプッシュする。プッシュする前にはDocker Indexに「sudo docker login」でログインする必要がある。
+  ♦︎コンテナの操作
+    ・sudo docker run イメージ名:タグ名 コマンド
+        コンテナを作成する。
+        タグを省略した場合は、「sodo docker inspect イメージ名:latest」と同じ意味になる。
+        「イメージ名:タグ名」の代わりにIDを指定することもできる。
+        コマンドはコンテナを作った後にそのコンテナ上で実行される。
+        ■オプション
+          ・-d ... 「run -d イメージ名:タグ名」でバックグラウンドで実行)
+          ・-it ... インタラクティブモード(コンテナの標準入力(キーボードからの入力)に接続)、かつ、擬似ターミナルを割り当てる。つまりコンテナにログインする
+            例) sudo docker run -i -t イメージ名:タグ名 /bin/bash (インタラクティブモードで/bin/bashとしてシェルを立ち上げる)
+            ※コンテナから抜けるときはexitとする
+            ※/bin/bashとはLinuxで使われるシェル「bash」の本体ファイルのこと。
+          ・-p ... ホスト側のポート番号をコンテナ側のポート番号にリダイレクトする。
+            例) sudo docker run -p 8080:80
+              ホスト側のポートの8080番をコンテナ側のポートの80番にリダイレクトする。
+    ・sudo docker ps
+        実行中のコンテナ一覧を表示する。
+        動作が終了した物を表示するには-aオプションをつける。
+        最新の5つだけ見たいときは-nオプションを使って、「... -n=5」とする。
+    ・sudo docker rm ID
+        コンテナを削除する
+    ・sudo docker logs ID
+        実行中のタスクのログを表示する
+    ・sudo docker attach --sig-proxy=false ID
+        タスクをフォアグラウンドに持ってくる。Ctrl+Cで抜ける。
+    ・sudo docker stop ID
+        タスクをストップさせる
+    ・sudo docker kill ID
+        タスクをストップさせる
+    ・sudo docker start ID
+        タスクをスタートさせる
+    ・sudo docker build -t 作成するイメージ名 Dockerfileのあるディレクトリ
+        Dockerfileを使ってイメージを元に何らかの変更を加えてまた新しいイメージを作る。タグを省略した場合は、「sodo docker build -t イメージ名:latest Dockerfileのあるディレクトリ」と同じ意味になる。
+  ♦︎Dockerfile
+    イメージからコンテナを立ち上げて、そこで変更を加えて、それをまたイメージにする一連の作業をスクリプトに書いて自動化する。この自動化するためのスクリプトファイルがDockerfile。これを共有することで作成したコンテナの構成を他のコンテナに流用することができる
+    ▼Dockerfile記述の際の決まりごと
+      ・FROM
+        元のイメージを指定する
+          例) FROM centos
+      ・MAINTAINER
+        誰が書いたのかを指定する
+          例) MAINTAINER Masashi Otake <masashi.otake696@gmail.com>
+      ・#
+        コメント
+          例) # text
+      ・RUN
+        sudo docker buildする時に実行される処理を指定する
+          例) RUN echo "now building..."
+      ・CMD
+        sudo docker runするときに実行される処理を指定する。
+        実行したいものをカンマで区切り、[]で囲む。
+          例) CMD ["echo", "now running..."]
+      ・ADD
+        指定したファイル・ディレクトリをコンテナ内にコピーする。URLの指定が可能で、tarファイルは自動解凍される。
+          例) ADD ./index.html /var/www/html
+      ・EXPOSE
+        指定したポート番号を開ける
+          例) EXPOSE 80
+    ▼実用的なDokcerfileを作ってみる
+      内容：Webサーバをインストールしてrunの時に立ち上げて、ブラウザでその中身を確認する
