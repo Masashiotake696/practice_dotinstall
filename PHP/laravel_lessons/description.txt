@@ -1,0 +1,10 @@
+Laravel
+  ■公式サイト
+    laravel.com
+  ■概要
+    Webアプリケーションを簡単に作るためのPHP用フレームワーク
+  ■使用条件
+    PHPのバージョン7以上
+  ■インストール
+    PHPのパッケージ管理ツールであるComposerを使ってインストールする。
+    Composerの公式サイトは getcomposer.org

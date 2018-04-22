@@ -52,20 +52,20 @@
 -- select * from users;
 
 
-drop table if exists users;
-CREATE table users (
-  id integer primary key,
-  name text,
-  score integer,
-  team text
-);
-insert into users (name, score, team) values ('taguchi', 43, 'team-A');
-insert into users (name, score, team) values ('fkoji',   80, 'team-B');
-insert into users (name, score, team) values ('tashiro', 65, 'team-B');
-insert into users (name, score, team) values ('hayashi', 54, 'team-A');
-insert into users (name, score, team) values ('sato',    74, 'team-C');
-.headers on
-.mode column
+-- drop table if exists users;
+-- CREATE table users (
+--   id integer primary key,
+--   name text,
+--   score integer,
+--   team text
+-- );
+-- insert into users (name, score, team) values ('taguchi', 43, 'team-A');
+-- insert into users (name, score, team) values ('fkoji',   80, 'team-B');
+-- insert into users (name, score, team) values ('tashiro', 65, 'team-B');
+-- insert into users (name, score, team) values ('hayashi', 54, 'team-A');
+-- insert into users (name, score, team) values ('sato',    74, 'team-C');
+-- .headers on
+-- .mode column
 -- トリガー
 -- create table messages (message);
 -- usersテーブルがupdateされた時に誰かのscoreが100点を超えたらmessagesテーブルにメッセージを挿入する
@@ -81,9 +81,12 @@ insert into users (name, score, team) values ('sato',    74, 'team-C');
 -- select * from messages;
 
 -- インデックス
-create index score_index on users(score);
-create unique index name_index on users(name);
-
+-- create index score_index on users(score);
+-- create unique index name_index on users(name);
+-- drop index if exists score_index;
+-- drop index if exists name_index;
+-- .indices users
+-- .schema users
 
 -- テーブルの一覧を表示
 -- .tables
