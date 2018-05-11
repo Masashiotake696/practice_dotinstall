@@ -352,6 +352,28 @@
       document.body.appendChild(greet).appendChild(text);
     }');
 
+
+  ■追加説明(CodeCampより)
+    ▼DOM
+      DOM(Document Object Model)は「HTML文書をオブジェクトとして扱えるようにしたもの」で、これによりJavaScriptからHTMLを操作する事ができる。
+      HTML文書がブラウザに読み込まれると、JavaScript内でDOMオブジェクトとして複数のオブジェクトが自動生成される。生成されたDOMオブジェクトにはメソッドやプロパティが定義されており、これを利用する事ができる。
+      DOMのツリー構造は以下のようになっている。
+        window
+          location
+          history
+          document など
+            html
+              head
+                meta
+                title など
+              body
+                h1
+                p など
+        ※各要素のオブジェクトはツリー構造により親子関係となっており、windowオブジェクトが最上位の親となる
+      documentオブジェクトはDOMのなかで最も頻繁に利用するオブジェクトで、Webページに関するあらゆる情報を持っている。DOMはHTMLのhtml要素・body要素・p要素などの要素全てに対してオブジェクトとプロパティ、メソッドを定義する。
+      DOMは全ての要素をオブジェクトとして定義するが、一つ一つ独立しているわけではなく、windowオブジェクトの一部として各要素が定義されている。
+      このため、DOMを利用して各HTML要素の操作を行う場合、windowオブジェクトの中から必要な要素を指定する必要がある。しかし、windowオブジェクトはJavaScript内で省略可能。
+
 */
 
 // var msg = "Hello World";
