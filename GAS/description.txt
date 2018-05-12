@@ -1,0 +1,9 @@
+■開発者向けサイト
+developers.google.com/apps-script
+
+■説明
+GASはJSで書くが、GASのサーバ上で動くJSなので、ブラウザの部品を操作するような命令は使えない
+例) alert()は使えない
+
+■メソッド
+Logger.log() ... ログに引数の内容を表示する
