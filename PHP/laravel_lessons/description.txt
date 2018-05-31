@@ -6,5 +6,326 @@ Laravel
   ■使用条件
     PHPのバージョン7以上
   ■インストール
+    dockerを使う場合
+      https://github.com/kooooohe/Laravel-docker-minimum-required.git
     PHPのパッケージ管理ツールであるComposerを使ってインストールする。
     Composerの公式サイトは getcomposer.org
+  ■フレームワークとは
+    「フレームワーク」=「枠組み」
+    頻繁に必要とされる基礎的な機能をまとめて提供してくれるもの
+  ■フォルダ構成
+    ▼app
+      アプリケーションに関するクラスを管理。
+      Modelに関するファイルはapp直下に作られる。
+      app > Http > Controllersにコントローラーを入れる。
+    ▼config(configはconfigurationの略で「設定」の意味)
+      様々な設定に関するファイルを管理。
+    ▼database
+      データベースに関するファイルを管理。
+      database > migrationsにデータベースのバージョンを管理するファイルを入れる。
+    ▼public
+    	ブラウザからアクセスした時に見えるフォルダ。
+    	CSSやJavaScriptや画像をここに入れる。
+    ▼resources > views
+    	画面のテンプレート(View)を管理する。
+    ▼routes
+    	どのURLにアクセスした時にどの処理をするかの設定をする(ルーティングという)ためのファイルを管理する。
+    	今回はWebアプリケーションを作成するので、
+    	routes > web.phpを使用する
+  ■データベースの設定
+    .envファイルを書き変える
+    .envファイルとは環境に依存するような設定を書き込むファイルで、configフォルダにあるファイルからは.envファイルに書かれた値を参照する。
+    以下のあたりを書き換える。
+      DB_DATABASE=homestead
+      DB_USERNAME=homestead
+      DB_PASSWORD=secret
+  ■アプリケーションの設定
+    config > app.phpを開く
+    ①タイムゾーンを日本時刻にする
+    ‘timezone’ => ‘UTC’ -----------> ‘timezone’ => ‘Asia/Tokyo’
+
+    ②言語設定を日本語にする
+    ‘locale’ => ‘en’ -----------> ‘locale’ => ‘ja’
+  ■マイグレーションの設定をする
+    ▼マイグレーションとは？
+      アプリケーションで使うデータベースの定義を自動的に作成・管理する機能のこと。
+      これを使うことで、SQLを書かなくてもデータベース操作(SELECT, INSERT, UPDATEなど)ができる。
+      また、マイグレーションファイルとして蓄積されていくので、バージョン管理ができる
+    ▼Modelの命名規則
+      モデルクラス名 ... 先頭大文字かつ単数形 例) Post
+      モデルクラスのファイル名 ... 先頭大文字かつ単数形 例) Post.php
+      テーブル名 ... 先頭小文字かつ複数形 例) posts
+    ▼Modelの作成
+      php artisan make:model モデル名 --migration
+      ※モデル名は先頭文字は大文字にして単数形で書く
+      ※--migrationオプションでマイグレーションファイルを作成する(-mでも良い)
+      コマンドを実行すると、database > migrationsにマイグレーションファイルが作成される。
+    ▼マイグレーションファイルについて
+      マイグレーションファイルはテーブルの設計図。
+      マイグレーションファイルを実行することでモデルに該当するテーブルを作成することができる。
+      マイグレーションファイルには、up()とdown()というメソッドがある。
+      ・up()
+        マイグレーションで行いたい処理を記述
+      ・down()
+        それを巻き戻すための処理を記述
+      これらによって、データベース構成を変更したり、その変更を取り消したりすることができるので、結果としてデータベース構成のバージョン管理ができる。
+      upメソッドでは、作成するテーブル名を自動的にモデル名を複数形にしたものにしてくれる。
+      また、自動でid(連番で主キー)とtimestampsを設定してくれる。
+      timestampsはcreated_atとupdated_atというカラムを自動的に作ってくれて、作成日時と更新日時を自動で管理してくれる。
+      必要なカラムはマイグレーションファイルに追加していく。
+    ▼カラムの型
+      integer
+      string
+      text
+      boolean
+      timestamp などなど
+    ▼外部キーの設定
+      外部キーを設定するときはforeign, references, onを使用する。
+        例) commentsテーブルにあるpost_idをpostsテーブルのidで外部キーとする
+          $table->foreign('post_id')->references('id')->on('posts');
+          これを書いた場合はモデルで関係性を記述する。belongsToは所属するという意味で、hasManyは複数持つという意味。
+          例) コメントモデルがポストモデルに所属する場合(メソッド名は単数形にする)
+          public function post() {
+            return $this->belongsTo('App\Post');
+          }
+          例) ポストモデルがコメントモデルを複数持つ場合(メソッド名は複数形にする)
+          public function comments() {
+            return $this->hasMany('App\Comment');
+          }
+      外部キーのレコード削除時に行う処理はonDeleteで設定する。
+      設定する値は以下のどれか
+        ・cascade ... 親テーブルのレコード削除時に小テーブルのレコードも削除する
+        ・set null ... 親テーブルのレコード削除時に小テーブルのレコードの値をNULLにする
+        ・restrict ... 親テーブルのレコード削除時にエラーを発生する
+      例) 親テーブルのレコード削除時に小テーブルのレコードも削除する
+        $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+    ▼マイグレーションファイルの実行
+      php artisan migrate
+      このコマンドを実行することで、DBに新しいテーブルを作成してくれる。
+      ※マイグレーションファイルを実行するとmigrationsテーブルが作成される。
+      ※マイグレーションファイルは削除してはいけない。実行し終わったマイグレーションファイルを削除すると、migrationsと齟齬が生じて問題が発生する恐れがある。
+    ▼一度変更したデータベースの状態を元に戻す
+      php artisan migrate:rollback
+      ※実行したマイグレーションファイルを書き換えて再度マイグレーションを行なっても正しいカラムを作ることはできない。
+  ■モデルを操作してみる
+    LaravelのモデルはEloquentモデルと呼ばれていて、SQLを意識しなくても直感的に操作できるようになっている。
+    ▼起動方法
+      php artisan tinker
+    ▼レコードの挿入
+      方法1. インスタンスを生成してレコードを挿入する方法
+        ①インスタンスの生成
+          $post = new App\Post();
+          (デフォルトで名前空間がAppになっている)
+        ②値をセット
+          $post->title = ‘title 1’;
+          $post->body = ‘body 1’;
+        ③保存
+          $post->save();
+      方法2. インスタンスを作らないでレコードを挿入する方法
+        App\Post::create([‘title’ => ‘title 2’, ‘body’ => ‘body 2’]);
+        ※Laravelでは意図しないリクエストによって悪意のあるデータが挿入されてしまうことを防ぐMassAssignmentというものが設定されてある。そのため、その設定を無効にしないとこの方法でレコードの挿入はできない。
+        app直下にあるモデルファイルに以下を記述することで無効にできる
+          protected $fillable = ['カラム名', 'カラム名', ...];
+    ▼レコードの取得
+      App\Post::all();
+      配列に変換する場合はtoArrayメソッドを使う。
+      App\Post::all()->toArray();
+    ▼データの抽出
+      ♦︎特定のIDのレコードを取得
+        App\Post::find(3)->toArray();
+        該当するデータがない場合に例外を返すにはfindOrFailメソッドを使う。
+          App\Post::findOrFail(3)->toArray();
+      ♦︎条件付きで抽出
+        App\Post::where(‘id’, ‘>’, 1)->get()->toArray();
+    ▼並べ替え
+      App\Post::orderBy(‘created_at’, ‘desc’)->get();
+      これは以下のように書くこともできる。
+      $posts = App\Post::latest()->get();
+    ▼表示件数の制限
+      App\Post::where(‘id’, ‘>’, 1)->take(1)->get()->toArray();
+    ▼更新
+      $post = App\Post::find(3);
+      $post->title = ‘title 3 updated’;
+      $post->save();
+    ▼削除
+      $post = App\Post::find(3);
+      $post->delete();
+  ■ルーティング
+    ルーティングはroutes/web.phpに書く。
+    ▼ルーティングの書き方
+      Route::[Httpメソッド]('アクセス先', コントローラー名@アクション(コントローラーのメソッド));
+    ▼変数を入れたい場合(idを入れたいとする)
+      Route::[Httpメソッド]('アクセス先/{id}', コントローラー名@アクション(コントローラーのメソッド));
+      こうすることで、アクションの引数としてidが渡される。
+    ▼ルーティングの値のルール設定
+      Route::get(‘/posts/{post}’, ‘PostsController@show’);
+      Route::get(‘/posts/create’, ‘PostsController@create’);
+      このように書いた場合、二つ目のcreateが{post}と判断され、二つ目の処理が実行されない。そういった場合に、where()を使ってルーティングの値のルールを設定することができる。
+      例) {post}の値として数字のみ許可する
+        Route::get(‘/posts/{post}’, ‘PostsController@show’)->where(‘post’, ‘[0-9]+’);
+    ▼ミドルウェアの読み込み
+      ミドルウェアとは処理を行う前に決められた処理を行うもの。Laravelではwebというミドルウェアを読み込むことで、ログインしているかの検証をすることができる。
+      Route::group(['middleware' => ['web']], function() {
+        // GETなどを書く
+      });
+  ■コントローラーの作成
+    php artisan make:controller コントローラー名
+    このコマンドを実行すると、app/Http/Controllersのなかにコントローラーが作成される。
+  ■サーバーの立ち上げ方
+    php artisan serve
+  ■Viewについて
+    ▼Viewの種類
+      webブラウザに表示するviewを作成する場合は、HTML形式で情報を渡す。この時、拡張子をblade.phpとする。
+      iOSやAndroidアプリに表示するviewを作成する場合は、json形式で用法を渡す。ただし、この場合はSwiftやJavaを使ってViewを作成する必要がある。
+    ▼ビューの作成方法
+      resources/viewsのなかにコントローラー名と対応したview用のフォルダを作成する。
+      そのフォルダの中にアクション名に対応したviewを作成する。
+      LaravelではBladeというテンプレートエンジン(HTMLファイルの代わりに、動的に変化して欲しい部分だけを変数化した「テンプレート」を作成し、PHPで取得したデータをテンプレートに割り当てるもの)が使える。
+        例) index.blade.php
+    ▼Bladeの書き方
+      ♦︎コメントアウト
+        {{-- --}}
+      ♦︎出力
+        {{ $変数名 }}
+      ♦︎中身をエスケープしないで出力
+        {{!! !!}}
+      ♦︎条件分岐
+        ■if文
+          @if
+          @elseif
+          @else
+          @endif
+        ■unless文
+          @unless
+          @endunless
+      ♦︎繰り返し処理
+        @foreach (変数名 as 変数名)
+        @endforeach
+      ♦︎繰り返し処理 + 条件分岐
+        @forelse (変数名 as 変数名)
+        @empty
+        @endforelse
+        ※@emptyは空だったらという意味
+      ♦︎共通部分を部品化
+        ■共通部分の作成
+          default.blade.phpのような共通部分を定義するファイルを作成する。このファイルをレイアウトファイルと呼ぶ。レイアウトファイルでは、共通部分は残しつつ、ページごとに値を埋め込みたい箇所に特殊な命令(@yield())を書いていく。
+          例) titleを埋め込みたい場合
+            @yield('title')
+        ■共通部分の読み込み
+          @extends('共通部分の存在するフォルダ.共通部分のファイル名')
+        ■共通部分の埋め込み
+          @section()
+          @endsection
+          例) titleを埋め込みたい場合
+            @section('title')
+            Blog Posts
+            @endsection
+          埋め込む値が短い場合は以下のように1行で書くこともできる。
+          @section('title', 'Blog Posts')
+  ■コントローラーでのviewの指定
+    return view('フォルダ名.アクション名')
+    データを埋め込む方法は以下の2パターンがある。
+    ①view()の第二引数にキーバリューの配列を渡す
+      return view('フォルダ名.アクション名’, [‘キー' => バリュー]);
+    ②withを使って値を渡す
+      return view(‘フォルダ名.アクション名’)->with('キー', バリュー);
+  ■デバッグ方法
+    ddメソッドを使う。ddはdumpとdieの略で、結果を出力してその場で処理を終了させてくれる。
+    例) dd($posts->toArray());
+  ■リンクの張り方
+    ルーティングの設計通り
+      <a href=“/アクセス先/{{ 渡す変数 }}”></a>
+    としても良いが、URLを生成するためのメソッドがいくつか用意されているので、それらを使う。
+    ①url()を使う方法
+      <a href=“{{ url(‘/アクセス先, 渡す変数) }}”></a>
+    ②ControllerとActionからURLを生成するaction()を使う方法
+      <a href=“{{ action('コントローラー名@アクション名’, 渡す変数) }}”></a>
+    ③Implicit Bindingを使う方法
+      URLから$idを受け取って、Controllerでその$idを元にモデルを取得するという流れはよく行う。
+      そのため、Laravelではルーティングの情報から直接モデルを取得できるImplicit Bindingという仕組みが用意されている。
+        手順1. ルーティングに渡したい変数を埋め込む
+          Route::[Httpメソッド]('アクセス先/{変数名}', コントローラー名@アクション(コントローラーのメソッド));
+        手順2. アクションの引数の型を変数名と同じにする
+          例) public function show(Post $post) {}
+        手順3. リンクの生成は$post->idではなく、$postにする
+    ③を使うのが楽
+  ■フォームの使用
+    ▼CSRF対策
+      Laravelではフォームの中に{{ csrf_field }}を記述することでCSRF対策をしてくれる。
+      CSRF(Cross-site Request Forgery, リクエスト強要)とは、Webアプリケーションに存在する脆弱性、もしくはその脆弱性を利用した攻撃方法のこと。掲示板や問い合わせフォームなどを処理するWebアプリケーションが、本来拒否すべき他サイトからのリクエストを受信し処理してしまう。
+      対策として、フォーム生成時にサーバからの認証用のtokenを埋め込み、リクエスト送信時に一緒にサーバに返し、正しいtokenが送られてきているか検証を行う。
+      このtoken発行や検証を、{{ csrf_field() }}を埋め込むとLaravelが勝手にやってくれる。
+    ▼HTTPメソッドの指定
+      formでPOSTとGET以外のHTTPメソッドを使いたい場合は、method_filedを指定する。
+      例) HTTPメソッドにPATCHを使いたい場合
+        {{ method_field('patch') }}
+  ■バリデーションの設定
+    ▼バリデーションの導入方法
+      formの送信データを$request(Request型)とした時に、以下のように設定する。
+      $this->validate($request, [
+        'title' => 'required|min:3',
+        'body' => 'required',
+      ]);
+      requiredは入力必須の意味。
+      minは最低文字数を指定する。
+      複数の条件を指定する場合は、「|」を使う。
+      詳細( https://readouble.com/laravel/5.5/ja/validation.html )
+      このようにすることで、バリデーションに引っかかるとエラーメッセージとともに自動で元の画面に差し戻してくれる。
+    ▼エラーメッセージの出力
+      エラーメッセージは$errorsに格納される。hasメソッドを使って特定のキーのエラーがあるかを調べることができる。
+        例) $errors->has('title');
+      また、エラーは複数入ってくる可能性があるので、firstメソッドを使ってエラーがなくなるまで最初のものだけを表示する。
+        例) $errors->first('title')
+    ▼元の値をフォームに埋め込む
+      エラーが出てフォームに戻る際に、元の値を保持してもらうにはoldヘルパーを使う。
+      例) value="{{ old('title') }}"
+  ■フォームリクエストの作成
+    フォームリクエストとは、バリデーションロジックを含んだカスタムリクエストクラス。これを作ることで、重複するバリデーションロジックをクラスにまとめることができる。
+    ▼フォームリクエストの作成方法
+      php artisan make:request フォームリクエスト名
+      ※フォームリクエスト名の先頭の文字は大文字にする
+      このコマンドを実行すると、app/HttpのなかにRequestsフォルダが作成され、その中にフォームリクエストクラスが作成される。
+    ▼フォームリクエストの構成
+      authorizeメソッドとrulesメソッドが用意されている。
+      。
+      ♦︎authorizeメソッド
+        authorizeメソッドには認証のルールを記述し、rulesメソッドにはバリデーションのルールを記述する。
+        authorizeメソッドに何も記述しない場合は、何でも通すよという意味で、
+          return true;
+        とする。
+      ♦︎rulesメソッド
+        returnの中にバリデーションを記述する。
+        例)
+          return [
+              //
+              'title' => 'required|min:3',
+              'body' => 'required'
+          ];
+        バリデーションのエラーメッセージをカスタマイズしたいときは、messages()というメソッドを作成する。
+        例)
+          public function messages() {
+            return [
+              'title.required' => 'Please enter title!!!',
+              'title.min' => 'Please enter more 3 characters!!!',
+              'body.required' => 'Please enter body!!!'
+            ];
+          }
+    ▼フォームリクエストをControllerへ反映
+      バリデーション記述したら、フォームから渡ってくる変数$requestの型をフォームリクエスト名として、バリデーションの部分を削る。
+  ■データの削除
+    削除処理は単なるリンクだとアクセスするだけで(URLを叩くだけで)削除されてしまうので、リンク先はダミーにして、formで送信するようにし、jsで操作する。
+  ■リダイレクト
+    リダイレクトするにはredirectメソッドを使う。
+      例) ルートにリダレクトする
+        redirect('/')
+    ▼違うコントローラーのアクションにリダイレクトしたい場合
+      actionメソッドを使う
+        例) PostsControllerのshowアクションに$postを渡しつつリダレクトする場合
+          redirect()->action('PostsController@show', $post);
+    ▼元の画面に戻りたい場合
+      backメソッドを使う
+        例) redirect()->back();
+  ■その他メソッド
+    e() ... 引数をエスケープする
+    nl2br() ... 改行コードの前にHTMLのbrタグを挿入する
+    redirect() ... 指定したアクセス先にリダイレクトする
