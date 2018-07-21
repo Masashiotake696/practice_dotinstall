@@ -1,40 +1,11 @@
-class User {
-    String name = "Me!";
-
-    User(String name) {
-        this.name = name;
-    } 
-
-    // コンストラクタもメソッドなので、オーバーロードできる
-    User() {
-        // this.name = "me~~~~~";
-        // this()はこのクラスのコンストラクタの意味
-        this("me====="); // User(String name)のコンストラクタがthis()で呼び出される
-    }
-
-    void sayHi() {
-        System.out.println("Hi!!!" + this.name);
-    }
-} 
-
-class AdminUser extends User {
-    AdminUser(String name) {
-        super(name); // 親クラスのコンストラクタはsuper()で呼び出す。引数がなければ省略することも可能
-    }
-
-    void sayHello() {
-        System.out.println("Hello" + this.name);
-    }
-
-    // オーバーライド(アノテーションを付けることでメソッド名の間違いや引数の間違い時にエラーを出してくれる
-    @override
-    void sayHi() {
-        System.out.println("[admin] Hi!" + this.name);
-    }
-}
-
+package practice.app;
+import practice.app.model.User;
+import practice.app.model.AdminUser;
+// ワイルドカードも使える
+// import app.model.*;
 
 public class MyApp {
+    // main()はJavaの仮想マシンがインスタンスを作らずにいきなり実行できるようにstaticになっている
     public static void main(String[] args) {
         /* 型
         // 文字(文字はシングルクオートで囲う)
@@ -142,21 +113,30 @@ public class MyApp {
         */
 
         // クラス
+        /*
         User tom;
         tom = new User("Tom");
-        System.out.println(tom.name);
-        tom.sayHi();
+        System.out.println(tom.getName());
         
         User me = new User();
-        System.out.println(me.name);
+        System.out.println(me.getName());
 
         AdminUser bob = new AdminUser("Bob");
-        System.out.println(bob.name);
+        System.out.println(bob.getName());
         bob.sayHi();
         bob.sayHello();
+        */
+
+        User.getInfo(); // 0
+        User tom = new User("tom", 65);
+        User.getInfo(); // 1
+        tom.setScore(85);
+        tom.setScore(-10);
+        System.out.println(tom.getScore());
+        User tom2 = new User("tom2", 65);
+        User.getInfo(); // 2
     }
     
-    // メソッド
     public static void sayHi() {
         System.out.println("Hi!");
     }
