@@ -1,6 +1,18 @@
 package practice.app.model;
 
-public class User {
+interface Printable {
+    // 定数(pubilc static finalは省略できる)
+    double VERSION = 1.2;
+    // 抽象メソッド(public abstractは省略できる)
+    void print();
+    // defaultメソッド(抽象メソッドと違い直接実装が書けるメソッド)
+    public default void getInfoVersion() {
+        System.out.println("I/F ver." + Printable.VERSION);
+    }
+    // staticメソッド(defaultメソッドが複雑になってきた時に処理をまとめるヘルパー的な用途)
+}
+
+public class User implements Printable {
     private String name = "Me!";
     private int score;
     private static int count; 
@@ -34,6 +46,11 @@ public class User {
     public User() {
         // User(String name)のコンストラクタがthis()で呼び出される
         this("me", 100); 
+    }
+
+    @Override
+    public void print() {
+        System.out.println("適当");
     }
 
     public void sayHi() {
